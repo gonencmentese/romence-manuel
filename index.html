@@ -1008,12 +1008,74 @@ const B1_U7=[
   ]},
 ];
 
+/* ---------- B1 · UNIT 8 (La restaurant — mâncare românească) ---------- */
+const B1_U8=[
+  {title:"Aperitiv românesc",ro:"Romen mezeleri",blocks:[
+    {t:"vocab",title:"Mezeler",items:[
+      ["salată de vinete","közlenmiş patlıcan salatası"],["zacuscă","zakuska (sebze ezmesi)"],["pate de gâscă","kaz ciğeri ezmesi"],
+      ["telemea de oaie","koyun beyaz peyniri"],["cașcaval afumat","füme kaşar"],["salam de Sibiu","Sibiu salamı"],
+      ["măsline","zeytin"],["aperitiv","meze / başlangıç"],
+    ]},
+  ]},
+  {title:"Feluri de mâncare",ro:"Ana yemekler",blocks:[
+    {t:"vocab",title:"Çorba & ana yemek",items:[
+      ["ciorbă de perișoare","köfteli ekşi çorba"],["ciorbă de legume / fasole","sebzeli / fasulyeli çorba"],["borș","çorbayı ekşiten maya"],
+      ["perișoare","küçük köfteler"],["friptură la grătar","ızgara kızartma"],["cârnați","sucuk / sosis"],
+      ["cașcaval pane","pane kaşar"],["murături","turşu"],["frigărui","şiş kebap"],["cartofi prăjiți","patates kızartması"],
+    ],note:"Romanya çorbaları (ciorbă) borș ile ekşitilir; bu yüzden acrișor (hafif ekşi) olur."},
+  ]},
+  {title:"Gust",ro:"Tat & yorum",blocks:[
+    {t:"vocab",title:"Tatlar",items:[
+      ["gustos","lezzetli"],["delicios","nefis"],["acru / acrișor","ekşi / hafif ekşi"],["dulce","tatlı"],
+      ["sărat","tuzlu"],["picant","acılı / baharatlı"],["Ce foame îmi este!","Çok acıktım!"],["Poftă bună!","Afiyet olsun!"],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 9 (La medic) ---------- */
+const B1_U9=[
+  {title:"Simptome & diagnostic",ro:"Belirti & teşhis",blocks:[
+    {t:"table",title:"Belirti → Olası teşhis",head:["Simptom","Diagnostic"],rows:[
+      ["tușesc, strănut","răceală / gripă"],["mă doare / mă dor","durere"],["frisoane / febră","infecție"],
+      ["stare de vomă","gastrită"],["stare de oboseală","lipsă de vitamine"],
+    ]},
+    {t:"vocab",title:"Belirti & uzman",items:[
+      ["a tuși / a strănuta","öksürmek / hapşırmak"],["frisoane","titreme"],["febră","ateş"],
+      ["stomatolog","diş hekimi"],["farmacist","eczacı"],["fractură","kırık"],["infecție","enfeksiyon"],
+    ]},
+  ]},
+  {title:"Ce faci dacă…?",ro:"Eğer… ne yaparsın?",blocks:[
+    {t:"vocab",title:"Tavsiyeler",items:[
+      ["Te dor dinții? → la stomatolog","Dişin ağrıyorsa → diş hekimine"],["Te doare capul? → iei o pastilă","Başın ağrıyorsa → hap alırsın"],
+      ["Ești răcit? → bei ceai cald","Üşüttünse → sıcak çay içersin"],["Te doare stomacul? → la medic","Miden ağrıyorsa → doktora"],
+      ["Ai febră? → stai în pat","Ateşin varsa → yatakta kalırsın"],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 10 (Stări de spirit) ---------- */
+const B1_U10=[
+  {title:"Azi mă simt…",ro:"Bugün hissediyorum",blocks:[
+    {t:"vocab",title:"Durum & bağlam",items:[
+      ["confuz / confuză","kafası karışık"],["fericit / fericită","mutlu"],["obosit / obosită","yorgun"],["emoționat","heyecanlı"],
+      ["Cum te simți când…?","… olduğunda nasıl hissediyorsun?"],["Când mă trezesc…","Uyandığımda…"],["Când ascult muzică…","Müzik dinlediğimde…"],
+    ],note:"Bağlam için când (…‑dığında): Când mănânc ceva bun, sunt fericit (güzel bir şey yiyince mutlu olurum)."},
+  ]},
+  {title:"Piramida nevoilor",ro:"Maslow — İhtiyaçlar piramidi",blocks:[
+    {t:"vocab",title:"İhtiyaç düzeyleri",items:[
+      ["nevoi fiziologice","fizyolojik ihtiyaçlar"],["apă, mâncare, aer, odihnă","su, yemek, hava, dinlenme"],
+      ["nevoi de siguranță","güvenlik ihtiyaçları"],["nevoi sociale","sosyal ihtiyaçlar"],
+      ["stimă / respect","saygınlık / saygı"],["autorealizare","kendini gerçekleştirme"],
+    ],note:"Maslow piramidi: önce fizyolojik ihtiyaçlar (apă, mâncare, aer, odihnă) karşılanmalı; ancak o zaman insan üst ihtiyaçlara (güvenlik, sosyal, saygı, kendini gerçekleştirme) yönelir."},
+  ]},
+];
+
 /* ---------- COURSE ---------- */
 function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
 const COURSE={
   A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5,6:A1_U6,7:A1_U7,8:A1_U8,9:A1_U9,10:A1_U10})},
   A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3,4:A2_U4,5:A2_U5,6:A2_U6,7:A2_U7,8:A2_U8,9:A2_U9,10:A2_U10})},
-  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{1:B1_U1,2:B1_U2,3:B1_U3,4:B1_U4,5:B1_U5,6:B1_U6,7:B1_U7})},
+  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{1:B1_U1,2:B1_U2,3:B1_U3,4:B1_U4,5:B1_U5,6:B1_U6,7:B1_U7,8:B1_U8,9:B1_U9,10:B1_U10})},
 };
 const LEVELS=["A1","A2","B1"];
 
