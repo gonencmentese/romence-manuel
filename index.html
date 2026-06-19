@@ -1144,7 +1144,7 @@ function vLesson(){
   const lv=S.level,u=COURSE[lv].units.find(x=>x.n===S.unit),l=u.lessons[S.lesson];
   const id=lid(lv,u.n,S.lesson);const done=S.done.has(id);
   const body=l.blocks.map((b,bi)=>renderBlock(b,id+":"+bi)).join("");
-  return topBar(`${lv} · Ü${u.n} · Ders ${S.lesson+1}`,esc(l.title))+body+
+  return topBar(`${lv} · Ü${u.n} · Ders ${S.lesson+1}`,esc(l.title))+body+genQuizHTML(l)+
     `<button class="donebtn ${done?"on":""}" data-act="toggledone">${done?"✓ Tamamlandı":"Dersi tamamla"}</button>`;
 }
 function topBar(crumb,title){
@@ -1193,6 +1193,53 @@ function renderBlock(b,exId){
       <div class="ex"><div class="exinstr">${esc(b.instr)}</div>${qs}</div></div>`;
   }
   return "";
+}
+
+/* ============ AUTO QUIZ (her derste kelime testi) ============ */
+let _GV=null;
+function globalVocab(){
+  if(_GV)return _GV;
+  const ro=[],tr=[],sro=new Set(),str=new Set();
+  for(const lv of LEVELS) for(const u of COURSE[lv].units){ if(!u.lessons)continue;
+    for(const l of u.lessons) for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items){
+      if(!sro.has(it[0])){sro.add(it[0]);ro.push(it[0]);}
+      if(!str.has(it[1])){str.add(it[1]);tr.push(it[1]);}
+    }
+  }
+  _GV={ro,tr};return _GV;
+}
+function shuf(a){const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[x[i],x[j]]=[x[j],x[i]];}return x;}
+function lessonPairs(l){
+  const seen=new Set(),out=[];
+  for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items){ if(seen.has(it[0]))continue; seen.add(it[0]); out.push([it[0],it[1]]); }
+  return out;
+}
+function distractors(correct,localPool,globalPool){
+  const cands=[],seen=new Set([correct]);
+  for(const v of localPool){ if(seen.has(v))continue; seen.add(v); cands.push(v); }
+  for(const v of shuf(globalPool)){ if(seen.has(v))continue; seen.add(v); cands.push(v); if(cands.length>=14)break; }
+  return shuf(cands).slice(0,3);
+}
+function genQuizHTML(l){
+  const pairs=lessonPairs(l);
+  if(pairs.length<2)return "";
+  const GV=globalVocab();
+  const n=Math.min(6,pairs.length);
+  const chosen=shuf(pairs).slice(0,n);
+  const localTr=pairs.map(p=>p[1]),localRo=pairs.map(p=>p[0]);
+  const qs=chosen.map(p=>{
+    const ro2tr=Math.random()<0.5;
+    let prompt,correct,dis;
+    if(ro2tr){prompt=p[0];correct=p[1];dis=distractors(correct,localTr,GV.tr);}
+    else{prompt=p[1];correct=p[0];dis=distractors(correct,localRo,GV.ro);}
+    if(dis.length<3)return "";
+    const opts=shuf([correct].concat(dis));
+    const ob=opts.map(o=>`<button class="exopt" data-act="choice" data-correct="${o===correct?1:0}">${esc(o)}</button>`).join("");
+    return `<div class="exq"><div class="exprompt">${esc(prompt)}</div><div class="exopts">${ob}</div></div>`;
+  }).filter(Boolean).join("");
+  if(!qs)return "";
+  return `<div class="block"><div class="btitle">Kelime testi 🎲</div>
+    <div class="ex"><div class="exinstr">Doğru karşılığı seç · her açılışta yenilenir</div>${qs}</div></div>`;
 }
 
 /* ============ REVIEW (ders bitince tekrar) ============ */
