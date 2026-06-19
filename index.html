@@ -678,11 +678,102 @@ const A2_U3=[
   ]},
 ];
 
+/* ---------- A2 · UNIT 4 (Timpul) ---------- */
+const A2_U4=[
+  {title:"Sărbători",ro:"Bayramlar (tarihlerle)",blocks:[
+    {t:"table",title:"Romanya bayramları",head:["Tarih","Bayram"],rows:[
+      ["1–2 ianuarie","Anul Nou (Yılbaşı)"],["24 ianuarie","Ziua Unirii (Birleşme Günü)"],["1 Martie","Mărțișor"],
+      ["8 Martie","Ziua Mamei (Anneler Günü)"],["Paște","Paskalya (değişken tarih)"],["1 Mai","Ziua Muncii (İşçi Bayramı)"],
+      ["1 Iunie","Ziua Copilului (Çocuk Bayramı)"],["1 Decembrie","Ziua Națională (Millî Gün)"],["25–26 Decembrie","Crăciun (Noel)"],
+    ]},
+    {t:"vocab",title:"İlgili kelimeler",items:[
+      ["sărbătoare","bayram / kutlama"],["zi liberă","tatil günü"],["cadou","hediye"],["Moș Crăciun","Noel Baba"],["a sărbători","kutlamak"],
+    ]},
+  ]},
+  {title:"Anotimpuri & activități",ro:"Mevsim etkinlikleri",blocks:[
+    {t:"table",title:"Mevsime göre etkinlikler",head:["Mevsim","Etkinlik"],rows:[
+      ["primăvara","punem flori (çiçek dikeriz)"],["vara","mergem la mare, înotăm (denize gider, yüzeriz)"],
+      ["toamna","culegem roade (hasat yaparız)"],["iarna","mergem la schi, patinăm (kayak, paten)"],
+    ]},
+    {t:"vocab",title:"Fiiller & kelimeler",items:[
+      ["a înota","yüzmek"],["a schia","kayak yapmak"],["a patina","paten yapmak"],["om de zăpadă","kardan adam"],["plimbare","gezinti"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 5 (La cumpărături — mall) ---------- */
+const A2_U5=[
+  {title:"La mall",ro:"AVM'de",blocks:[
+    {t:"vocab",title:"Giysiler & AVM",items:[
+      ["mall","AVM"],["raion","reyon"],["rochie","elbise"],["pantaloni scurți","şort"],["blugi","kot pantolon"],
+      ["cămașă cu mânecă lungă","uzun kollu gömlek"],["pantofi de fotbal","futbol ayakkabısı"],["sandale","sandalet"],
+      ["comod","rahat"],["Pot să probez?","Deneyebilir miyim?"],["Care e mărimea ta?","Bedenin kaç?"],
+    ]},
+  ]},
+  {title:"Plata",ro:"Ödeme & alıştırma",blocks:[
+    {t:"vocab",title:"Kasada",items:[
+      ["casa de marcat","kasa"],["Plătiți cash sau cu cardul?","Nakit mi kartla mı ödersiniz?"],
+      ["factură","fatura"],["rest","para üstü"],["reducere / ofertă","indirim / kampanya"],
+    ]},
+    {t:"note_block",body:"Tekrar eden günler: joia = her perşembe, vinerea = her cuma, sâmbăta = her cumartesi, duminica = her pazar."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Diyaloga göre doğru mu yanlış mı?",qs:[
+      ["Ioana probează o rochie.",true],["Andrei vrea pantofi de fotbal.",true],
+      ["Tata plătește cu cardul.",false],["Mama cumpără blugi de damă.",true],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 6 (Casa mea) ---------- */
+const A2_U6=[
+  {title:"Descrierea casei",ro:"Ev tarifi",blocks:[
+    {t:"vocab",title:"İleri mobilya & mekânlar",items:[
+      ["canapea / fotoliu","kanepe / koltuk"],["bibliotecă","kitaplık"],["veioză","gece lambası"],
+      ["comodă / noptieră","şifonyer / komodin"],["măsuță de cafea","sehpa"],["pat dublu","çift kişilik yatak"],
+      ["dulap cu sertare","çekmeceli dolap"],["raft","raf"],["covor","halı"],["mașină de spălat vase","bulaşık makinesi"],
+      ["mașină de spălat rufe","çamaşır makinesi"],["cadă / chiuvetă","küvet / lavabo"],["etaj / balcon","kat / balkon"],
+    ]},
+  ]},
+  {title:"Într-un / dintr-o",ro:"Edat + belirsiz artikel",blocks:[
+    {t:"table",title:"Kaynaşma",head:["Birleşim","Sonuç"],rows:[
+      ["în + un","într-un"],["în + o","într-o"],["din + un","dintr-un"],["din + o","dintr-o"],
+    ],note:"Belirsiz artikelli isimden önce edat kaynaşır: Locuiesc într-un apartament (bir dairede oturuyorum). Vin dintr-o țară (bir ülkeden geliyorum)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["Locuiesc ___ apartament.",["într-un","în un"],0],
+      ["Stau ___ casă mare.",["într-o","în o"],0],
+      ["Vin ___ oraș mic.",["dintr-un","din un"],0],
+      ["Ies ___ cameră.",["dintr-o","din o"],0],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 7 (Familia mea) ---------- */
+const A2_U7=[
+  {title:"Tablou de familie",ro:"Aile tablosu",blocks:[
+    {t:"vocab",title:"Aile & durum",items:[
+      ["familie numeroasă","kalabalık aile"],["mai mare / mai mic","daha büyük / daha küçük"],
+      ["căsătorit / necăsătorit","evli / bekâr"],["a semăna cu","benzemek"],["din partea mamei / tatălui","anne / baba tarafından"],
+      ["cumnat / cumnată","kayınbirader / baldız"],["verișor / verișoară","kuzen (e / k)"],["mătușă / unchi","teyze-hala / amca-dayı"],
+    ]},
+  ]},
+  {title:"Comparație",ro:"Karşılaştırma (mai… decât)",blocks:[
+    {t:"vocab",title:"Karşılaştırma kalıpları",items:[
+      ["mai mare decât","…‑den daha büyük"],["mai mic decât","…‑den daha küçük"],["la fel de … ca","… kadar …"],
+      ["cel mai mare","en büyük"],["cel mai mic","en küçük"],
+    ],note:"Karşılaştırma: mai + sıfat + decât. Oana este mai mare decât Mihai (Oana, Mihai’den büyük). En üstünlük: cel mai mare (en büyük)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Yaşlara göre doğru biçimi seç.",qs:[
+      ["Oana (12) e ___ decât Mihai (10).",["mai mare","mai mic"],0],
+      ["Mihai (10) e ___ decât Oana (12).",["mai mare","mai mic"],1],
+      ["Adrian (17) e ___ decât Oana.",["mai mare","mai mic"],0],
+      ["Mihai e cel mai ___ dintre frați.",["mare","mic"],1],
+    ]},
+  ]},
+];
+
 /* ---------- COURSE ---------- */
 function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
 const COURSE={
   A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5,6:A1_U6,7:A1_U7,8:A1_U8,9:A1_U9,10:A1_U10})},
-  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3})},
+  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3,4:A2_U4,5:A2_U5,6:A2_U6,7:A2_U7})},
   B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{})},
 };
 const LEVELS=["A1","A2","B1"];
