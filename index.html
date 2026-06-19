@@ -585,11 +585,104 @@ const A1_U10=[
   ]},
 ];
 
+/* ---------- A2 · UNIT 1 (Despre mine) ---------- */
+const A2_U1=[
+  {title:"Salutul",ro:"Selamlar (kibar)",blocks:[
+    {t:"vocab",title:"Selam & vedalaşma",items:[
+      ["Sărut-mâna!","Saygı selamı (elinizden öperim)"],["Ciao!","Selam / Hoşça kal"],["Pe curând!","Yakında görüşürüz!"],
+      ["Te îmbrățișez!","Sarılıyorum! (vedalaşma)"],["Te sărut!","Öpüyorum! (samimi)"],["Noapte bună!","İyi geceler!"],
+      ["Bună dimineața / ziua / seara!","Günaydın / İyi günler / İyi akşamlar!"],
+    ],note:"Sărut-mâna: yaşça büyüklere ve kadınlara saygı selamıdır; gerçekten el öpülmez, sözlü kullanılır."},
+  ]},
+  {title:"Alfabet & grupuri",ro:"Harf grupları",blocks:[
+    {t:"table",title:"Harf grupları",head:["Grup","Okunuş"],rows:[
+      ["ce / ci","çe / çi"],["ge / gi","ce / ci"],["che / chi","ke / ki"],["ghe / ghi","ge / gi"],
+    ]},
+    {t:"note_block",body:"Vocale (sesli harfler): A, E, I, O, U, Ă, Î. Consoane (sessizler): geri kalan tüm harfler."},
+  ]},
+  {title:"De unde ești?",ro:"Nerelisin? (ülkeler)",blocks:[
+    {t:"vocab",title:"Köken",items:[
+      ["De unde ești?","Nerelisin?"],["Sunt din…","…‑lıyım"],["Sunt din orașul…","… şehrindenim"],
+    ]},
+    {t:"vocab",title:"Ülkeler (Romence)",items:[
+      ["Turcia","Türkiye"],["România","Romanya"],["Siria","Suriye"],["Egipt","Mısır"],["Maroc","Fas"],
+      ["Ungaria","Macaristan"],["Rusia","Rusya"],["Grecia","Yunanistan"],["Olanda","Hollanda"],["Japonia","Japonya"],
+    ]},
+  ]},
+  {title:"Politețe",ro:"Nezaket",blocks:[
+    {t:"vocab",title:"Nezaket ifadeleri",items:[
+      ["Te rog / Vă rog","Lütfen (sen / siz)"],["Mulțumesc frumos","Çok teşekkürler"],["Cu plăcere","Rica ederim"],
+      ["Ajută-mă, te rog!","Bana yardım et, lütfen!"],["Am nevoie de ajutor.","Yardıma ihtiyacım var."],
+      ["Îmi pare rău.","Üzgünüm."],["Scuze! / Scuzați!","Pardon! / Affedersiniz!"],["Poți să mă asculți?","Beni dinler misin?"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 2 (Învăț în România) ---------- */
+const A2_U2=[
+  {title:"Sala de curs",ro:"Sınıf",blocks:[
+    {t:"vocab",title:"Sınıf & kişiler",items:[
+      ["cursant / cursantă","kursiyer (e / k)"],["coleg de bancă","sıra arkadaşı"],["prima zi de curs","ilk ders günü"],
+      ["doamna profesoară","öğretmen hanım"],["ușă / tablă / scaun","kapı / tahta / sandalye"],
+      ["Cine sunteți voi?","Sizler kimsiniz?"],["prietenii noștri","arkadaşlarımız"],
+    ]},
+  ]},
+  {title:"Rechizite",ro:"Kırtasiye",blocks:[
+    {t:"vocab",title:"Kırtasiye eşyaları",items:[
+      ["caiet","defter"],["creion","kurşun kalem"],["pix","tükenmez"],["carte","kitap"],["rucsac","sırt çantası"],
+      ["riglă","cetvel"],["foarfece","makas"],["ascuțitoare","kalemtıraş"],["gumă (de șters)","silgi"],
+      ["lipici","yapıştırıcı"],["capsator","zımba"],["creioane colorate","boya kalemleri"],["carioci","keçeli kalem"],["calculator","hesap makinesi"],
+    ]},
+  ]},
+  {title:"Mergem la curs",ro:"Derse gidiş",blocks:[
+    {t:"table",title:"a merge — gitmek",head:["Kişi","Biçim"],rows:[
+      ["eu","merg"],["tu","mergi"],["el / ea","merge"],["noi","mergem"],["voi","mergeți"],["ei / ele","merg"],
+    ]},
+    {t:"vocab",title:"Ulaşım ifadeleri",items:[
+      ["Tu cu ce mergi?","Sen neyle gidiyorsun?"],["pe jos","yürüyerek"],["cu autobuzul","otobüsle"],
+      ["cu metroul","metroyla"],["cu troleibuzul","troleybüsle"],["Sunt în stație.","Duraktayım."],["Ajung în 15 minute.","15 dakikaya varırım."],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"a merge ile doldur.",qs:[
+      ["Eu ___ la curs cu metroul.","merg"],["Tu cu ce ___?","mergi"],["Noi ___ pe jos.","mergem"],["Ei ___ cu autobuzul.","merg"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 3 (La cumpărături) ---------- */
+const A2_U3=[
+  {title:"Fructe",ro:"Meyveler",blocks:[
+    {t:"vocab",title:"Yerli & narenciye",items:[
+      ["caise","kayısı"],["piersici","şeftali"],["cireșe","kiraz"],["vișine","vişne"],["prune","erik"],["struguri","üzüm"],
+      ["lămâie","limon"],["portocală","portakal"],["mandarină","mandalina"],["grepfrut","greyfurt"],["pomelo","pomelo"],
+    ],note:"Caise, piersici, cireșe, vișine Romanya’da yetişir; narenciye (lămâie, portocală, mandarină) çoğunlukla ithaldir."},
+  ]},
+  {title:"Mese",ro:"Öğünler",blocks:[
+    {t:"vocab",title:"Kahvaltı / öğle / akşam",items:[
+      ["mic dejun","kahvaltı"],["cornuri","kruvasan / poğaça"],["miere","bal"],["dulceață","reçel"],
+      ["iaurt cu cereale","mısır gevrekli yoğurt"],["prânz","öğle yemeği"],["supă","çorba"],["șnițel","şinitzel"],
+      ["cartofi prăjiți","patates kızartması"],["cină","akşam yemeği"],["plăcintă cu carne","etli börek"],
+    ]},
+  ]},
+  {title:"A bea & la cantină",ro:"İçmek & kantin",blocks:[
+    {t:"table",title:"a bea — içmek",head:["Kişi","Biçim"],rows:[
+      ["eu","beau"],["tu","bei"],["el / ea","bea"],["noi","bem"],["voi","beți"],["ei / ele","beau"],
+    ]},
+    {t:"vocab",title:"Pişirme & kantin",items:[
+      ["prăjit","kızartılmış (yağda)"],["fiert","haşlanmış"],["la grătar","ızgara"],["la cuptor","fırında"],
+      ["o sticlă de apă","bir şişe su"],["Ce doriți să mâncați?","Ne yemek istersiniz?"],["Cât am de plată?","Ne kadar ödeyeceğim?"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"a mânca / a bea ile doldur.",qs:[
+      ["Dimineața mama ___ cafea. (a bea)","bea"],["Copiii ___ lapte. (a bea)","beau"],
+      ["La prânz noi ___ supă. (a mânca)","mâncăm"],["Eu ___ multe fructe. (a mânca)","mănânc"],
+    ]},
+  ]},
+];
+
 /* ---------- COURSE ---------- */
 function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
 const COURSE={
   A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5,6:A1_U6,7:A1_U7,8:A1_U8,9:A1_U9,10:A1_U10})},
-  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{})},
+  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3})},
   B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{})},
 };
 const LEVELS=["A1","A2","B1"];
