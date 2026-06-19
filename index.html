@@ -233,10 +233,212 @@ const A1_U1=[
   ]},
 ];
 
+/* ---------- A1 · UNIT 2 (La curs) ---------- */
+const A1_U2=[
+  {title:"Colegii mei",ro:"Sınıf arkadaşlarım",blocks:[
+    {t:"vocab",title:"Sınıf eşyaları",items:[
+      ["catedră / birou","öğretmen masası"],["tablă","tahta"],["fereastră","pencere"],["scaun","sandalye"],
+      ["masă","masa"],["dulap","dolap"],["creion","kurşun kalem"],["pix","tükenmez kalem"],["caiet","defter"],["carte","kitap"],
+    ]},
+    {t:"vocab",title:"Diyalog ifadeleri",items:[
+      ["De unde ești?","Nerelisin?"],["Sunt din Canada.","Kanadalıyım."],
+      ["colegul meu / colega mea","sınıf arkadaşım (e / k)"],["Văd că sunt colegi noi.","Yeni arkadaşlar olduğunu görüyorum."],
+    ]},
+  ]},
+  {title:"Genul",ro:"Cinsiyet (M / F / N)",blocks:[
+    {t:"text",body:"Romence’de isimler eril (M), dişil (F) veya nötr (N) olur. Nötr isimler tekilde eril, çoğulda dişil gibi davranır."},
+    {t:"table",title:"Örnekler",head:["Kelime","Cinsiyet"],rows:[
+      ["frate","M — erkek kardeş"],["mamă","F — anne"],["caiet","N — defter"],["profesoară","F — öğretmen (k)"],
+      ["student","M — öğrenci"],["scaun","N — sandalye"],["fereastră","F — pencere"],["pix","N — tükenmez"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma — Cinsiyet",instr:"Doğru cinsiyeti seç.",qs:[
+      ["frate",["M","F","N"],0],["mamă",["M","F","N"],1],["caiet",["M","F","N"],2],
+      ["profesoară",["M","F","N"],1],["scaun",["M","F","N"],2],["student",["M","F","N"],0],
+    ]},
+  ]},
+  {title:"Articolul nehotărât",ro:"Belirsiz artikel (un / o)",blocks:[
+    {t:"table",title:"un / o + niște",head:["Eril","Dişil"],rows:[
+      ["un băiat","o fată"],["un student","o studentă"],["un coleg","o colegă"],["niște băieți","niște fete"],
+    ],note:"Belirsiz artikel kelimenin ÖNÜNE gelir: un (eril), o (dişil). Çoğulda her ikisi için niște. (Karşılaştır: belirli artikel sona gelir → băiatul, fata.)"},
+    {t:"ex_choice",title:"Alıştırma — un / o?",instr:"Doğru artikeli seç.",qs:[
+      ["___ băiat",["un","o"],0],["___ fată",["un","o"],1],["___ studentă",["un","o"],1],
+      ["___ coleg",["un","o"],0],["___ profesoară",["un","o"],1],
+    ]},
+  ]},
+  {title:"Culorile",ro:"Renkler",blocks:[
+    {t:"vocab",title:"Renkler",items:[
+      ["roșu","kırmızı"],["galben","sarı"],["albastru","mavi"],["verde","yeşil"],["negru","siyah"],["alb","beyaz"],
+      ["portocaliu","turuncu"],["maro","kahverengi"],["roz","pembe"],["gri","gri"],
+    ]},
+  ]},
+  {title:"La plimbare",ro:"Ulaşım",blocks:[
+    {t:"vocab",title:"Ulaşım araçları",items:[
+      ["bicicletă","bisiklet"],["mașină","araba"],["autobuz","otobüs"],["avion","uçak"],["tren","tren"],
+      ["tramvai","tramvay"],["metrou","metro"],["barcă","tekne / kayık"],["vapor","gemi / vapur"],["elicopter","helikopter"],
+    ]},
+    {t:"note_block",body:"Eu merg cu… = … ile giderim. Eu călătoresc = seyahat ederim. Araç belirli artikelle gelir: cu autobuzul, cu mașina, cu trenul."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Doğru mu yanlış mı?",qs:[
+      ["Eu merg pe stradă cu metroul.",false],
+      ["Tu mergi pe apă cu iahtul.",true],
+      ["Noi mergem pe șine cu avionul.",false],
+      ["Voi mergeți în aer cu elicopterul.",true],
+      ["Ele merg pe stradă cu mașina.",true],
+    ]},
+  ]},
+];
+
+/* ---------- A1 · UNIT 3 (La cumpărături — piață) ---------- */
+const A1_U3=[
+  {title:"Legume",ro:"Sebzeler",blocks:[
+    {t:"vocab",title:"Sebzeler",items:[
+      ["legume","sebzeler"],["ardei","biber"],["roșie / roșii","domates(ler)"],["ceapă","soğan"],["usturoi","sarımsak"],
+      ["cartof / cartofi","patates"],["varză","lahana"],["morcov","havuç"],["castravete","salatalık"],
+      ["ciupercă / ciuperci","mantar"],["fasole","fasulye"],["mazăre","bezelye"],["porumb","mısır"],
+    ]},
+    {t:"vocab",title:"Öğünler",items:[
+      ["micul dejun","kahvaltı"],["masa de prânz","öğle yemeği"],["cina","akşam yemeği"],
+    ]},
+  ]},
+  {title:"Verbe — mâncare",ro:"Yemek fiilleri",blocks:[
+    {t:"table",title:"a mânca — yemek",head:["Kişi","Biçim"],rows:[
+      ["eu","mănânc"],["tu","mănânci"],["el / ea","mănâncă"],["noi","mâncăm"],["voi","mâncați"],["ei / ele","mănâncă"],
+    ]},
+    {t:"table",title:"a cumpăra — satın almak",head:["Kişi","Biçim"],rows:[
+      ["eu","cumpăr"],["tu","cumperi"],["el / ea","cumpără"],["noi","cumpărăm"],["voi","cumpărați"],["ei / ele","cumpără"],
+    ]},
+    {t:"table",title:"a pregăti — hazırlamak",head:["Kişi","Biçim"],rows:[
+      ["eu","pregătesc"],["tu","pregătești"],["el / ea","pregătește"],["noi","pregătim"],["voi","pregătiți"],["ei / ele","pregătesc"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"Parantezdeki fiili doğru çek.",qs:[
+      ["Dimineața eu ___ acasă. (a mânca)","mănânc"],
+      ["Noi ___ împreună cina. (a pregăti)","pregătim"],
+      ["Mama și tata ___ alimente. (a cumpăra)","cumpără"],
+      ["Eu ___ fructe de la piață. (a cumpăra)","cumpăr"],
+      ["Voi ce ___ dimineața? (a mânca)","mâncați"],
+    ]},
+  ]},
+  {title:"Cantități",ro:"Miktarlar",blocks:[
+    {t:"vocab",title:"Miktar & ürün",items:[
+      ["gram / grame","gram"],["kilogram (kg)","kilogram"],["mililitru / litru","mililitre / litre"],
+      ["lapte","süt"],["cașcaval","kaşar peyniri"],["brânză","beyaz peynir"],["iaurt","yoğurt"],
+      ["carne","et"],["pui","tavuk"],["pește","balık"],
+    ]},
+    {t:"note_block",body:"“Ne kadar?” soru sözcüğü cinsiyete göre: dişil Câtă (apă), eril/nötr Cât (lapte, orez), çoğul sayılabilir Câte (fructe) / Câți (oameni)."},
+    {t:"ex_choice",title:"Alıştırma — Câtă / Cât / Câte?",instr:"Doğru biçimi seç.",qs:[
+      ["___ apă bei? (apă · F)",["Câtă","Cât","Câte"],0],
+      ["___ lapte bei? (lapte · N)",["Câtă","Cât","Câte"],1],
+      ["___ fructe mănânci? (çoğul)",["Câtă","Cât","Câte"],2],
+      ["___ cafea bei? (cafea · F)",["Câtă","Cât","Câte"],0],
+    ]},
+  ]},
+  {title:"Fructele",ro:"Meyveler",blocks:[
+    {t:"vocab",title:"Meyveler",items:[
+      ["mere","elma"],["pere","armut"],["prune","erik"],["pepene","kavun / karpuz"],["struguri","üzüm"],
+      ["căpșuni","çilek"],["zmeură","ahududu"],["mure","böğürtlen"],["ananas","ananas"],["banană","muz"],
+      ["portocală","portakal"],["lămâie","limon"],
+    ]},
+  ]},
+  {title:"Cât costă?",ro:"Ne kadar? (markette)",blocks:[
+    {t:"vocab",title:"Markette",items:[
+      ["Cât costă?","Ne kadar?"],["Cât costă un kilogram de mere?","Bir kilo elma kaça?"],
+      ["costă … lei","… lei tutar"],["ieftin / scump","ucuz / pahalı"],["Vreau, vă rog…","İstiyorum, lütfen…"],
+    ]},
+    {t:"note_block",body:"Fiyat sorusu: Cât costă…? Cevap: Costă X lei. Romanya para birimi leu (çoğul: lei)."},
+  ]},
+];
+
+/* ---------- A1 · UNIT 4 (Timpul) ---------- */
+const A1_U4=[
+  {title:"Luni și anotimpuri",ro:"Aylar ve mevsimler",blocks:[
+    {t:"table",title:"Anotimpuri — Mevsimler",head:["Romence","Türkçe"],rows:[
+      ["primăvară","ilkbahar"],["vară","yaz"],["toamnă","sonbahar"],["iarnă","kış"],
+    ]},
+    {t:"table",title:"Lunile — Aylar",head:["Romence","Türkçe"],rows:[
+      ["ianuarie","Ocak"],["februarie","Şubat"],["martie","Mart"],["aprilie","Nisan"],["mai","Mayıs"],["iunie","Haziran"],
+      ["iulie","Temmuz"],["august","Ağustos"],["septembrie","Eylül"],["octombrie","Ekim"],["noiembrie","Kasım"],["decembrie","Aralık"],
+    ]},
+    {t:"note_block",body:"Zaman: 60 secunde = 1 minut · 60 minute = 1 oră · 24 ore = o zi · 7 zile = o săptămână · 12 luni = un an."},
+  ]},
+  {title:"Ora",ro:"Saat",blocks:[
+    {t:"vocab",title:"Saat sorma",items:[
+      ["Cât este ceasul?","Saat kaç?"],["Este ora…","Saat …"],["douăsprezece fix","tam on iki"],
+      ["și un sfert","çeyrek geçe (+15)"],["și jumătate","buçuk (+30)"],["fără un sfert","çeyrek var (−15)"],
+      ["dimineață / prânz / seară","sabah / öğle / akşam"],["ieri / azi / mâine","dün / bugün / yarın"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma — Saat",instr:"Doğru ifadeyi seç.",qs:[
+      ["12:15 = douăsprezece ___",["și un sfert","fără un sfert"],0],
+      ["12:30 = douăsprezece ___",["și jumătate","fix"],0],
+      ["12:45 = unu ___",["fără un sfert","și un sfert"],0],
+      ["12:00 = douăsprezece ___",["fix","și jumătate"],0],
+    ]},
+  ]},
+  {title:"Vremea",ro:"Hava durumu",blocks:[
+    {t:"vocab",title:"Hava",items:[
+      ["Cum e vremea?","Hava nasıl?"],["Este cald.","Sıcak."],["Este frig.","Soğuk."],["Este soare.","Güneşli."],
+      ["Plouă.","Yağmur yağıyor."],["Ninge.","Kar yağıyor."],["Este vânt.","Rüzgârlı."],
+      ["nori","bulutlar"],["ceață","sis"],["zăpadă","kar"],["grade Celsius","santigrat derece"],
+    ]},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Doğru mu yanlış mı?",qs:[
+      ["“Ninge” = kar yağıyor.",true],
+      ["“Plouă” = güneşli.",false],
+      ["“Este cald” = sıcak.",true],
+      ["“Este vânt” = sisli.",false],
+    ]},
+  ]},
+  {title:"Sărbători",ro:"Bayramlar",blocks:[
+    {t:"vocab",title:"Bayramlar",items:[
+      ["Anul Nou / Revelion","Yılbaşı"],["Dragobete","Romen sevgililer günü (24 Şubat)"],
+      ["Mărțișor","bahar simgesi (1 Mart)"],["Paște","Paskalya"],["Crăciun","Noel"],["La mulți ani!","Mutlu yıllar! / Nice senelere!"],
+    ]},
+    {t:"note_block",body:"Mărțișor: 1 Mart’ta kadınlara verilen, beyaz-kırmızı iple bağlı küçük bir süs; baharın gelişini simgeler."},
+  ]},
+];
+
+/* ---------- A1 · UNIT 5 (La cumpărături — haine) ---------- */
+const A1_U5=[
+  {title:"La magazin",ro:"Mağazada",blocks:[
+    {t:"vocab",title:"Giysiler",items:[
+      ["bluză","bluz"],["cămașă","gömlek"],["pantaloni","pantolon"],["rochie","elbise"],["pantofi","ayakkabı"],
+      ["pantofi sport","spor ayakkabı"],["mânecă lungă / scurtă","uzun / kısa kol"],["bumbac","pamuk"],
+      ["mătase","ipek"],["măsură / mărime","beden"],["cabină de probă","deneme kabini"],
+    ]},
+    {t:"vocab",title:"Diyalog",items:[
+      ["Aș vrea…","İstiyorum (kibar)"],["Ce măsură aveți?","Hangi bedensiniz?"],["Pot să probez?","Deneyebilir miyim?"],
+      ["Cât costă în total?","Toplam ne kadar?"],
+    ]},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Diyaloga göre doğru mu yanlış mı?",qs:[
+      ["Clientul caută bluză cu mânecă lungă.",true],
+      ["Clientul caută bluză din mătase.",false],
+      ["Clientul cumpără bluză neagră.",false],
+      ["Clientul probează bluza.",true],
+      ["Clientul plătește 200 de lei în total.",true],
+    ]},
+  ]},
+  {title:"Verbe neregulate",ro:"Düzensiz fiiller & sınıflar",blocks:[
+    {t:"table",title:"a lua — almak",head:["Kişi","Biçim"],rows:[
+      ["eu","iau"],["tu","iei"],["el / ea","ia"],["noi","luăm"],["voi","luați"],["ei / ele","iau"],
+    ]},
+    {t:"text",body:"Fiil sınıfları mastar sonuna göre: -a (a mânca), -ea (a vrea), -e (a merge), -i / -î (a citi)."},
+    {t:"table",title:"Örnek çekim (eu)",head:["Mastar","eu"],rows:[
+      ["a mânca","mănânc"],["a vrea","vreau"],["a merge","merg"],["a citi","citesc"],["a face","fac"],["a putea","pot"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"“eu” biçimini yaz.",qs:[
+      ["a citi → eu ___","citesc"],["a face → eu ___","fac"],["a putea → eu ___","pot"],["a învăța → eu ___","învăț"],
+    ]},
+  ]},
+  {title:"Cât costă?",ro:"Fiyat (a costa)",blocks:[
+    {t:"vocab",title:"Ödeme",items:[
+      ["Cât costă?","Ne kadar?"],["El costă (sacoul).","O (ceket) … tutar."],["Ea costă (rochia).","O (elbise) … tutar."],
+      ["scump / ieftin","pahalı / ucuz"],["reducere","indirim"],["Plătesc cu cardul.","Kartla öderim."],
+    ]},
+    {t:"note_block",body:"a costa: el / ea costă, ei / ele costă. Erkek nesne → el costă, dişil nesne → ea costă."},
+  ]},
+];
+
 /* ---------- COURSE ---------- */
 function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
 const COURSE={
-  A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1})},
+  A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5})},
   A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{})},
   B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{})},
 };
