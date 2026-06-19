@@ -125,7 +125,18 @@ const A2_THEMES=[
   [7,"Familia mea","Ailem"],[8,"La restaurant","Restoranda"],[9,"La medic","Doktorda"],
   [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
 ];
-const B1_THEMES=A1_THEMES.map(t=>[t[0],t[1],t[2]]);
+const B1_THEMES=[
+  [1,"Din nou la curs!","Yeniden derste"],
+  [2,"Învățăm în România!","Romanya'da öğrenim"],
+  [3,"La cumpărături","Alışveriş"],
+  [4,"Timpul","Zaman"],
+  [5,"La cumpărături","Alışveriş"],
+  [6,"Casa mea","Evim"],
+  [7,"Familia mea","Ailem"],
+  [8,"La restaurant","Restoranda"],
+  [9,"La medic","Doktorda"],
+  [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
+];
 
 /* ---------- A1 · UNIT 1 (tam içerik) ---------- */
 const A1_U1=[
@@ -847,12 +858,77 @@ const A2_U10=[
   ]},
 ];
 
+/* ---------- B1 · UNIT 1 (Din nou la curs) ---------- */
+const B1_U1=[
+  {title:"Sunete & grupuri",ro:"Ses grupları",blocks:[
+    {t:"table",title:"Harf grupları (ses)",head:["Grup","Ses"],rows:[
+      ["ce / ci","çe / çi"],["ge / gi","ce / ci"],["che / chi","ke / ki"],["ghe / ghi","ge / gi"],
+    ],note:"İki harf bir ses verir (ce = ç); üç harf iki ses verir (chi = ki)."},
+  ]},
+  {title:"Punctuație",ro:"Noktalama & yazım",blocks:[
+    {t:"table",title:"Noktalama işaretleri",head:["İşaret","Romence"],rows:[
+      [".","punct (nokta)"],[",","virgulă (virgül)"],["?","semnul întrebării (soru)"],
+      ["!","semnul exclamării (ünlem)"],[":","două puncte"],[";","punct și virgulă"],
+    ]},
+    {t:"note_block",body:"Büyük harf: cümle başında ve özel adlarda (kişi, ülke, şehir, nehir, firma). Nokta / soru / ünlemden sonra büyük harfle başlanır."},
+  ]},
+  {title:"Despre mine",ro:"Kendini tanıtma",blocks:[
+    {t:"vocab",title:"Kendini tanıtma",items:[
+      ["nume / prenume","soyadı / ad"],["țară / oraș","ülke / şehir"],["vârstă","yaş"],
+      ["mâncarea preferată","en sevdiğim yemek"],["sportul preferat","en sevdiğim spor"],["hobby","hobi"],
+      ["culoarea preferată","en sevdiğim renk"],["Mă numesc…","Adım…"],["Sunt din… și locuiesc în…","…‑lıyım ve …‑de yaşıyorum."],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 2 (Învățăm în România) ---------- */
+const B1_U2=[
+  {title:"La curs",ro:"Süre & hedef",blocks:[
+    {t:"vocab",title:"Diyalog ifadeleri",items:[
+      ["De cât timp ești în România?","Ne zamandır Romanya’dasın?"],["Sunt aici de trei luni.","Üç aydır buradayım."],
+      ["Vreau să mă înscriu la facultate.","Üniversiteye kaydolmak istiyorum."],["Vreau să devin…","… olmak istiyorum."],
+      ["afacere","iş / ticaret"],["Vă urez bun venit!","Hoş geldiniz!"],["Mă bucur să te cunosc.","Tanıştığıma sevindim."],
+    ],note:"Süre için «de» kullanılır: Sunt aici de trei luni (üç aydır buradayım). De cât timp…? = Ne zamandır…?"},
+  ]},
+  {title:"Gen & articol",ro:"Cinsiyet & artikel tekrarı",blocks:[
+    {t:"table",title:"Belirsiz artikel (M / F / N)",head:["Cins","Tekil → Çoğul"],rows:[
+      ["M","un student → niște studenți"],["F","o studentă → niște studente"],["N","un telefon → niște telefoane"],
+    ],note:"Tekilde un (M / N), o (F); çoğulda hepsi için niște. Belirli artikel sona eklenir: studentul, studenta, telefonul."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru artikeli seç.",qs:[
+      ["___ student (eril, tekil)",["un","o"],0],
+      ["___ studentă (dişil, tekil)",["un","o"],1],
+      ["___ studenți (çoğul)",["niște","o"],0],
+      ["___ telefon (nötr, tekil)",["un","o"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 3 (La cumpărături) ---------- */
+const B1_U3=[
+  {title:"La piață",ro:"Pazarda",blocks:[
+    {t:"vocab",title:"Pazar & ürünler",items:[
+      ["aglomerat","kalabalık"],["proaspăt","taze"],["copt / coapte","olgun"],["carne","et"],["unt","tereyağı"],
+      ["făină","un"],["conopidă","karnabahar"],["vinete","patlıcan"],["ardei gras","dolmalık biber"],
+      ["2 kg de roșii","2 kilo domates"],["500 gr de ardei","500 gr biber"],
+    ],note:"Miktar + de + ürün: 2 kg de roșii, 500 gr de ardei. 20 ve üstü sayılarda da «de»: douăzeci de mere."},
+  ]},
+  {title:"Comprehensiune",ro:"Okuma alıştırması",blocks:[
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Sâmbăta prețurile sunt mai mici.",true],
+      ["Mama vrea să cumpere ceapă pentru salată.",true],
+      ["Domnul Matache are roșii din Turcia și România.",true],
+      ["Doamna Ionescu dorește 500 gr de roșii.",false],
+      ["Ema și Radu merg cu mama la cumpărături.",true],
+    ]},
+  ]},
+];
+
 /* ---------- COURSE ---------- */
 function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
 const COURSE={
   A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5,6:A1_U6,7:A1_U7,8:A1_U8,9:A1_U9,10:A1_U10})},
   A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3,4:A2_U4,5:A2_U5,6:A2_U6,7:A2_U7,8:A2_U8,9:A2_U9,10:A2_U10})},
-  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{})},
+  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{1:B1_U1,2:B1_U2,3:B1_U3})},
 };
 const LEVELS=["A1","A2","B1"];
 
