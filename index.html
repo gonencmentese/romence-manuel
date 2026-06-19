@@ -923,12 +923,97 @@ const B1_U3=[
   ]},
 ];
 
+/* ---------- B1 · UNIT 4 (Timpul) ---------- */
+const B1_U4=[
+  {title:"Sărbători din lume",ro:"Dünya bayramları",blocks:[
+    {t:"vocab",title:"Bayramlar",items:[
+      ["Ziua Recunoștinței","Şükran Günü"],["Diwali","Diwali (Işık Festivali)"],["Ramadan","Ramazan"],
+      ["Suhur / Iftar","Sahur / İftar"],["Crăciun","Noel"],["Nowruz","Nevruz"],
+      ["recoltă bogată","bol hasat"],["post","oruç"],["lumânare","mum"],["cadou","hediye"],
+    ]},
+  ]},
+  {title:"Tradiții românești",ro:"Romen gelenekleri",blocks:[
+    {t:"vocab",title:"Noel'de",items:[
+      ["Moș Crăciun","Noel Baba"],["brad de Crăciun","Noel ağacı"],["globuri colorate","renkli süs topları"],
+      ["sarmale","sarma"],["cozonac","cozonac (tatlı çörek)"],["Nașterea Domnului","İsa’nın doğuşu"],
+    ],note:"Romanya’da Noel’de geleneksel yemek sarmale (sarma), tatlı olarak cozonac yenir. Çam ağacı süsleme geleneği 1920’den sonra yayılmıştır."},
+  ]},
+];
+
+/* ---------- B1 · UNIT 5 (La cumpărături — stil) ---------- */
+const B1_U5=[
+  {title:"Stilul vestimentar",ro:"Giyim tarzı",blocks:[
+    {t:"vocab",title:"Giysi & malzeme",items:[
+      ["haine elegante","şık giysiler"],["cămașă din in / bumbac","keten / pamuk gömlek"],["încălțăminte comodă","rahat ayakkabı"],
+      ["bijuterii din argint","gümüş takılar"],["costum / cravată","takım elbise / kravat"],["tricou","tişört"],
+      ["pantaloni lejeri","bol / rahat pantolon"],["ceas","kol saati"],["pantofi de lac","rugan ayakkabı"],["echipament sportiv","spor kıyafeti"],
+    ]},
+    {t:"vocab",title:"Tarzlar",items:[
+      ["stil elegant","şık tarz"],["stil sport","spor tarz"],["stil office","ofis tarzı"],
+      ["stil clasic","klasik tarz"],["ținută obligatorie","zorunlu kıyafet"],
+    ]},
+  ]},
+  {title:"Comprehensiune",ro:"Okuma alıştırması",blocks:[
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Mama preferă hainele elegante.",true],
+      ["Tata poartă cravată în timpul liber.",false],
+      ["Andrei face înot.",true],
+      ["Tata poartă la birou costum.",true],
+      ["Ioana preferă stilul clasic.",false],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 6 (Casa mea) ---------- */
+const B1_U6=[
+  {title:"Casa visurilor mele",ro:"Hayalimdeki ev",blocks:[
+    {t:"vocab",title:"Mekânlar & tarif",items:[
+      ["casa visurilor mele","hayalimdeki ev"],["garsonieră","stüdyo daire"],["sufragerie","oturma / yemek odası"],
+      ["dormitor","yatak odası"],["grădină","bahçe"],["garaj","garaj"],["la munte / la mare","dağda / deniz kenarında"],
+      ["din lemn","ahşaptan"],["conexiune la internet","internet bağlantısı"],["în mijlocul naturii","doğanın ortasında"],
+    ]},
+  ]},
+  {title:"Trebuie să / să",ro:"Gereklilik & dilek",blocks:[
+    {t:"table",title:"Conjunctiv (să — el / ea)",head:["Mastar","să"],rows:[
+      ["a avea","să aibă"],["a fi","să fie"],["a putea","să poată"],["a face","să facă"],["a sta","să stea"],
+    ],note:"Gereklilik: trebuie să + fiil = …meli/malı. Casa trebuie să aibă grădină (evin bahçesi olmalı). Amaç/sıfat cümlesinde de «să»: o casă unde să pot lucra (çalışabileceğim bir ev)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru “să” biçimini seç.",qs:[
+      ["Casa trebuie să ___ grădină. (a avea)",["are","aibă"],1],
+      ["Casa trebuie să ___ mare. (a fi)",["este","fie"],1],
+      ["El vrea o cameră unde să ___ liniște. (a fi)",["este","fie"],1],
+      ["Trebuie să ___ ceva. (a face)",["face","facă"],1],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 7 (Familia mea) ---------- */
+const B1_U7=[
+  {title:"Familia la români",ro:"Toplumda aile",blocks:[
+    {t:"vocab",title:"Toplum & aile",items:[
+      ["rol important","önemli rol"],["relații puternice","güçlü ilişkiler"],["responsabilități","sorumluluklar"],
+      ["activități gospodărești","ev işleri"],["a împărți","paylaşmak"],["majorat (18 ani)","reşit olma (18 yaş)"],
+      ["familia extinsă","geniş aile"],["rude de sânge","kan bağı akrabalar"],["rude prin alianță","evlilik yoluyla akrabalar"],["a avea grijă de","ilgilenmek / bakmak"],
+    ]},
+  ]},
+  {title:"Diateza pasivă",ro:"Edilgen çatı",blocks:[
+    {t:"table",title:"Etken → Edilgen",head:["Etken","Edilgen"],rows:[
+      ["vizitează","este vizitat (ziyaret edilir)"],["ajută","este ajutat (yardım edilir)"],
+      ["iubește","este iubit (sevilir)"],["respectă","este respectat (saygı görür)"],
+    ],note:"Edilgen çatı: a fi + ortaç (özneyle uyumlu). Părinții sunt vizitați. Copiii sunt ajutați. Ortaç cinsiyet/sayıya uyar: vizitat / vizitată / vizitați / vizitate."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru edilgen ortacı seç.",qs:[
+      ["Părinții sunt ___ la sărbători.",["vizitați","vizitează"],0],
+      ["Copiii sunt ___ de părinți.",["ajutați","ajută"],0],
+      ["Casa este ___ în fiecare zi.",["curățată","curăță"],0],
+    ]},
+  ]},
+];
+
 /* ---------- COURSE ---------- */
 function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
 const COURSE={
   A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5,6:A1_U6,7:A1_U7,8:A1_U8,9:A1_U9,10:A1_U10})},
   A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3,4:A2_U4,5:A2_U5,6:A2_U6,7:A2_U7,8:A2_U8,9:A2_U9,10:A2_U10})},
-  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{1:B1_U1,2:B1_U2,3:B1_U3})},
+  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{1:B1_U1,2:B1_U2,3:B1_U3,4:B1_U4,5:B1_U5,6:B1_U6,7:B1_U7})},
 };
 const LEVELS=["A1","A2","B1"];
 
