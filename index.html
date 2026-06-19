@@ -553,11 +553,15 @@ const A1_U9=[
       ["pe mine","mă doare / mă dor"],["pe tine","te doare / te dor"],["pe el / ea","îl / o doare"],
       ["pe noi","ne doare / dor"],["pe voi","vă doare / dor"],["pe ei / ele","îi / le doare"],
     ],note:"Tekil ağrıyan organ → doare, çoğul → dor. Mă doare capul (başım ağrıyor) · Mă dor picioarele (ayaklarım ağrıyor). Akuzatif zamir kullanılır."},
-    {t:"ex_choice",title:"Alıştırma — doare / dor?",instr:"Tekil → doare, çoğul → dor.",qs:[
-      ["Mă ___ capul. (baş · tekil)",["doare","dor"],0],
-      ["Mă ___ picioarele. (ayaklar · çoğul)",["doare","dor"],1],
-      ["Mă ___ dinții. (dişler · çoğul)",["doare","dor"],1],
-      ["Mă ___ stomacul. (mide · tekil)",["doare","dor"],0],
+    {t:"ex_choice",title:"Alıştırma — doare / dor?",instr:"Şahıs değişse de biçim organ sayısına bağlı: tekil → doare, çoğul → dor.",qs:[
+      ["Mă ___ capul. (ben · tekil)",["doare","dor"],0],
+      ["Te ___ picioarele. (sen · çoğul)",["doare","dor"],1],
+      ["Îl ___ stomacul. (o · tekil)",["doare","dor"],0],
+      ["O ___ măseaua. (o · tekil)",["doare","dor"],0],
+      ["Ne ___ ochii. (biz · çoğul)",["doare","dor"],1],
+      ["Vă ___ gâtul. (siz · tekil)",["doare","dor"],0],
+      ["Îi ___ dinții. (onlar · çoğul)",["doare","dor"],1],
+      ["Le ___ mâinile. (onlar · çoğul)",["doare","dor"],1],
     ]},
   ]},
   {title:"La medic",ro:"Doktorda",blocks:[
@@ -1191,11 +1195,44 @@ function renderBlock(b,exId){
   return "";
 }
 
+/* ============ REVIEW (ders bitince tekrar) ============ */
+function completedVocab(){
+  const pairs=[];
+  for(const lv of LEVELS) for(const u of COURSE[lv].units){ if(!u.lessons)continue;
+    u.lessons.forEach((l,i)=>{ if(!S.done.has(lid(lv,u.n,i)))return;
+      for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items) pairs.push({ro:it[0],tr:it[1]});
+    });
+  }
+  const seen=new Set(),out=[];
+  for(const p of pairs){ if(seen.has(p.ro))continue; seen.add(p.ro); out.push(p); }
+  return out;
+}
+function makeReviewQ(){
+  const pool=completedVocab();
+  const trs=[...new Set(pool.map(p=>p.tr))];
+  if(pool.length<4||trs.length<4)return null;
+  const sh=a=>{const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[x[i],x[j]]=[x[j],x[i]];}return x;};
+  const ans=sh(pool)[0];
+  const dis=sh(trs.filter(t=>t!==ans.tr)).slice(0,3);
+  return {ro:ans.ro,tr:ans.tr,options:sh([ans.tr].concat(dis))};
+}
+function vReview(){
+  const r=S.review;
+  const opts=r.options.map(o=>`<button class="exopt" data-act="choice" data-correct="${o===r.tr?1:0}">${esc(o)}</button>`).join("");
+  return `<div class="top"><button class="back" data-act="revdone">‹ Geç</button><div class="crumb">Hızlı tekrar</div></div>
+    <h1 style="margin-bottom:6px">Tekrar 📝</h1>
+    <p class="sub" style="margin-bottom:16px">Önceki derslerden bir kelime — anlamı ne?</p>
+    <div class="ex" style="margin-bottom:14px"><div class="exinstr">Bu Romence kelimenin anlamı?</div>
+      <div class="exprompt" style="font-size:24px;color:var(--red)">${esc(r.ro)}</div></div>
+    <div class="exopts" style="display:grid;gap:10px">${opts}</div>
+    <button class="donebtn" style="margin-top:18px;color:var(--indigo);border-color:var(--indigo)" data-act="revdone">Devam ›</button>`;
+}
+
 /* ============ RENDER ============ */
 function render(){
   let html;
   switch(S.view){case"home":html=vHome();break;case"units":html=vUnits();break;
-    case"unit":html=vUnit();break;case"lesson":html=vLesson();break;}
+    case"unit":html=vUnit();break;case"lesson":html=vLesson();break;case"review":html=vReview();break;}
   const app=document.getElementById("app");app.innerHTML=html;app.scrollTo?app.scrollTo(0,0):0;window.scrollTo(0,0);
 }
 
@@ -1212,7 +1249,8 @@ document.addEventListener("click",e=>{
     return;
   }
   if(act==="checkfill"){
-    const box=document.getElementById("ex-"+val);
+    const box=document.getElementById("ex-"+t.getAttribute("data-ex"));
+    if(!box)return;
     box.querySelectorAll("input.fillin").forEach(inp=>{
       const ok=fold(inp.value)===fold(inp.getAttribute("data-answer"));
       inp.classList.remove("ok","no");inp.classList.add(ok?"ok":"no");
@@ -1228,8 +1266,15 @@ document.addEventListener("click",e=>{
     case"unit":S.unit=+val;S.view="unit";break;
     case"lesson":S.lesson=+val;S.view="lesson";break;
     case"toggledone":{const id=lid(S.level,S.unit,S.lesson);S.done.has(id)?S.done.delete(id):S.done.add(id);save();break;}
+    case"revdone":S.review=null;S.view="unit";break;
     case"back":
-      if(S.view==="lesson")S.view="unit";
+      if(S.view==="lesson"){
+        const curDone=S.done.has(lid(S.level,S.unit,S.lesson));
+        const rq=curDone?makeReviewQ():null;
+        if(rq){S.review=rq;S.view="review";}
+        else S.view="unit";
+      }
+      else if(S.view==="review")S.view="unit";
       else if(S.view==="unit")S.view="units";
       else if(S.view==="units")S.view="home";
       break;
