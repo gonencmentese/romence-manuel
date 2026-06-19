@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Limba Română — Manual</title>
+<meta name="description" content="Yetişkinler için Romence kursu A1·A2·B1." />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#2C3E63" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Manual RO" />
+<style>
+  :root{--paper:#FBF6EC;--ink:#2A2622;--red:#B5232A;--indigo:#2C3E63;--blue:#002B7F;
+    --yellow:#E8B71F;--gold:#C8902F;--green:#5B8A4E;--soft:#EFE6D2;--line:#E2D6BC;--mute:#8A8175;
+    --serif:Georgia,'Times New Roman',serif;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overscroll-behavior-y:none;}
+  body{padding:env(safe-area-inset-top) 0 calc(env(safe-area-inset-bottom) + 24px);}
+  .wrap{max-width:760px;margin:0 auto;padding:14px 16px 40px;}
+  .top{display:flex;align-items:center;gap:10px;margin-bottom:16px;min-height:34px;}
+  .back{font-family:var(--serif);font-size:15px;border:1px solid var(--line);background:#fff;
+    color:var(--ink);border-radius:20px;padding:5px 14px;cursor:pointer;}
+  .crumb{font-size:12.5px;color:var(--mute);}
+  h1{font-family:var(--serif);font-size:26px;margin:0;font-weight:700;}
+  .kicker{font-family:var(--serif);font-size:11px;letter-spacing:3px;color:var(--indigo);text-transform:uppercase;}
+  .sub{font-size:12.5px;color:var(--mute);}
+  .tricolor{display:flex;height:5px;border-radius:3px;overflow:hidden;max-width:120px;margin:6px 0 0;}
+  .tricolor i{flex:1;}
+
+  .levelcard{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid var(--line);
+    border-radius:10px;padding:16px;margin-bottom:12px;cursor:pointer;}
+  .lvbadge{width:54px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:20px;color:#fff;flex:0 0 auto;}
+  .levelcard h2{font-family:var(--serif);font-size:19px;margin:0 0 2px;}
+  .progmini{height:5px;background:var(--soft);border-radius:5px;margin-top:7px;overflow:hidden;}
+  .progmini i{display:block;height:100%;background:var(--green);border-radius:5px;}
+
+  .unit{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);
+    border-radius:9px;padding:13px 15px;margin-bottom:9px;cursor:pointer;}
+  .unit.soon{opacity:.6;}
+  .unum{font-family:var(--serif);font-size:17px;color:var(--indigo);width:30px;flex:0 0 auto;}
+  .utitle{font-family:var(--serif);font-size:16px;}
+  .utheme{font-size:12px;color:var(--mute);}
+  .tag{font-size:11px;padding:3px 9px;border-radius:20px;margin-left:auto;flex:0 0 auto;}
+  .tag.ok{background:#e7f0e3;color:var(--green);}
+  .tag.soon{background:var(--soft);color:var(--mute);}
+
+  .lesson{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);
+    border-radius:9px;padding:13px 15px;margin-bottom:9px;cursor:pointer;}
+  .lcheck{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;}
+  .lcheck.on{background:var(--green);border-color:var(--green);}
+  .ltitle{font-family:var(--serif);font-size:16px;}
+  .lro{font-size:12px;color:var(--mute);}
+
+  .block{margin-bottom:20px;}
+  .btitle{font-family:var(--serif);font-size:18px;color:var(--indigo);margin:0 0 8px;}
+  .btext{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:11px 14px;font-size:14px;line-height:1.5;}
+  .panel{background:#fff;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;}
+  .vrow{display:flex;gap:10px;padding:9px 14px;border-top:1px solid var(--soft);}
+  .vrow:first-child{border-top:none;}
+  .vro{font-family:var(--serif);font-size:16px;color:var(--red);flex:0 0 46%;}
+  .vtr{font-size:13.5px;flex:1;}
+  table{width:100%;border-collapse:collapse;}
+  th{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mute);text-align:left;padding:8px 14px;background:#faf6ec;font-weight:600;}
+  td{padding:7px 14px;border-top:1px solid var(--soft);font-size:14.5px;}
+  td.k{color:var(--mute);width:42%;}
+  td.v{font-family:var(--serif);color:var(--red);}
+  .note{background:#eef1f6;border-left:3px solid var(--indigo);padding:8px 12px;border-radius:3px;
+    font-size:12.5px;color:#46506b;margin-top:8px;}
+
+  .ex{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:14px;}
+  .exinstr{font-size:12.5px;color:var(--mute);margin-bottom:12px;}
+  .exq{margin-bottom:13px;}
+  .exprompt{font-family:var(--serif);font-size:16px;line-height:1.7;}
+  .fillin{font-family:var(--serif);font-size:15px;border:none;border-bottom:2px solid var(--indigo);
+    background:#f7f3ea;width:120px;padding:2px 6px;text-align:center;color:var(--ink);}
+  .fillin.ok{border-color:var(--green);background:#e7f0e3;}
+  .fillin.no{border-color:var(--red);background:#f6e3e3;}
+  .sol{font-size:12px;color:var(--green);margin-left:8px;}
+  .exopts{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+  .exopt{font-family:var(--serif);font-size:15px;padding:8px 16px;border:1.5px solid var(--line);
+    background:#fff;border-radius:6px;cursor:pointer;}
+  .exopt.ok{background:#e7f0e3;border-color:var(--green);color:#3f6a34;}
+  .exopt.no{background:#f6e3e3;border-color:var(--red);color:var(--red);}
+  .checkbtn{font-family:var(--serif);font-size:14px;background:var(--indigo);color:#fff;border:none;
+    border-radius:6px;padding:8px 16px;cursor:pointer;margin-top:6px;}
+  .donebtn{display:block;width:100%;font-family:var(--serif);font-size:16px;padding:13px;border-radius:8px;
+    border:1.5px solid var(--green);background:#fff;color:var(--green);cursor:pointer;margin-top:8px;}
+  .donebtn.on{background:var(--green);color:#fff;}
+
+  #install{position:fixed;right:14px;bottom:18px;z-index:30;display:none;background:var(--indigo);color:#fff;
+    border:none;border-radius:24px;padding:11px 18px;font-family:var(--serif);font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;}
+</style>
+</head>
+<body>
+  <div id="app" class="wrap"></div>
+  <button id="install">⬇ Uygulamayı yükle</button>
+
+<script>
+"use strict";
+/* ====== Limba Română — Manual (PWA v1.0) ======
+   Kaynak: Manual de limba română pentru adulți (A1·A2·B1)
+   A1 Ünite 1 tam dolu; diğer üniteler iskelet (ekledikçe büyür). */
+
+/* ---------- THEMES ---------- */
+const A1_THEMES=[
+  [1,"Salut! Cine ești?","Selamlaşma & Tanışma"],
+  [2,"La curs","Derste"],
+  [3,"La cumpărături","Markette alışveriş"],
+  [4,"Timpul","Zaman & Saat"],
+  [5,"La cumpărături","Giyim alışverişi"],
+  [6,"Casa mea","Evim"],
+  [7,"Familia mea","Ailem"],
+  [8,"La restaurant","Restoranda"],
+  [9,"La medic","Doktorda"],
+  [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
+];
+const A2_THEMES=[
+  [1,"Salutul","Selamlaşma"],[2,"Învăț în România","Romanya'da öğrenim"],[3,"La cumpărături","Alışveriş"],
+  [4,"Timpul","Zaman"],[5,"La cumpărături","Giyim alışverişi"],[6,"Casa mea","Evim"],
+  [7,"Familia mea","Ailem"],[8,"La restaurant","Restoranda"],[9,"La medic","Doktorda"],
+  [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
+];
+const B1_THEMES=A1_THEMES.map(t=>[t[0],t[1],t[2]]);
+
+/* ---------- A1 · UNIT 1 (tam içerik) ---------- */
+const A1_U1=[
+  {title:"Salutul",ro:"Selamlaşma",blocks:[
+    {t:"vocab",title:"Selamlar",items:[
+      ["Bună!","Selam"],["Salut!","Selam (samimi)"],["Bună dimineața!","Günaydın"],
+      ["Bună ziua!","İyi günler"],["Bună seara!","İyi akşamlar"],["Noapte bună!","İyi geceler"],
+      ["Îmi pare bine.","Memnun oldum."],["La revedere!","Güle güle / Hoşça kal"],["Pa!","Bay bay"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma",instr:"Zamana uygun selamı seç.",qs:[
+      ["Sabah (08:00):",["Bună dimineața!","Bună seara!"],0],
+      ["Öğle (13:00):",["Bună ziua!","Noapte bună!"],0],
+      ["Akşam (20:00):",["Bună dimineața!","Bună seara!"],1],
+      ["Yatarken:",["Noapte bună!","Bună ziua!"],0],
+      ["Ayrılırken:",["Salut!","La revedere!"],1],
+    ]},
+  ]},
+  {title:"Alfabetul",ro:"Alfabe",blocks:[
+    {t:"text",body:"Romen alfabesi 31 harftir. Türkçeden farklı 5 özel harf: ă, â, î, ș, ț. Tüm alfabe:\nA Ă Â B C D E F G H I Î J K L M N O P Q R S Ș T Ț U V W X Y Z"},
+    {t:"table",title:"Özel sesler",head:["Harf / küme","Okunuş"],rows:[
+      ["ă","vurgusuz ı/e arası — măr (elma)"],
+      ["â, î","ı sesi — în, român"],
+      ["ș","ş — și (ve)"],
+      ["ț","ts — țară (ülke)"],
+      ["ce, ci","çe, çi — cine (çine)"],
+      ["che, chi","ke, ki — chem"],
+      ["ge, gi","ce, ci — ger, gimnast"],
+      ["ghe, ghi","ge, gi — ghid"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru okunuşu seç.",qs:[
+      ["“ț” sesi:",["ts","ç"],0],
+      ["“ci” okunuşu:",["çi","ki"],0],
+      ["“che” okunuşu:",["ke","çe"],0],
+      ["“ge” okunuşu:",["ce","ge"],0],
+      ["“â / î” sesi:",["ı","a"],0],
+    ]},
+  ]},
+  {title:"Cine ești?",ro:"Kim sin? — Zamirler & A fi",blocks:[
+    {t:"vocab",title:"Tanışma ifadeleri",items:[
+      ["Eu sunt…","Ben …‑im"],["Tu cine ești?","Sen kimsin?"],["Eu sunt din…","Ben …‑lıyım"],
+      ["Îmi pare bine să te cunosc.","Tanıştığımıza memnun oldum."],
+      ["Mă bucur să te cunosc.","Tanıştığıma sevindim."],
+    ]},
+    {t:"table",title:"Pronume personale — Kişi zamirleri",head:["Romence","Türkçe"],rows:[
+      ["eu","ben"],["tu","sen"],["el / ea","o (erkek / kadın)"],
+      ["noi","biz"],["voi","siz"],["ei / ele","onlar (erkek / kadın)"],
+    ]},
+    {t:"table",title:"Verbul A FI — olmak (prezent)",head:["Kişi","A fi"],rows:[
+      ["eu","sunt"],["tu","ești"],["el / ea","este"],["noi","suntem"],["voi","sunteți"],["ei / ele","sunt"],
+    ],note:"Örnek: Eu sunt profesor. · Eu sunt din România. · Noi suntem la curs."},
+    {t:"ex_fill",title:"Alıştırma",instr:"Boşlukları doldur: sunt · ești · este · suntem · sunteți",qs:[
+      ["Eu ___ din Anglia.","sunt"],
+      ["Tu ___ din Siria?","ești"],
+      ["El ___ Ali.","este"],
+      ["Ea ___ colega mea.","este"],
+      ["Noi ___ studenți.","suntem"],
+      ["Voi ___ colegi la curs.","sunteți"],
+    ]},
+  ]},
+  {title:"Numerele",ro:"Sayılar",blocks:[
+    {t:"table",title:"0 – 20",head:["#","Romence"],rows:[
+      ["0","zero"],["1","unu"],["2","doi"],["3","trei"],["4","patru"],["5","cinci"],["6","șase"],
+      ["7","șapte"],["8","opt"],["9","nouă"],["10","zece"],["11","unsprezece"],["12","doisprezece"],
+      ["13","treisprezece"],["14","paisprezece"],["15","cincisprezece"],["16","șaisprezece"],
+      ["17","șaptesprezece"],["18","optsprezece"],["19","nouăsprezece"],["20","douăzeci"],
+    ]},
+    {t:"table",title:"Onluklar",head:["#","Romence"],rows:[
+      ["10","zece"],["20","douăzeci"],["30","treizeci"],["40","patruzeci"],["50","cincizeci"],
+      ["60","șaizeci"],["70","șaptezeci"],["80","optzeci"],["90","nouăzeci"],["100","o sută"],
+    ],note:"11–19: birler + sprezece. 21, 22…: onluk + și + birler → douăzeci și unu (21), treizeci și doi (32)."},
+    {t:"table",title:"Cinsiyet: un/o, doi/două",head:["Eril (M)","Dişil (F)"],rows:[
+      ["un băiat","o fată"],["doi băieți","două fete"],["trei băieți","trei fete"],
+    ],note:"Sadece 1 ve 2 cinsiyete göre değişir (un/o, doi/două). 3’ten itibaren aynıdır."},
+    {t:"text",body:"Câți? / Câte? = Kaç tane? — Eril için câți, dişil/nötr için câte. Yalnızca çoğulla kullanılır."},
+    {t:"ex_choice",title:"Alıştırma — Câți / Câte?",instr:"Doğru soru sözcüğünü seç.",qs:[
+      ["___ fete sunt la curs?",["Câți","Câte"],1],
+      ["___ băieți sunt la curs?",["Câți","Câte"],0],
+      ["___ profesori sunt?",["Câți","Câte"],0],
+      ["___ telefoane sunt pe masă?",["Câți","Câte"],1],
+      ["___ studente sunt?",["Câți","Câte"],1],
+      ["___ colegi ai?",["Câți","Câte"],0],
+    ]},
+    {t:"text",body:"“DE” kuralı: 1–19 → de YOK (trei fete). 20 ve üstü → de VAR (douăzeci de fete)."},
+    {t:"ex_choice",title:"Alıştırma — “de” gerekli mi?",instr:"Gerekliyse “de”yi seç.",qs:[
+      ["trei ___ fete",["—","de"],0],
+      ["douăzeci ___ studenți",["—","de"],1],
+      ["cincizeci ___ lei",["—","de"],1],
+      ["șapte ___ colegi",["—","de"],0],
+      ["patruzeci ___ ani",["—","de"],1],
+      ["zece ___ zile",["—","de"],0],
+    ]},
+  ]},
+  {title:"Câți ani ai?",ro:"Kaç yaşındasın?",blocks:[
+    {t:"vocab",title:"Yaş",items:[
+      ["Câți ani ai?","Kaç yaşındasın?"],["Am … ani.","… yaşındayım."],
+      ["Am douăzeci de ani.","Yirmi yaşındayım."],["Câți ani are el?","O kaç yaşında?"],
+      ["El are treizeci de ani.","O otuz yaşında."],
+    ],},
+    {t:"note_block",body:"Yaşta a avea (sahip olmak) kullanılır: “Am 20 de ani” = “20 yaşım var”. 20 ve üstünde “de ani”, altında sadece “ani”: am 5 ani / am 25 de ani."},
+    {t:"ex_fill",title:"Alıştırma",instr:"a avea ile doldur: am · ai · are",qs:[
+      ["Eu ___ douăzeci de ani.","am"],
+      ["Tu câți ani ___?","ai"],
+      ["El ___ treizeci de ani.","are"],
+    ]},
+  ]},
+];
+
+/* ---------- COURSE ---------- */
+function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
+const COURSE={
+  A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1})},
+  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{})},
+  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{})},
+};
+const LEVELS=["A1","A2","B1"];
+
+/* ---------- state + storage ---------- */
+const S={view:"home",level:null,unit:null,lesson:null,done:new Set()};
+function load(){try{S.done=new Set(JSON.parse(localStorage.getItem("manual:done")||"[]"));}catch(e){}}
+function save(){try{localStorage.setItem("manual:done",JSON.stringify([...S.done]));}catch(e){}}
+function lid(lv,u,i){return lv+"-"+u+"-"+i;}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function fold(s){return String(s).toLocaleLowerCase("tr").trim()
+  .replace(/ă|â/g,"a").replace(/î/g,"i").replace(/ș|ş/g,"s").replace(/ț|ţ/g,"t");}
+function levelStats(lv){let total=0,done=0;COURSE[lv].units.forEach(u=>{if(u.lessons){total+=u.lessons.length;
+  u.lessons.forEach((_,i)=>{if(S.done.has(lid(lv,u.n,i)))done++;});}});return{total,done};}
+
+/* ============ VIEWS ============ */
+function vHome(){
+  const cards=LEVELS.map(lv=>{
+    const c=COURSE[lv];const st=levelStats(lv);
+    const pct=st.total?Math.round(st.done/st.total*100):0;
+    return `<div class="levelcard" data-act="level" data-val="${lv}">
+      <div class="lvbadge" style="background:${c.badge}">${lv}</div>
+      <div style="flex:1">
+        <h2>${c.label}</h2>
+        <div class="sub">${esc(c.desc)} · ${st.total?`${st.done}/${st.total} ders`:"hazırlanıyor"}</div>
+        <div class="progmini"><i style="width:${pct}%"></i></div>
+      </div>
+      <div style="font-size:22px;color:var(--mute)">›</div>
+    </div>`;
+  }).join("");
+  return `<div class="top"><div><div class="kicker">Manual de limba română</div>
+    <h1>Romence Kursu</h1></div></div>
+    <p class="sub" style="margin:-6px 0 16px">Yetişkinler için kurs — A1, A2, B1. Tema tema diyalog, gramer ve alıştırma.</p>
+    ${cards}`;
+}
+function vUnits(){
+  const lv=S.level,c=COURSE[lv];
+  const list=c.units.map(u=>{
+    if(!u.lessons){
+      return `<div class="unit soon"><div class="unum">${u.n}</div>
+        <div><div class="utitle">${esc(u.ro)}</div><div class="utheme">${esc(u.tr)}</div></div>
+        <span class="tag soon">Hazırlanıyor</span></div>`;
+    }
+    let done=0;u.lessons.forEach((_,i)=>{if(S.done.has(lid(lv,u.n,i)))done++;});
+    return `<div class="unit" data-act="unit" data-val="${u.n}"><div class="unum">${u.n}</div>
+      <div><div class="utitle">${esc(u.ro)}</div><div class="utheme">${esc(u.tr)}</div></div>
+      <span class="tag ok">${done}/${u.lessons.length} ✓</span></div>`;
+  }).join("");
+  return topBar(c.label,"Üniteler")+list;
+}
+function vUnit(){
+  const lv=S.level,u=COURSE[lv].units.find(x=>x.n===S.unit);
+  const list=u.lessons.map((l,i)=>{
+    const done=S.done.has(lid(lv,u.n,i));
+    return `<div class="lesson" data-act="lesson" data-val="${i}">
+      <div class="lcheck ${done?"on":""}">${done?"✓":""}</div>
+      <div><div class="ltitle">${i+1}. ${esc(l.title)}</div><div class="lro">${esc(l.ro)}</div></div>
+      <div style="margin-left:auto;color:var(--mute)">›</div></div>`;
+  }).join("");
+  return topBar(`${lv} · Ünite ${u.n}`,esc(u.ro))+list;
+}
+function vLesson(){
+  const lv=S.level,u=COURSE[lv].units.find(x=>x.n===S.unit),l=u.lessons[S.lesson];
+  const id=lid(lv,u.n,S.lesson);const done=S.done.has(id);
+  const body=l.blocks.map((b,bi)=>renderBlock(b,id+":"+bi)).join("");
+  return topBar(`${lv} · Ü${u.n} · Ders ${S.lesson+1}`,esc(l.title))+body+
+    `<button class="donebtn ${done?"on":""}" data-act="toggledone">${done?"✓ Tamamlandı":"Dersi tamamla"}</button>`;
+}
+function topBar(crumb,title){
+  return `<div class="top"><button class="back" data-act="back">‹ Geri</button>
+    <div><div class="crumb">${crumb}</div></div></div>
+    <h1 style="margin-bottom:14px">${title}</h1>`;
+}
+
+function renderBlock(b,exId){
+  if(b.t==="text")return `<div class="block"><div class="btext">${esc(b.body).replace(/\n/g,"<br>")}</div></div>`;
+  if(b.t==="note_block")return `<div class="block"><div class="note">${esc(b.body)}</div></div>`;
+  if(b.t==="vocab"){
+    const rows=b.items.map(it=>`<div class="vrow"><span class="vro">${esc(it[0])}</span><span class="vtr">${esc(it[1])}</span></div>`).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div><div class="panel">${rows}</div></div>`;
+  }
+  if(b.t==="table"){
+    const th=`<tr>${b.head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr>`;
+    const tr=b.rows.map(r=>`<tr><td class="k">${esc(r[0])}</td><td class="v">${esc(r[1])}</td></tr>`).join("");
+    const note=b.note?`<div class="note">${esc(b.note)}</div>`:"";
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div><div class="panel"><table>${th}${tr}</table></div>${note}</div>`;
+  }
+  if(b.t==="ex_fill"){
+    const qs=b.qs.map(q=>{
+      const inp=`<input class="fillin" data-answer="${esc(q[1])}" autocapitalize="off" autocomplete="off" spellcheck="false"><span class="sol"></span>`;
+      return `<div class="exq"><span class="exprompt">${esc(q[0]).replace("___",inp)}</span></div>`;
+    }).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div>
+      <div class="ex" id="ex-${esc(exId)}"><div class="exinstr">${esc(b.instr)}</div>${qs}
+      <button class="checkbtn" data-act="checkfill" data-ex="${esc(exId)}">Kontrol et</button></div></div>`;
+  }
+  if(b.t==="ex_choice"){
+    const qs=b.qs.map(q=>{
+      const opts=q[1].map((o,oi)=>`<button class="exopt" data-act="choice" data-correct="${oi===q[2]?1:0}">${esc(o)}</button>`).join("");
+      return `<div class="exq"><div class="exprompt">${esc(q[0])}</div><div class="exopts">${opts}</div></div>`;
+    }).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div>
+      <div class="ex"><div class="exinstr">${esc(b.instr)}</div>${qs}</div></div>`;
+  }
+  if(b.t==="ex_tf"){
+    const qs=b.qs.map(q=>{
+      const opts=[["Adevărat",true],["Fals",false]].map(o=>
+        `<button class="exopt" data-act="choice" data-correct="${o[1]===q[1]?1:0}">${o[0]}</button>`).join("");
+      return `<div class="exq"><div class="exprompt">${esc(q[0])}</div><div class="exopts">${opts}</div></div>`;
+    }).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div>
+      <div class="ex"><div class="exinstr">${esc(b.instr)}</div>${qs}</div></div>`;
+  }
+  return "";
+}
+
+/* ============ RENDER ============ */
+function render(){
+  let html;
+  switch(S.view){case"home":html=vHome();break;case"units":html=vUnits();break;
+    case"unit":html=vUnit();break;case"lesson":html=vLesson();break;}
+  const app=document.getElementById("app");app.innerHTML=html;app.scrollTo?app.scrollTo(0,0):0;window.scrollTo(0,0);
+}
+
+/* ============ ACTIONS ============ */
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-act]");if(!t)return;
+  const act=t.getAttribute("data-act"),val=t.getAttribute("data-val");
+  // exercise interactions (no full re-render)
+  if(act==="choice"){
+    const box=t.parentElement;if(box.dataset.locked)return;box.dataset.locked="1";
+    box.querySelectorAll(".exopt").forEach(o=>{
+      if(o.getAttribute("data-correct")==="1")o.classList.add("ok");});
+    if(t.getAttribute("data-correct")!=="1")t.classList.add("no");
+    return;
+  }
+  if(act==="checkfill"){
+    const box=document.getElementById("ex-"+val);
+    box.querySelectorAll("input.fillin").forEach(inp=>{
+      const ok=fold(inp.value)===fold(inp.getAttribute("data-answer"));
+      inp.classList.remove("ok","no");inp.classList.add(ok?"ok":"no");
+      const sol=inp.nextElementSibling;
+      if(sol&&sol.classList.contains("sol")){sol.textContent=ok?"✓":("→ "+inp.getAttribute("data-answer"));
+        sol.style.color=ok?"var(--green)":"var(--red)";}
+    });
+    return;
+  }
+  // navigation / state
+  switch(act){
+    case"level":S.level=val;S.view="units";break;
+    case"unit":S.unit=+val;S.view="unit";break;
+    case"lesson":S.lesson=+val;S.view="lesson";break;
+    case"toggledone":{const id=lid(S.level,S.unit,S.lesson);S.done.has(id)?S.done.delete(id):S.done.add(id);save();break;}
+    case"back":
+      if(S.view==="lesson")S.view="unit";
+      else if(S.view==="unit")S.view="units";
+      else if(S.view==="units")S.view="home";
+      break;
+    default:return;
+  }
+  render();
+});
+
+/* ============ PWA ============ */
+let dp=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e;
+  const b=document.getElementById("install");b.style.display="block";
+  b.onclick=async()=>{b.style.display="none";dp.prompt();await dp.userChoice;dp=null;};});
+window.addEventListener("appinstalled",()=>{document.getElementById("install").style.display="none";});
+if("serviceWorker"in navigator&&location.protocol.startsWith("http")){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}
+
+/* ============ INIT ============ */
+load();render();
+</script>
+</body>
+</html>
