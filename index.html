@@ -769,11 +769,89 @@ const A2_U7=[
   ]},
 ];
 
+/* ---------- A2 · UNIT 8 (La restaurant) ---------- */
+const A2_U8=[
+  {title:"La restaurant",ro:"Sipariş",blocks:[
+    {t:"vocab",title:"Restoranda",items:[
+      ["o masă pentru patru persoane","dört kişilik masa"],["lângă fereastră","pencere kenarında"],["meniu","menü"],
+      ["supă de legume","sebze çorbası"],["ciorbă de văcuță","ekşi dana çorbası"],["friptură de pui","tavuk kızartma"],
+      ["tocăniță de legume","sebze yahnisi"],["clătite","krep"],["cartofi la cuptor","fırın patates"],
+      ["suc de portocale","portakal suyu"],["un pahar cu vin","bir kadeh şarap"],["Ce vreți să mâncați?","Ne yemek istersiniz?"],
+    ]},
+  ]},
+  {title:"Conjunctiv (să…)",ro:"Dilek kipi",blocks:[
+    {t:"table",title:"Prezent → Conjunctiv (el / ea)",head:["Prezent","Conjunctiv"],rows:[
+      ["mănâncă","să mănânce"],["merge","să meargă"],["poate","să poată"],["face","să facă"],["citește","să citească"],["vrea","să vrea"],
+    ],note:"Conjunctiv = «să + fiil»; istek/dilek anlatır. Vreau să mănânc (yemek istiyorum). Yalnızca 3. şahıs biçim değiştirir: el merge → să meargă; diğer şahıslar prezent ile aynıdır."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru “să” biçimini seç.",qs:[
+      ["El vrea să ___. (a merge)",["merge","meargă"],1],
+      ["Ea poate să ___. (a face)",["face","facă"],1],
+      ["Îmi place să ___. (a citi, eu)",["citesc","citească"],0],
+      ["Ei vor să ___. (a mânca)",["mănâncă","mănânce"],1],
+    ]},
+  ]},
+  {title:"Mâncare internațională",ro:"Dünya mutfağı",blocks:[
+    {t:"vocab",title:"Yemekler",items:[
+      ["pizza","pizza"],["paste","makarna"],["musaca","musakka"],["sushi","suşi"],["tabuleh","tabule"],
+      ["falafel","falafel"],["kebab","kebap"],["hamburger","hamburger"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 9 (La medic) ---------- */
+const A2_U9=[
+  {title:"Am răcit",ro:"Hastalık",blocks:[
+    {t:"vocab",title:"Şikâyetler",items:[
+      ["a răci","üşütmek"],["răceală / gripă","soğuk algınlığı / grip"],["Îmi curge nasul.","Burnum akıyor."],
+      ["Am febră.","Ateşim var."],["Tușesc.","Öksürüyorum."],["Mă doare gâtul.","Boğazım ağrıyor."],
+      ["Mă dor mușchii.","Kaslarım ağrıyor."],["Ce vă supără?","Şikâyetiniz ne?"],["Sănătate!","Geçmiş olsun! / Çok yaşa!"],
+    ]},
+    {t:"vocab",title:"Doktor & tedavi",items:[
+      ["consultație","muayene"],["radiografie","röntgen"],["rețetă","reçete"],["medicamente","ilaçlar"],
+      ["farmacie","eczane"],["repaos la domiciliu","evde istirahat"],["ceai cu lămâie și miere","limonlu ballı çay"],
+    ]},
+  ]},
+  {title:"Perfect compus",ro:"Geçmiş zaman",blocks:[
+    {t:"table",title:"Geçmiş zaman örnekleri (eu)",head:["Mastar","Geçmiş (eu)"],rows:[
+      ["a merge","am mers"],["a mânca","am mâncat"],["a face","am făcut"],["a fi","am fost"],["a avea","am avut"],["a răci","am răcit"],
+    ],note:"Geçmiş zaman (perfect compus) = a avea (am, ai, a, am, ați, au) + ortaç. a merge → mers: am mers (gittim). a răci → răcit: am răcit (üşüttüm)."},
+    {t:"ex_fill",title:"Alıştırma",instr:"Geçmiş zaman ortaçını yaz: am + ___",qs:[
+      ["a merge → eu am ___","mers"],["a mânca → eu am ___","mâncat"],["a face → eu am ___","făcut"],["a fi → eu am ___","fost"],
+    ]},
+  ]},
+  {title:"Corpul uman",ro:"Vücut (yüz & baş)",blocks:[
+    {t:"vocab",title:"Yüz & baş",items:[
+      ["păr","saç"],["frunte","alın"],["sprânceană / sprâncene","kaş(lar)"],["obraz","yanak"],["ureche","kulak"],
+      ["dinte / dinți","diş(ler)"],["buză / buze","dudak(lar)"],["bărbie","çene"],["gât","boyun / boğaz"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 10 (Stări de spirit) ---------- */
+const A2_U10=[
+  {title:"Cum te simți?",ro:"Nasıl hissediyorsun?",blocks:[
+    {t:"vocab",title:"Duygular (genişletilmiş)",items:[
+      ["plictisit","sıkılmış"],["trist","üzgün"],["confuz","kafası karışık"],["dezamăgit","hayal kırıklığına uğramış"],
+      ["optimist / pesimist","iyimser / kötümser"],["îngrijorat","endişeli"],["emoționat","duygulanmış / heyecanlı"],["calm / relaxat","sakin / rahatlamış"],
+    ]},
+    {t:"vocab",title:"Sorular",items:[
+      ["Cum te simți azi?","Bugün nasıl hissediyorsun?"],["Ce te face fericit?","Seni ne mutlu eder?"],
+      ["De ce îți este frică?","Neyden korkuyorsun?"],["Ce te plictisește?","Seni ne sıkar?"],
+    ]},
+  ]},
+  {title:"Substantive",ro:"Duygu isimleri",blocks:[
+    {t:"table",title:"Sıfat → İsim",head:["Sıfat","İsim"],rows:[
+      ["fericit","fericire (mutluluk)"],["bucuros","bucurie (sevinç)"],["entuziasmat","entuziasm (coşku)"],
+      ["furios","furie (öfke)"],["trist","tristețe (üzüntü)"],["dezamăgit","dezamăgire (hayal kırıklığı)"],["relaxat","relaxare (rahatlama)"],
+    ],note:"Duygu sıfatlarından isim türetilir: fericit → fericire, trist → tristețe."},
+  ]},
+];
+
 /* ---------- COURSE ---------- */
 function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
 const COURSE={
   A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5,6:A1_U6,7:A1_U7,8:A1_U8,9:A1_U9,10:A1_U10})},
-  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3,4:A2_U4,5:A2_U5,6:A2_U6,7:A2_U7})},
+  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3,4:A2_U4,5:A2_U5,6:A2_U6,7:A2_U7,8:A2_U8,9:A2_U9,10:A2_U10})},
   B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{})},
 };
 const LEVELS=["A1","A2","B1"];
