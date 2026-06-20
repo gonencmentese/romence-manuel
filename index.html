@@ -94,6 +94,19 @@
 
   #install{position:fixed;right:14px;bottom:18px;z-index:30;display:none;background:var(--indigo);color:#fff;
     border:none;border-radius:24px;padding:11px 18px;font-family:var(--serif);font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;}
+  .search{width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;
+    font-size:15px;background:#fff;font-family:var(--serif);margin-bottom:12px;}
+  .search:focus{outline:none;border-color:var(--indigo);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .chip{font-size:12.5px;padding:6px 12px;border:1.5px solid var(--line);border-radius:20px;background:#fff;cursor:pointer;}
+  .chip.on{background:var(--indigo);color:#fff;border-color:var(--indigo);}
+  .sectlabel{font-family:var(--serif);font-size:12px;letter-spacing:2px;color:var(--mute);text-transform:uppercase;margin:22px 0 10px;}
+  .ctable td,.ctable th{font-size:11.5px;padding:6px 8px;}
+  .ctable .k{white-space:nowrap;}
+  .sent{display:flex;gap:10px;padding:8px 14px;border-top:1px solid var(--soft);}
+  .sent:first-child{border-top:none;}
+  .sro{font-family:var(--serif);color:var(--red);flex:0 0 50%;font-size:14px;}
+  .str{font-size:13px;flex:1;}
 </style>
 </head>
 <body>
@@ -1109,10 +1122,16 @@ function vHome(){
       <div style="font-size:22px;color:var(--mute)">›</div>
     </div>`;
   }).join("");
+  const tools=TOOLS.map(t=>`<div class="levelcard" data-act="tool" data-val="${t[0]}">
+    <div class="lvbadge" style="background:${t[3]};font-size:24px">${t[2]}</div>
+    <div style="flex:1"><h2>${t[1]}</h2><div class="sub">${esc(t[4])}</div></div>
+    <div style="font-size:22px;color:var(--mute)">›</div></div>`).join("");
   return `<div class="top"><div><div class="kicker">Manual de limba română</div>
     <h1>Romence Kursu</h1></div></div>
     <p class="sub" style="margin:-6px 0 16px">Yetişkinler için kurs — A1, A2, B1. Tema tema diyalog, gramer ve alıştırma.</p>
-    ${cards}`;
+    ${cards}
+    <div class="sectlabel">Sık kullanılanlar</div>
+    ${tools}`;
 }
 function vUnits(){
   const lv=S.level,c=COURSE[lv];
@@ -1193,6 +1212,167 @@ function renderBlock(b,exId){
       <div class="ex"><div class="exinstr">${esc(b.instr)}</div>${qs}</div></div>`;
   }
   return "";
+}
+
+/* ============ SIK KULLANILANLAR — veri ============ */
+const VERBS=[
+  {inf:"a pleca",tr:"ayrılmak / gitmek",part:"plecat",group:"hareket",prez:["plec","pleci","pleacă","plecăm","plecați","pleacă"]},
+  {inf:"a ajunge",tr:"varmak",part:"ajuns",group:"hareket",prez:["ajung","ajungi","ajunge","ajungem","ajungeți","ajung"]},
+  {inf:"a trece",tr:"geçmek",part:"trecut",group:"hareket",prez:["trec","treci","trece","trecem","treceți","trec"]},
+  {inf:"a veni",tr:"gelmek",part:"venit",group:"hareket",prez:["vin","vii","vine","venim","veniți","vin"]},
+  {inf:"a merge",tr:"gitmek",part:"mers",group:"hareket",prez:["merg","mergi","merge","mergem","mergeți","merg"]},
+  {inf:"a coborî",tr:"inmek",part:"coborât",group:"hareket",prez:["cobor","cobori","coboară","coborâm","coborâți","coboară"]},
+  {inf:"a urca",tr:"çıkmak",part:"urcat",group:"hareket",prez:["urc","urci","urcă","urcăm","urcați","urcă"]},
+  {inf:"a opri",tr:"durmak / durdurmak",part:"oprit",group:"hareket",prez:["opresc","oprești","oprește","oprim","opriți","opresc"]},
+  {inf:"a trimite",tr:"göndermek",part:"trimis",group:"verme",prez:["trimit","trimiți","trimite","trimitem","trimiteți","trimit"]},
+  {inf:"a primi",tr:"almak (teslim)",part:"primit",group:"verme",prez:["primesc","primești","primește","primim","primiți","primesc"]},
+  {inf:"a duce",tr:"götürmek",part:"dus",group:"verme",prez:["duc","duci","duce","ducem","duceți","duc"]},
+  {inf:"a aduce",tr:"getirmek",part:"adus",group:"verme",prez:["aduc","aduci","aduce","aducem","aduceți","aduc"]},
+  {inf:"a lua",tr:"almak",part:"luat",group:"verme",prez:["iau","iei","ia","luăm","luați","iau"]},
+  {inf:"a da",tr:"vermek",part:"dat",group:"verme",prez:["dau","dai","dă","dăm","dați","dau"]},
+  {inf:"a cumpăra",tr:"satın almak",part:"cumpărat",group:"verme",prez:["cumpăr","cumperi","cumpără","cumpărăm","cumpărați","cumpără"]},
+  {inf:"a fi",tr:"olmak",part:"fost",group:"temel",prez:["sunt","ești","este","suntem","sunteți","sunt"]},
+  {inf:"a avea",tr:"sahip olmak / …var",part:"avut",group:"temel",prez:["am","ai","are","avem","aveți","au"]},
+  {inf:"a putea",tr:"yapabilmek",part:"putut",group:"temel",prez:["pot","poți","poate","putem","puteți","pot"]},
+  {inf:"a vrea",tr:"istemek",part:"vrut",group:"temel",prez:["vreau","vrei","vrea","vrem","vreți","vor"]},
+  {inf:"a face",tr:"yapmak / etmek",part:"făcut",group:"temel",prez:["fac","faci","face","facem","faceți","fac"]},
+  {inf:"a ști",tr:"bilmek",part:"știut",group:"temel",prez:["știu","știi","știe","știm","știți","știu"]},
+  {inf:"a spune",tr:"söylemek",part:"spus",group:"konusma",prez:["spun","spui","spune","spunem","spuneți","spun"]},
+  {inf:"a zice",tr:"demek",part:"zis",group:"konusma",prez:["zic","zici","zice","zicem","ziceți","zic"]},
+  {inf:"a vedea",tr:"görmek",part:"văzut",group:"konusma",prez:["văd","vezi","vede","vedem","vedeți","văd"]},
+  {inf:"a auzi",tr:"duymak",part:"auzit",group:"konusma",prez:["aud","auzi","aude","auzim","auziți","aud"]},
+  {inf:"a crede",tr:"inanmak / sanmak",part:"crezut",group:"konusma",prez:["cred","crezi","crede","credem","credeți","cred"]},
+  {inf:"a încerca",tr:"denemek",part:"încercat",group:"deneme",prez:["încerc","încerci","încearcă","încercăm","încercați","încearcă"]},
+  {inf:"a arăta",tr:"göstermek",part:"arătat",group:"deneme",prez:["arăt","arăți","arată","arătăm","arătați","arată"]},
+  {inf:"a începe",tr:"başlamak",part:"început",group:"deneme",prez:["încep","începi","începe","începem","începeți","încep"]},
+  {inf:"a termina",tr:"bitirmek",part:"terminat",group:"deneme",prez:["termin","termini","termină","terminăm","terminați","termină"]},
+  {inf:"a alege",tr:"seçmek",part:"ales",group:"deneme",prez:["aleg","alegi","alege","alegem","alegeți","aleg"]},
+];
+const VERB_GROUPS=[["hareket","Hareket"],["verme","Verme / Alma"],["temel","Temel & Modal"],["konusma","Konuşma / Algı"],["deneme","Deneme / Bitiş"]];
+const PERSONS=["eu","tu","el / ea","noi","voi","ei / ele"];
+const AUX_PC=["am","ai","a","am","ați","au"];
+const AUX_VI=["voi","vei","va","vom","veți","vor"];
+const TENSES=[["prez","Prezent","şimdiki"],["pc","Perfect compus","geçmiş"],["vi","Viitor","gelecek"]];
+function verbForms(v,tense){
+  if(tense==="prez")return v.prez;
+  if(tense==="pc")return AUX_PC.map(a=>a+" "+v.part);
+  return AUX_VI.map(a=>a+" "+v.inf.slice(2));
+}
+const CLITICS=[
+  {title:"Akuzatif zamirleri",sub:"nesne — kimi / neyi?",
+   table:[["eu (pe mine)","mă / m-","beni"],["tu (pe tine)","te","seni"],["el","îl / l-","onu (e)"],["ea","o","onu (k)"],["noi","ne","bizi"],["voi","vă / v-","sizi"],["ei","îi / i-","onları (e)"],["ele","le","onları (k)"]],
+   note:"Ünlüden önce kısalır: m-a, l-a, v-a. Geçmişte “o” fiilden SONRA gelir: a văzut-o.",
+   exTitle:"Örnek — a vedea (görmek)",exCols:["nesne","prezent","perfect","viitor"],
+   rows:[["beni","mă vede","m-a văzut","mă va vedea"],["seni","te vede","te-a văzut","te va vedea"],["onu (e)","îl vede","l-a văzut","îl va vedea"],["onu (k)","o vede","a văzut-o","o va vedea"],["bizi","ne vede","ne-a văzut","ne va vedea"],["sizi","vă vede","v-a văzut","vă va vedea"],["onları (e)","îi vede","i-a văzut","îi va vedea"],["onları (k)","le vede","le-a văzut","le va vedea"]],
+   sentences:[["Te văd.","Seni görüyorum."],["Te-am sunat ieri.","Seni dün aradım."],["O cunosc bine.","Onu (kadın) iyi tanıyorum."],["Ne ajută mereu.","Bize hep yardım eder."],["Îi aștept jos.","Onları aşağıda bekliyorum."],["Cartea? Am citit-o.","Kitap mı? Onu okudum."]]},
+  {title:"Datif zamirleri",sub:"dolaylı nesne — kime / neye?",
+   table:[["mie","îmi / mi-","bana"],["ție","îți / ți-","sana"],["lui / ei","îi / i-","ona"],["nouă","ne / ni-","bize"],["vouă","vă / vi-","size"],["lor","le / li-","onlara"]],
+   note:"a plăcea Türkçedeki “hoşuma gitmek” gibidir: beğenilen şey ÖZNE, kişi DATİF olur. “Îmi place cafeaua” = kahve hoşuma gidiyor.",
+   exTitle:"Örnek — a plăcea (hoşuna gitmek)",exCols:["kişi","prezent","perfect","viitor"],
+   rows:[["bana","îmi place","mi-a plăcut","îmi va plăcea"],["sana","îți place","ți-a plăcut","îți va plăcea"],["ona","îi place","i-a plăcut","îi va plăcea"],["bize","ne place","ne-a plăcut","ne va plăcea"],["size","vă place","v-a plăcut","vă va plăcea"],["onlara","le place","le-a plăcut","le va plăcea"]],
+   sentences:[["Îmi place muzica.","Müziği severim."],["Îți place cafeaua?","Kahveyi sever misin?"],["Îți mulțumesc mult.","Sana çok teşekkür ederim."],["I-am dat cartea.","Ona kitabı verdim."],["Îmi trebuie ajutor.","Bana yardım lazım."],["Mi-e dor de tine.","Seni özledim."],["Îți scriu mâine.","Sana yarın yazarım."]]},
+  {title:"Refleksif zamirler",sub:"kişi kendisi için yapar",
+   table:[["eu","îmi / mi-","kendime"],["tu","îți / ți-","kendine"],["el / ea","își / și-","kendine"],["noi","ne / ni-","kendimize"],["voi","vă / vi-","kendinize"],["ei / ele","își / și-","kendilerine"]],
+   note:"Refleksif datif: eylem kişinin kendisi için. a-și aminti (hatırlamak), a-și dori (arzulamak). Refleksif akuzatif ise: mă, te, se, ne, vă, se (örn. a se trezi — uyanmak).",
+   exTitle:"Örnek — a-și dori (arzulamak)",exCols:["kişi","prezent","perfect","viitor"],
+   rows:[["eu","îmi doresc","mi-am dorit","îmi voi dori"],["tu","îți dorești","ți-ai dorit","îți vei dori"],["el / ea","își dorește","și-a dorit","își va dori"],["noi","ne dorim","ne-am dorit","ne vom dori"],["voi","vă doriți","v-ați dorit","vă veți dori"],["ei / ele","își doresc","și-au dorit","își vor dori"]],
+   sentences:[["Mă trezesc devreme.","Erken uyanırım."],["Îmi amintesc de tine.","Seni hatırlıyorum."],["Mi-am dorit asta de mult.","Bunu çoktandır istiyordum."],["Ne distrăm împreună.","Birlikte eğleniyoruz."],["Își imaginează totul.","Her şeyi hayal ediyor."]]},
+];
+const ARTICLES={
+  intro:"Romence’de belirli artikel (İng. “the”) kelimenin SONUNA eklenir — bir ek gibi. Cinsiyete ve sayıya göre değişir. Türkçede tam karşılığı yoktur; belirlilik (“o / söz konusu”) anlamı katar.",
+  groups:[
+    {title:"Eril & Nötr — tekil",rule:"Ünsüzle bitenlere -ul; -e ile bitenlere -le.",rows:[["băiat","băiatul","çocuk"],["tren","trenul","tren"],["om","omul","adam / insan"],["câine","câinele","köpek"],["frate","fratele","erkek kardeş"],["pește","peștele","balık"]]},
+    {title:"Dişil — tekil",rule:"-ă → -a; -e → -ea; -a → -ua.",rows:[["casă","casa","ev"],["fată","fata","kız"],["floare","floarea","çiçek"],["carte","cartea","kitap"],["cafea","cafeaua","kahve"],["cutie","cutia","kutu"]]},
+    {title:"Çoğul",rule:"Eril çoğul -i uzar: băieți → băieții. Dişil/nötr çoğul → -le.",rows:[["băieți","băieții","çocuklar"],["studenți","studenții","öğrenciler"],["case","casele","evler"],["cărți","cărțile","kitaplar"],["flori","florile","çiçekler"],["trenuri","trenurile","trenler"]]},
+  ],
+  examples:[["Cartea este pe masă.","Kitap masanın üstünde."],["Unde este băiatul?","Çocuk nerede?"],["Îmi place cafeaua.","Kahveyi severim."],["Câinele doarme.","Köpek uyuyor."],["Florile sunt frumoase.","Çiçekler güzel."],["Am închis ușa.","Kapıyı kapattım."]],
+  note:"Karşılaştır: belirsiz artikel (un / o) kelimenin ÖNÜNE gelir → un băiat (bir çocuk), o casă (bir ev). Belirli artikel ise hep sona eklenir → băiatul, casa.",
+};
+const TOOLS=[
+  ["dict","Sözlük","📖","var(--green)","Tüm kelimeler · ara"],
+  ["conj","Çekimler","🔄","var(--indigo)","30+ fiil · 3 zaman"],
+  ["pron","Zamirler","👥","var(--red)","Akuzatif · Datif · Refleksif"],
+  ["gram","Gramer","📐","var(--gold)","Belirli artikel"],
+  ["quiz","Sınav","🎯","var(--blue)","Karışık kelime testi"],
+];
+
+/* ============ SIK KULLANILANLAR — ekranlar ============ */
+function buildDict(){
+  if(S._dict)return S._dict;
+  const seen=new Set(),out=[];
+  for(const lv of LEVELS) for(const u of COURSE[lv].units){ if(!u.lessons)continue;
+    for(const l of u.lessons) for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items){
+      if(seen.has(it[0]))continue; seen.add(it[0]); out.push([it[0],it[1]]); } }
+  for(const v of VERBS){ if(seen.has(v.inf))continue; seen.add(v.inf); out.push([v.inf,v.tr]); }
+  out.sort((a,b)=>a[0].localeCompare(b[0],"ro"));
+  S._dict=out;return out;
+}
+function dictRows(){
+  const q=fold(S.dictQ||"");
+  let list=buildDict();
+  if(q)list=list.filter(p=>fold(p[0]).includes(q)||fold(p[1]).includes(q));
+  const n=list.length; list=list.slice(0,400);
+  if(!n)return `<div class="sub" style="padding:14px">Sonuç yok.</div>`;
+  return list.map(p=>`<div class="vrow"><span class="vro">${esc(p[0])}</span><span class="vtr">${esc(p[1])}</span></div>`).join("");
+}
+function toolTop(t){return `<div class="top"><button class="back" data-act="toolback">‹ Geri</button><div class="crumb">Sık kullanılanlar</div></div><h1 style="margin-bottom:12px">${t}</h1>`;}
+function vDict(){
+  return toolTop("Sözlük 📖")+
+    `<input class="search" id="dictsearch" placeholder="Romence veya Türkçe ara…" value="${esc(S.dictQ||"")}" autocapitalize="off" autocomplete="off" spellcheck="false">
+    <div class="panel" id="dictresults">${dictRows()}</div>`;
+}
+function vConj(){
+  const g=S.conjGroup||VERB_GROUPS[0][0];
+  const chips=VERB_GROUPS.map(gr=>`<div class="chip ${gr[0]===g?"on":""}" data-act="conjgroup" data-val="${gr[0]}">${esc(gr[1])}</div>`).join("");
+  const cards=VERBS.filter(v=>v.group===g).map(v=>{
+    const head=`<tr><th>Kişi</th>${TENSES.map(t=>`<th>${esc(t[2])}</th>`).join("")}</tr>`;
+    const rows=PERSONS.map((p,i)=>`<tr><td class="k">${esc(p)}</td>${TENSES.map(t=>`<td class="v">${esc(verbForms(v,t[0])[i])}</td>`).join("")}</tr>`).join("");
+    return `<div class="block"><div class="btitle">${esc(v.inf)} <span class="sub">— ${esc(v.tr)}</span></div>
+      <div class="panel ctable"><table>${head}${rows}</table></div></div>`;
+  }).join("");
+  return toolTop("Çekimler 🔄")+`<div class="chips">${chips}</div>${cards}`;
+}
+function vPron(){
+  const secs=CLITICS.map(c=>{
+    const t1=`<table><tr><th>Kişi</th><th>Zamir</th><th>Anlam</th></tr>${c.table.map(r=>`<tr><td class="k">${esc(r[0])}</td><td class="v">${esc(r[1])}</td><td class="v">${esc(r[2])}</td></tr>`).join("")}</table>`;
+    const exHead=`<tr>${c.exCols.map(h=>`<th>${esc(h)}</th>`).join("")}</tr>`;
+    const exRows=c.rows.map(r=>`<tr>${r.map((cell,i)=>`<td class="${i===0?"k":"v"}">${esc(cell)}</td>`).join("")}</tr>`).join("");
+    const sents=c.sentences.map(s=>`<div class="sent"><span class="sro">${esc(s[0])}</span><span class="str">${esc(s[1])}</span></div>`).join("");
+    return `<div class="block"><div class="btitle">${esc(c.title)}</div><div class="sub" style="margin:-4px 0 8px">${esc(c.sub)}</div>
+      <div class="panel ctable">${t1}</div><div class="note">${esc(c.note)}</div>
+      <div class="sectlabel">${esc(c.exTitle)}</div><div class="panel ctable"><table>${exHead}${exRows}</table></div>
+      <div class="sectlabel">Örnek cümleler</div><div class="panel">${sents}</div></div>`;
+  }).join("");
+  return toolTop("Zamirler 👥")+secs;
+}
+function vGram(){
+  const groups=ARTICLES.groups.map(g=>{
+    const rows=g.rows.map(r=>`<tr><td class="k">${esc(r[0])}</td><td class="v">${esc(r[1])}</td><td class="v">${esc(r[2])}</td></tr>`).join("");
+    return `<div class="block"><div class="btitle">${esc(g.title)}</div><div class="sub" style="margin:-4px 0 8px">${esc(g.rule)}</div>
+      <div class="panel ctable"><table><tr><th>Yalın</th><th>Artikelli</th><th>Anlam</th></tr>${rows}</table></div></div>`;
+  }).join("");
+  const ex=ARTICLES.examples.map(e=>`<div class="sent"><span class="sro">${esc(e[0])}</span><span class="str">${esc(e[1])}</span></div>`).join("");
+  return toolTop("Belirli Artikel 📐")+`<div class="note">${esc(ARTICLES.intro)}</div>${groups}
+    <div class="sectlabel">Örnekler</div><div class="panel">${ex}</div>
+    <div class="note" style="margin-top:12px">${esc(ARTICLES.note)}</div>`;
+}
+function makeQuizQ(){
+  const d=buildDict(); if(d.length<4)return null;
+  const ans=shuf(d)[0],ro2tr=Math.random()<0.5;
+  const prompt=ro2tr?ans[0]:ans[1],correct=ro2tr?ans[1]:ans[0];
+  const pool=d.map(p=>ro2tr?p[1]:p[0]),dis=[],seen=new Set([correct]);
+  for(const v of shuf(pool)){ if(seen.has(v))continue; seen.add(v); dis.push(v); if(dis.length>=3)break; }
+  return {prompt,correct,options:shuf([correct].concat(dis)),dir:ro2tr};
+}
+function vQuiz(){
+  if(!S.quiz||!S.quiz.q)S.quiz={q:makeQuizQ(),score:0,total:0};
+  const q=S.quiz.q;
+  const opts=q.options.map(o=>`<button class="exopt" data-act="quizpick" data-correct="${o===q.correct?1:0}">${esc(o)}</button>`).join("");
+  return toolTop("Sınav 🎯")+
+    `<p class="sub" style="margin:-6px 0 14px">Skor: <b id="quizscore">${S.quiz.score} / ${S.quiz.total}</b> · ${q.dir?"Romence → Türkçe":"Türkçe → Romence"}</p>
+    <div class="ex"><div class="exprompt" style="font-size:24px;color:var(--red);margin-bottom:10px">${esc(q.prompt)}</div>
+      <div class="exopts">${opts}</div></div>
+    <button class="donebtn" style="margin-top:18px;color:var(--indigo);border-color:var(--indigo)" data-act="quiznext">Sonraki soru ›</button>`;
 }
 
 /* ============ AUTO QUIZ (her derste kelime testi) ============ */
@@ -1279,7 +1459,9 @@ function vReview(){
 function render(){
   let html;
   switch(S.view){case"home":html=vHome();break;case"units":html=vUnits();break;
-    case"unit":html=vUnit();break;case"lesson":html=vLesson();break;case"review":html=vReview();break;}
+    case"unit":html=vUnit();break;case"lesson":html=vLesson();break;case"review":html=vReview();break;
+    case"dict":html=vDict();break;case"conj":html=vConj();break;case"pron":html=vPron();break;
+    case"gram":html=vGram();break;case"quiz":html=vQuiz();break;}
   const app=document.getElementById("app");app.innerHTML=html;app.scrollTo?app.scrollTo(0,0):0;window.scrollTo(0,0);
 }
 
@@ -1293,6 +1475,14 @@ document.addEventListener("click",e=>{
     box.querySelectorAll(".exopt").forEach(o=>{
       if(o.getAttribute("data-correct")==="1")o.classList.add("ok");});
     if(t.getAttribute("data-correct")!=="1")t.classList.add("no");
+    return;
+  }
+  if(act==="quizpick"){
+    const box=t.parentElement;if(box.dataset.locked)return;box.dataset.locked="1";
+    box.querySelectorAll(".exopt").forEach(o=>{if(o.getAttribute("data-correct")==="1")o.classList.add("ok");});
+    if(t.getAttribute("data-correct")!=="1")t.classList.add("no");
+    if(S.quiz){S.quiz.total++;if(t.getAttribute("data-correct")==="1")S.quiz.score++;
+      const sc=document.getElementById("quizscore");if(sc)sc.textContent=S.quiz.score+" / "+S.quiz.total;}
     return;
   }
   if(act==="checkfill"){
@@ -1310,6 +1500,14 @@ document.addEventListener("click",e=>{
   // navigation / state
   switch(act){
     case"level":S.level=val;S.view="units";break;
+    case"tool":
+      if(val==="quiz")S.quiz=null;
+      if(val==="conj"&&!S.conjGroup)S.conjGroup=VERB_GROUPS[0][0];
+      if(val==="dict")S.dictQ="";
+      S.view=val;break;
+    case"toolback":S.view="home";break;
+    case"conjgroup":S.conjGroup=val;break;
+    case"quiznext":S.quiz={q:makeQuizQ(),score:(S.quiz?S.quiz.score:0),total:(S.quiz?S.quiz.total:0)};break;
     case"unit":S.unit=+val;S.view="unit";break;
     case"lesson":S.lesson=+val;S.view="lesson";break;
     case"toggledone":{const id=lid(S.level,S.unit,S.lesson);S.done.has(id)?S.done.delete(id):S.done.add(id);save();break;}
@@ -1328,6 +1526,12 @@ document.addEventListener("click",e=>{
     default:return;
   }
   render();
+});
+document.addEventListener("input",e=>{
+  if(e.target&&e.target.id==="dictsearch"){
+    S.dictQ=e.target.value;
+    const r=document.getElementById("dictresults");if(r)r.innerHTML=dictRows();
+  }
 });
 
 /* ============ PWA ============ */
