@@ -107,6 +107,10 @@
   .sent:first-child{border-top:none;}
   .sro{font-family:var(--serif);color:var(--red);flex:0 0 50%;font-size:14px;}
   .str{font-size:13px;flex:1;}
+  .svgwrap{text-align:center;margin:6px 0 16px;}
+  .svgwrap svg{max-width:100%;height:auto;display:inline-block;border:1px solid var(--line);border-radius:10px;background:#fff;}
+  .dialog{background:#fff;border:1px solid var(--line);border-left:4px solid var(--indigo);border-radius:8px;padding:13px 15px;font-size:14.5px;line-height:1.6;}
+  .dialog b{color:var(--indigo);}
 </style>
 </head>
 <body>
@@ -430,6 +434,9 @@ const A1_U5=[
       ["Aș vrea…","İstiyorum (kibar)"],["Ce măsură aveți?","Hangi bedensiniz?"],["Pot să probez?","Deneyebilir miyim?"],
       ["Cât costă în total?","Toplam ne kadar?"],
     ]},
+    {t:"svg",svg:`<svg viewBox="0 0 220 130" width="200" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="130" fill="#FBF6EC"/><path d="M86 30 L60 46 L72 70 L86 62 L86 110 L134 110 L134 62 L148 70 L160 46 L134 30 L121 30 a13 9 0 0 1 -22 0 Z" fill="#B5232A" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/></svg>`},
+    {t:"read",body:"<b>Vânzător:</b> Bună ziua!<br><b>Client:</b> Bună ziua, aș vrea o bluză albă ca aceea din vitrină, cu mânecă lungă.<br><b>Vânzător:</b> Din ce material preferați?<br><b>Client:</b> Din bumbac.<br><b>Vânzător:</b> Ce măsură aveți?<br><b>Client:</b> Măsura M–L aveți?<br><b>Vânzător:</b> Da, sigur. Puteți proba la cabină!<br><b>Client:</b> Da, cumpăr bluza. Aveți pantaloni măsura L? Și vreau să încerc pantofii sport, măsura 38, negri.<br><b>Vânzător:</b> Costă 200 de lei în total: bluza 50, pantalonii 50 și pantofii 100 lei."},
+    {t:"note_block",body:"Türkçe özet: Müşteri vitrindeki gibi beyaz, uzun kollu, pamuklu bir bluz ister (M–L beden), kabinde dener ve alır. Ayrıca L beden pantolon ve 38 numara siyah spor ayakkabı dener. Toplam 200 lei: bluz 50, pantolon 50, ayakkabı 100."},
     {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Diyaloga göre doğru mu yanlış mı?",qs:[
       ["Clientul caută bluză cu mânecă lungă.",true],
       ["Clientul caută bluză din mătase.",false],
@@ -744,6 +751,9 @@ const A2_U5=[
       ["factură","fatura"],["rest","para üstü"],["reducere / ofertă","indirim / kampanya"],
     ]},
     {t:"note_block",body:"Tekrar eden günler: joia = her perşembe, vinerea = her cuma, sâmbăta = her cumartesi, duminica = her pazar."},
+    {t:"svg",svg:`<svg viewBox="0 0 200 150" width="160" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="150" fill="#FBF6EC"/><path d="M85 28 a15 8 0 0 0 30 0 l14 18 -12 8 18 66 -70 0 18 -66 -12 -8 z" fill="#7A4E9E" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/></svg>`},
+    {t:"read",body:"Familia Matei merge duminica la cumpărături, la Mall Vitan. Ioana și Andrei au nevoie de haine noi.<br><b>Ioana:</b> Uite, mama, acea rochie! Pot să probez?<br><b>Mama:</b> Această rochie mov este mărimea ta. <i>(Ioana probează rochia.)</i><br><b>Andrei:</b> Eu vreau pantaloni scurți pentru fotbal, albaștri cu dungi albe.<br><b>Mama:</b> Aici sunt blugi de damă; vreau să probez o pereche negri.<br><b>Tata:</b> Pentru mine am ales o cămașă cu mânecă lungă pentru birou.<br><b>Casier:</b> Aveți de plată 340 de lei. Plătiți cash sau cu cardul?<br><b>Tata:</b> Plătim cash. Poftiți 400 lei, vă rog factura.<br><b>Andrei:</b> Am nevoie de pantofi de fotbal. <b>Ioana:</b> Și eu vreau sandale pentru vară."},
+    {t:"note_block",body:"Türkçe özet: Matei ailesi pazar günü Mall Vitan’a gider. Ioana mor bir elbise dener. Andrei futbol için mavi-beyaz çizgili şort, sonra futbol ayakkabısı ister. Anne siyah kadın kot pantolon dener. Baba ofis için uzun kollu gömlek alır. Kasada 340 lei tutar; baba nakit öder, fatura ister."},
     {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Diyaloga göre doğru mu yanlış mı?",qs:[
       ["Ioana probează o rochie.",true],["Andrei vrea pantofi de fotbal.",true],
       ["Tata plătește cu cardul.",false],["Mama cumpără blugi de damă.",true],
@@ -929,13 +939,19 @@ const B1_U3=[
       ["2 kg de roșii","2 kilo domates"],["500 gr de ardei","500 gr biber"],
     ],note:"Miktar + de + ürün: 2 kg de roșii, 500 gr de ardei. 20 ve üstü sayılarda da «de»: douăzeci de mere."},
   ]},
-  {title:"Comprehensiune",ro:"Okuma alıştırması",blocks:[
-    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
-      ["Sâmbăta prețurile sunt mai mici.",true],
+  {title:"Comprehensiune",ro:"Okuma & anlama",blocks:[
+    {t:"text",body:"📖 Citește textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"text",body:"Ema și Radu merg cu mama la piață. Sâmbătă dimineața la piață este aglomerat; legumele și fructele sunt proaspete și prețurile mai mici. Mama vrea să cumpere carne pentru friptură și ciorbă, unt pentru micul dejun, pâine, roșii, castraveți și ceapă pentru salată, fructe pentru gustări sănătoase, și făină și lapte pentru desert."},
+    {t:"text",body:"— Haideți, copii, să mergem!\n— Bună dimineața! Ce mai faceți, doamna Ionescu?\n— Bună dimineața, domnule Matache! Aveți roșii proaspete și coapte?\n— Da, sigur! Avem roșii din Turcia sau din România. Din care doriți?\n— Doresc 2 kg de roșii din România și mai puneți: 2 kg de castraveți, 1 kg de ceapă, o conopidă, 3 kg de vinete, doi cartofi și 500 gr de ardei gras."},
+    {t:"note_block",body:"Türkçe özet: Ema ve Radu anneleriyle pazara gider. Cumartesi sabahı pazar kalabalıktır; sebze-meyve tazedir, fiyatlar daha ucuzdur. Anne; kızartma ve çorba için et, kahvaltı için tereyağı, salata için domates-salatalık-soğan, tatlı için un ve süt almak ister. Bay Matache’nin Türkiye ve Romanya’dan domatesi vardır; anne 2 kg Romanya domatesi ve başka sebzeler (salatalık, soğan, karnabahar, patlıcan, dolmalık biber) ister."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Yukarıdaki metne göre doğru mu yanlış mı?",qs:[
+      ["Sâmbăta prețurile sunt mai mari.",false],
+      ["Mama folosește untul la friptură.",false],
       ["Mama vrea să cumpere ceapă pentru salată.",true],
       ["Domnul Matache are roșii din Turcia și România.",true],
       ["Doamna Ionescu dorește 500 gr de roșii.",false],
-      ["Ema și Radu merg cu mama la cumpărături.",true],
+      ["Doamna Ionescu dorește 500 gr de ardei iute.",false],
+      ["Ema și Radu merg cu mama lor la cumpărături.",true],
     ]},
   ]},
 ];
@@ -970,13 +986,19 @@ const B1_U5=[
       ["stil clasic","klasik tarz"],["ținută obligatorie","zorunlu kıyafet"],
     ]},
   ]},
-  {title:"Comprehensiune",ro:"Okuma alıştırması",blocks:[
+  {title:"Comprehensiune",ro:"Okuma & anlama",blocks:[
+    {t:"text",body:"📖 Citește textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 240 140" width="220" xmlns="http://www.w3.org/2000/svg"><rect width="240" height="140" fill="#FBF6EC"/><path d="M50 34 L34 46 L42 62 L50 57 L50 104 L94 104 L94 57 L102 62 L110 46 L94 34 L84 34 a11 7 0 0 1 -24 0 Z" fill="#2C3E63" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M150 34 L134 46 L142 62 L150 57 L150 104 L194 104 L194 57 L202 62 L210 46 L194 34 L184 34 a11 7 0 0 1 -24 0 Z" fill="#B5232A" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M172 38 l-6 16 6 22 6 -22 z" fill="#C8902F" stroke="#2A2622" stroke-width="1.2"/></svg>`},
+    {t:"read",body:"Familia Matei merge duminica la cumpărături, la Mall Vitan. Fiecare caută lucruri care să îl reprezinte.<br><b>Mama</b> preferă hainele elegante, cămășile albe din in sau bumbac, dar alege mereu încălțăminte comodă. Îi place să poarte bijuterii fine, din argint.<br><b>Tata</b> se îmbracă de obicei în costum și poartă cravată — la birou este ținută obligatorie. În timpul liber preferă haine comode, tricouri și pantaloni lejeri. Poartă mereu ceas, ca să fie punctual.<br><b>Ioana</b> alege cămăși colorate și pantaloni; uneori rochie și pantofi de lac sau sandale. Îi plac hainele largi, pentru că aleargă și se joacă mult.<br><b>Andrei</b> este adeptul stilului sport: face fotbal și înot și are mereu echipament sportiv în rucsac."},
+    {t:"note_block",body:"Türkçe özet: Matei ailesinin her üyesinin kendine göre bir tarzı var. Anne şık giysiler ve beyaz keten/pamuk gömlekleri sever ama hep rahat ayakkabı seçer; gümüş takı takar. Baba genelde takım elbise + kravat giyer (ofiste zorunlu); boş zamanda rahat tişört-pantolon ve dakiklik için kol saati. Ioana renkli, bol giysiler; bazen elbise. Andrei spor tarzı: futbol, yüzme, çantasında hep spor kıyafeti."},
     {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Ioana și Andrei caută lucruri elegante.",false],
       ["Mama preferă hainele elegante.",true],
+      ["Mama alege încălțăminte sport.",false],
+      ["Tata poartă la birou costum și cravată.",true],
       ["Tata poartă cravată în timpul liber.",false],
-      ["Andrei face înot.",true],
-      ["Tata poartă la birou costum.",true],
       ["Ioana preferă stilul clasic.",false],
+      ["Andrei face înot.",true],
     ]},
   ]},
 ];
@@ -1174,6 +1196,8 @@ function topBar(crumb,title){
 
 function renderBlock(b,exId){
   if(b.t==="text")return `<div class="block"><div class="btext">${esc(b.body).replace(/\n/g,"<br>")}</div></div>`;
+  if(b.t==="svg")return `<div class="block svgwrap">${b.svg}</div>`;
+  if(b.t==="read")return `<div class="block"><div class="dialog">${b.body}</div></div>`;
   if(b.t==="note_block")return `<div class="block"><div class="note">${esc(b.body)}</div></div>`;
   if(b.t==="vocab"){
     const rows=b.items.map(it=>`<div class="vrow"><span class="vro">${esc(it[0])}</span><span class="vtr">${esc(it[1])}</span></div>`).join("");
