@@ -91,6 +91,15 @@
   .donebtn{display:block;width:100%;font-family:var(--serif);font-size:16px;padding:13px;border-radius:8px;
     border:1.5px solid var(--green);background:#fff;color:var(--green);cursor:pointer;margin-top:8px;}
   .donebtn.on{background:var(--green);color:#fff;}
+  .resetbtn{display:block;width:100%;font-family:var(--serif);font-size:14px;padding:11px;border-radius:8px;
+    border:1.5px solid var(--line);background:transparent;color:var(--mute);cursor:pointer;margin-top:22px;}
+  .resetbtn:hover{border-color:var(--red);color:var(--red);}
+  .resetbox{margin-top:22px;border:1.5px solid var(--red);border-radius:10px;padding:14px;background:#fff;}
+  .resetmsg{font-size:14px;color:var(--ink);margin-bottom:12px;line-height:1.5;}
+  .resetrow{display:flex;gap:10px;}
+  .resetrow button{flex:1;font-family:var(--serif);font-size:15px;padding:11px;border-radius:8px;cursor:pointer;border:none;}
+  .resetyes{background:var(--red);color:#fff;}
+  .resetno{background:#fff;color:var(--mute);border:1.5px solid var(--line) !important;}
 
   #install{position:fixed;right:14px;bottom:18px;z-index:30;display:none;background:var(--indigo);color:#fff;
     border:none;border-radius:24px;padding:11px 18px;font-family:var(--serif);font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;}
@@ -1536,10 +1545,14 @@ const GR_THEMES=[
 
 const GR_C1=[
   {title:"Pronumele personal",ro:"Şahıs zamirleri",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 160 120" width="150" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="120" fill="#FBF6EC"/><rect x="22" y="22" width="116" height="62" rx="14" fill="#2C3E63"/><path d="M50 84 L50 106 L74 84 Z" fill="#2C3E63"/><text x="80" y="62" font-family="Georgia,serif" font-size="26" fill="#FBF6EC" text-anchor="middle">Bună!</text></svg>`},
     {t:"table",title:"Şahıs zamirleri",head:["Tekil","Çoğul"],rows:[
       ["eu (ben)","noi (biz)"],["tu (sen)","voi (siz)"],["el (o · e)","ei (onlar · e)"],
       ["ea (o · k)","ele (onlar · k)"],["Dumneavoastră / Dvs. (siz · nazik)","—"],
     ],note:"Dvs. nazik hitap için: yaşça büyük, tanımadık kişiler, öğretmen, doktor. Fiil daima 2. çoğul: Dvs. sunteți. Çoğu zaman zamir kullanılmaz: Sunt Ana = Eu sunt Ana."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru zamiri seç.",qs:[
+      ["‘siz’ (nazik hitap):",["Dumneavoastră","tu"],0],["‘onlar’ (k):",["ele","ei"],0],["‘biz’:",["noi","voi"],0],
+    ]},
   ]},
   {title:"Verbul a fi",ro:"Fiil: olmak",blocks:[
     {t:"table",title:"a fi (olmak)",head:["Olumlu","Olumsuz"],rows:[
@@ -1563,6 +1576,7 @@ const GR_C1=[
 
 const GR_C2=[
   {title:"Genul substantivului",ro:"Cins & dişil türetme",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 150 120" width="140" xmlns="http://www.w3.org/2000/svg"><rect width="150" height="120" fill="#FBF6EC"/><path d="M30 30 L90 30 L122 60 L90 90 L30 90 Z" fill="#B5232A" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><circle cx="48" cy="60" r="7" fill="#FBF6EC"/></svg>`},
     {t:"text",body:"Romencede üç cins vardır: eril (masculin), dişil (feminin), nötr (neutru). Canlı varlıklarda dişil biçim erilden türer."},
     {t:"table",title:"Dişil türetme",head:["Eril","Dişil","Ek"],rows:[
       ["student","studentă","-ă"],["doctor","doctoriță","-iță"],["italian","italiancă","-că"],
@@ -1572,6 +1586,9 @@ const GR_C2=[
       ["tată (baba)","mamă (anne)"],["frate (erkek kardeş)","soră (kız kardeş)"],
       ["bărbat (erkek)","femeie (kadın)"],["băiat (oğlan)","fată (kız)"],
     ],note:"Cansız isimler tek cinslidir: nor (e), casă (k), pix (n)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Dişil biçimi seç.",qs:[
+      ["student →",["studentă","studentiță"],0],["doctor →",["doctoriță","doctoră"],0],["‘anne’:",["mamă","tată"],0],
+    ]},
   ]},
   {title:"Pluralul — masculin & feminin",ro:"Çoğul: eril & dişil",blocks:[
     {t:"table",title:"Eril çoğul",head:["Tekil → Çoğul","Kural"],rows:[
@@ -1595,6 +1612,9 @@ const GR_C2=[
     {t:"table",title:"Belirsiz tanımlık (un / o / niște)",head:["Cins","Tekil","Çoğul"],rows:[
       ["eril","un (un băiat)","niște"],["dişil","o (o fată)","niște"],["nötr","un (un pix)","niște"],
     ],note:"niște = birkaç / bazı (çoğul belirsiz). un / o sayı ya da miktar belirtir: Am băut o cafea (bir kahve içtim)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru tanımlığı seç.",qs:[
+      ["___ fată (bir kız · dişil)",["o","un"],0],["___ băiat (bir oğlan · eril)",["un","o"],0],["___ flori (birkaç çiçek)",["niște","un"],0],
+    ]},
   ]},
   {title:"Articolul hotărât",ro:"Belirli tanımlık",blocks:[
     {t:"note_block",body:"Belirli tanımlık (İng. ‘the’) Romencede isme YAPIŞIR (son ek olur). Türkçede ayrı bir karşılığı yoktur; bağlam ve cümle yapısıyla anlaşılır."},
@@ -1605,6 +1625,9 @@ const GR_C2=[
     {t:"table",title:"Çoğul",head:["Cins / Kural","Örnek"],rows:[
       ["eril +i","băieți → băieții"],["dişil/nötr +le","fete → fetele, pixuri → pixurile"],
     ],note:"Edatlardan sonra çoğunlukla tanımlıksız: Mergem în parc. Ama belirleyici varsa tanımlıklı: în parcul din cartier (mahalledeki park)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Belirli biçimi seç.",qs:[
+      ["băiat →",["băiatul","băiatle"],0],["mamă →",["mama","mamăl"],0],["carte →",["cartea","cartel"],0],
+    ]},
   ]},
   {title:"Cazul genitiv",ro:"İyelik hâli (genitiv)",blocks:[
     {t:"note_block",body:"Genitiv = sahiplik / aitlik (‘-in / -ın’): cartea băiatului (çocuğun kitabı). Sahip olunan isim daima belirli tanımlık alır."},
@@ -1626,6 +1649,7 @@ const GR_C2=[
 
 const GR_C3=[
   {title:"Formele adjectivului",ro:"Sıfat biçimleri & uyum",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 120 120" width="110" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="120" fill="#FBF6EC"/><path d="M60 18 L71 47 L102 49 L78 69 L86 100 L60 82 L34 100 L42 69 L18 49 L49 47 Z" fill="#E8B71F" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/></svg>`},
     {t:"note_block",body:"Sıfat; ismin cinsi, sayısı ve hâliyle uyum sağlar ve genelde isimden SONRA gelir: băiat fericit (mutlu oğlan), fată fericită (mutlu kız)."},
     {t:"table",title:"4 biçimli",head:["E.tk","D.tk","E.ço","D.ço"],rows:[
       ["bun","bună","buni","bune"],["frumos","frumoasă","frumoși","frumoase"],["negru","neagră","negri","negre"],
@@ -1636,6 +1660,9 @@ const GR_C3=[
     {t:"table",title:"2 biçimli & değişmez",head:["Tür","Örnek"],rows:[
       ["2 biçim (tk / ço)","mare → mari, verde → verzi, dulce → dulci"],["değişmez (renkler)","gri, maro, roz, mov, bej"],
     ],note:"Nötrde sıfat: tekil = eril, çoğul = dişil. İstisna vechi (eski): dişil tekil veche."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Sıfatın doğru biçimini seç.",qs:[
+      ["fată ___ (mutlu · d.tk)",["fericită","fericit"],0],["băieți ___ (mutlu · e.ço)",["fericiți","fericite"],0],["casă ___ (büyük)",["mare","mari"],0],
+    ]},
   ]},
   {title:"Gradele de comparație",ro:"Karşılaştırma dereceleri",blocks:[
     {t:"table",title:"Dereceler",head:["Derece","Yapı","Örnek"],rows:[
@@ -1655,6 +1682,7 @@ const GR_C3=[
 
 const GR_C4=[
   {title:"Indicativ prezent",ro:"Geniş / şimdiki zaman",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 120 120" width="110" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="120" fill="#FBF6EC"/><path d="M60 30 a32 32 0 1 1 -26 14" fill="none" stroke="#5B8A4E" stroke-width="8" stroke-linecap="round"/><path d="M60 16 L60 40 L80 28 Z" fill="#5B8A4E"/></svg>`},
     {t:"table",title:"Kısa fiiller",head:["Kişi","a merge","a fugi"],rows:[
       ["eu","merg","fug"],["tu","mergi","fugi"],["el / ea","merge","fuge"],
       ["noi","mergem","fugim"],["voi","mergeți","fugiți"],["ei / ele","merg","fug"],
@@ -1663,6 +1691,9 @@ const GR_C4=[
       ["eu","dansez","iubesc"],["tu","dansezi","iubești"],["el / ea","dansează","iubește"],
       ["noi","dansăm","iubim"],["voi","dansați","iubiți"],["ei / ele","dansează","iubesc"],
     ],note:"Düzensizler: a fi, a avea, a vrea (vreau/vrei/vrea/vrem/vreți/vor), a putea (pot/poți/poate…), a lua (iau/iei/ia…), a bea (beau/bei/bea…), a mânca (mănânc/mănânci/mănâncă…). a trebui her kişide ‘trebuie’."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["a merge → eu ___",["merg","mergi"],0],["a iubi → el ___",["iubește","iube"],0],["a vrea → ei ___",["vor","vrea"],0],
+    ]},
   ]},
   {title:"Perfect compus",ro:"Geçmiş zaman",blocks:[
     {t:"note_block",body:"Geçmiş zaman = a avea yardımcısı + ortaç (participiu): am / ai / a / am / ați / au + ortaç. Olumsuz: nu am fost (n-am fost)."},
@@ -1684,6 +1715,9 @@ const GR_C4=[
     {t:"table",title:"Halk dilinde gelecek",head:["Biçim","Örnek"],rows:[
       ["o + să + bağlaç","o să merg, o să învețe"],["a avea + să + bağlaç","am să merg, are să învețe"],
     ],note:"Günlük konuşmada ‘o să’ çok yaygındır: Mâine o să merg la piață."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["‘gideceğim’: ___ merge.",["voi","va"],0],["‘o gidecek’ (el): ___ merge.",["va","vei"],0],["halk dili gelecek:",["o să merg","aș merge"],0],
+    ]},
   ]},
   {title:"Conjunctiv prezent",ro:"să kipi (dilek)",blocks:[
     {t:"note_block",body:"să = ‘-mek / -mak’ işareti; çoğunlukla iki fiil arasında: Vreau să merg (gitmek istiyorum). 1. ve 2. kişide indicativ ile aynıdır; 3. kişi tek biçimdir: să meargă, să citească."},
@@ -1720,12 +1754,16 @@ const GR_C4=[
 
 const GR_C5=[
   {title:"Posesivul",ro:"İyelik sıfat / zamir",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 150 120" width="140" xmlns="http://www.w3.org/2000/svg"><rect width="150" height="120" fill="#FBF6EC"/><g stroke="#2C3E63" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M36 46 L108 46"/><path d="M94 32 L110 46 L94 60"/><path d="M114 76 L42 76"/><path d="M56 62 L40 76 L56 90"/></g></svg>`},
     {t:"note_block",body:"İyelik sıfatı isimden sonra gelir ve isim belirli tanımlıkla kullanılır: mașina mea (benim arabam), fratele meu. Cins ve sayı uyumu vardır."},
     {t:"table",title:"İyelik biçimleri",head:["Sahip","E/N tk","D tk","E ço","D/N ço"],rows:[
       ["benim","meu","mea","mei","mele"],["senin","tău","ta","tăi","tale"],
       ["onun","său / lui / ei","sa / lui / ei","săi / lui / ei","sale / lui / ei"],
       ["bizim","nostru","noastră","noștri","noastre"],["sizin","vostru","voastră","voștri","voastre"],["onların","lor","lor","lor","lor"],
     ],note:"Soru: Al / A / Ai / Ale cui? (kimin?). Zamir biçimi: al meu, a mea, ai mei, ale mele. (A cui e cartea? — A mea!)"},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru iyelik biçimini seç.",qs:[
+      ["‘benim arabam’ (k.tk): mașina ___",["mea","meu"],0],["‘senin kardeşin’ (e.tk): fratele ___",["tău","ta"],0],["‘bizim’ (e.ço): prietenii ___",["noștri","noastre"],0],
+    ]},
   ]},
   {title:"Pronumele în acuzativ",ro:"Akuzatif zamir (-i hâli)",blocks:[
     {t:"note_block",body:"Nesne zamiri. Vurgulu (edattan sonra): mine / tine / el / ea / noi / voi / ei / ele — cu mine (benimle). Vurgusuz (fiil önünde): mă / te / îl / o / ne / vă / îi / le."},
@@ -1782,6 +1820,7 @@ const GR_C5=[
 
 const GR_C6=[
   {title:"Numeralul",ro:"Sayılar (asıl · sıra · saat)",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 160 110" width="150" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="110" fill="#FBF6EC"/><text x="80" y="76" font-family="Georgia,serif" font-size="56" font-weight="bold" fill="#002B7F" text-anchor="middle">123</text></svg>`},
     {t:"table",title:"Asıl sayılar",head:["Aralık","Romence"],rows:[
       ["0–10","zero, unu, doi, trei, patru, cinci, șase, șapte, opt, nouă, zece"],
       ["11–19","unsprezece … nouăsprezece (paisprezece, șaisprezece!)"],
@@ -1802,6 +1841,7 @@ const GR_C6=[
 
 const GR_C7=[
   {title:"Adverbul",ro:"Zarf",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 120 130" width="110" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="130" fill="#FBF6EC"/><path d="M60 22 a26 26 0 0 1 26 26 c0 20 -26 52 -26 52 c0 0 -26 -32 -26 -52 a26 26 0 0 1 26 -26 z" fill="#B5232A" stroke="#2A2622" stroke-width="2"/><circle cx="60" cy="48" r="10" fill="#FBF6EC"/></svg>`},
     {t:"table",title:"Yer zarfları",head:["Romence","Türkçe"],rows:[
       ["aici / acolo","burada / orada"],["sus / jos","yukarı / aşağı"],["aproape / departe","yakın / uzak"],
       ["înăuntru / afară","içeri / dışarı"],["acasă","ev(d)e"],
@@ -1820,6 +1860,7 @@ const GR_C7=[
 
 const GR_C8=[
   {title:"Prepoziția",ro:"Edatlar",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 150 120" width="140" xmlns="http://www.w3.org/2000/svg"><rect width="150" height="120" fill="#FBF6EC"/><rect x="46" y="58" width="54" height="42" fill="#C8902F" stroke="#2A2622" stroke-width="2"/><path d="M46 58 L60 44 L114 44 L100 58 Z" fill="#E8B71F" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M100 58 L114 44 L114 86 L100 100 Z" fill="#9a6f24" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><circle cx="73" cy="34" r="9" fill="#B5232A" stroke="#2A2622" stroke-width="2"/></svg>`},
     {t:"table",title:"Yer edatları",head:["Edat","Anlam / Örnek"],rows:[
       ["pe / sub","üstünde / altında"],["în / lângă","içinde / yanında"],["între","arasında"],
       ["la","yön: la școală, la mare"],["din","-den: din Siria"],
@@ -1838,6 +1879,7 @@ const GR_C8=[
 
 const GR_C9=[
   {title:"Conjuncția",ro:"Bağlaçlar",blocks:[
+    {t:"svg",svg:`<svg viewBox="0 0 150 110" width="140" xmlns="http://www.w3.org/2000/svg"><rect width="150" height="110" fill="#FBF6EC"/><g fill="none" stroke="#2C3E63" stroke-width="9"><rect x="28" y="38" width="52" height="34" rx="17"/><rect x="70" y="38" width="52" height="34" rx="17"/></g></svg>`},
     {t:"table",title:"Temel bağlaçlar",head:["Bağlaç","Anlam"],rows:[
       ["și","ve"],["dar","ama / fakat"],["iar","-e gelince / ise"],["sau / ori","veya"],
       ["nici … nici","ne … ne"],["dacă","eğer"],["chiar dacă","-se bile"],["pentru că / deoarece / fiindcă","çünkü"],
@@ -1874,6 +1916,18 @@ function levelStats(lv){let total=0,done=0;COURSE[lv].units.forEach(u=>{if(u.les
   u.lessons.forEach((_,i)=>{if(S.done.has(lid(lv,u.n,i)))done++;});}});return{total,done};}
 
 /* ============ VIEWS ============ */
+function totalDone(){return [...LEVELS,"GR"].reduce((a,lv)=>a+levelStats(lv).done,0);}
+function resetUI(){
+  const n=totalDone();
+  if(!n)return "";
+  if(S.resetArmed){
+    return `<div class="resetbox">
+      <div class="resetmsg">Tüm ilerleme silinecek — <b>${n}</b> tamamlanan ders yeniden başlangıç durumuna dönecek. Emin misin?</div>
+      <div class="resetrow"><button class="resetyes" data-act="resetdo">Evet, sıfırla</button>
+      <button class="resetno" data-act="resetcancel">Vazgeç</button></div></div>`;
+  }
+  return `<button class="resetbtn" data-act="resetarm">↺ İlerlemeyi sıfırla (${n} tamamlanan ders)</button>`;
+}
 function vHome(){
   const cards=LEVELS.map(lv=>{
     const c=COURSE[lv];const st=levelStats(lv);
@@ -1908,7 +1962,8 @@ function vHome(){
     <div class="sectlabel">Dilbilgisi</div>
     ${gram}
     <div class="sectlabel">Sık kullanılanlar</div>
-    ${tools}`;
+    ${tools}
+    ${resetUI()}`;
 }
 function vUnits(){
   const lv=S.level,c=COURSE[lv];
@@ -2277,7 +2332,11 @@ document.addEventListener("click",e=>{
     return;
   }
   // navigation / state
+  if(act!=="resetarm"&&act!=="resetdo"&&act!=="resetcancel")S.resetArmed=false;
   switch(act){
+    case"resetarm":S.resetArmed=true;break;
+    case"resetcancel":S.resetArmed=false;break;
+    case"resetdo":S.done=new Set();save();S.resetArmed=false;break;
     case"level":S.level=val;S.view="units";break;
     case"tool":
       if(val==="quiz")S.quiz=null;
