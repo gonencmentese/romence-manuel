@@ -142,6 +142,1956 @@ const A2_THEMES=[
   [7,"Familia mea","Ailem"],[8,"La restaurant","Restoranda"],[9,"La medic","Doktorda"],
   [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
 ];
+const B2_THEMES=[
+  [1,"România","Romanya"],
+  [2,"Constanța","Constanța"],
+  [3,"Delta Dunării","Tuna Deltası"],
+  [4,"Legende românești","Romen efsaneleri"],
+  [5,"Planuri de vacanță","Tatil planları"],
+  [6,"Școala în România","Romanya'da okul"],
+  [7,"Rețelele de socializare","Sosyal medya"],
+  [8,"Alimentația sănătoasă","Sağlıklı beslenme"],
+];
+const B1_THEMES=[
+  [1,"Din nou la curs!","Yeniden derste"],
+  [2,"Învățăm în România!","Romanya'da öğrenim"],
+  [3,"La cumpărături","Alışveriş"],
+  [4,"Timpul","Zaman"],
+  [5,"La cumpărături","Alışveriş"],
+  [6,"Casa mea","Evim"],
+  [7,"Familia mea","Ailem"],
+  [8,"La restaurant","Restoranda"],
+  [9,"La medic","Doktorda"],
+  [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
+];
+
+/* ---------- A1 · UNIT 1 (tam içerik) ---------- */
+const A1_U1=[
+  {title:"Salutul",ro:"Selamlaşma",blocks:[
+    {t:"vocab",title:"Selamlar",items:[
+      ["Bună!","Selam"],["Salut!","Selam (samimi)"],["Bună dimineața!","Günaydın"],
+      ["Bună ziua!","İyi günler"],["Bună seara!","İyi akşamlar"],["Noapte bună!","İyi geceler"],
+      ["Îmi pare bine.","Memnun oldum."],["La revedere!","Güle güle / Hoşça kal"],["Pa!","Bay bay"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma",instr:"Zamana uygun selamı seç.",qs:[
+      ["Sabah (08:00):",["Bună dimineața!","Bună seara!"],0],
+      ["Öğle (13:00):",["Bună ziua!","Noapte bună!"],0],
+      ["Akşam (20:00):",["Bună dimineața!","Bună seara!"],1],
+      ["Yatarken:",["Noapte bună!","Bună ziua!"],0],
+      ["Ayrılırken:",["Salut!","La revedere!"],1],
+    ]},
+  ]},
+  {title:"Alfabetul",ro:"Alfabe",blocks:[
+    {t:"text",body:"Romen alfabesi 31 harftir. Türkçeden farklı 5 özel harf: ă, â, î, ș, ț. Tüm alfabe:\nA Ă Â B C D E F G H I Î J K L M N O P Q R S Ș T Ț U V W X Y Z"},
+    {t:"table",title:"Özel sesler",head:["Harf / küme","Okunuş"],rows:[
+      ["ă","vurgusuz ı/e arası — măr (elma)"],
+      ["â, î","ı sesi — în, român"],
+      ["ș","ş — și (ve)"],
+      ["ț","ts — țară (ülke)"],
+      ["ce, ci","çe, çi — cine (çine)"],
+      ["che, chi","ke, ki — chem"],
+      ["ge, gi","ce, ci — ger, gimnast"],
+      ["ghe, ghi","ge, gi — ghid"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru okunuşu seç.",qs:[
+      ["“ț” sesi:",["ts","ç"],0],
+      ["“ci” okunuşu:",["çi","ki"],0],
+      ["“che” okunuşu:",["ke","çe"],0],
+      ["“ge” okunuşu:",["ce","ge"],0],
+      ["“â / î” sesi:",["ı","a"],0],
+    ]},
+  ]},
+  {title:"Cine ești?",ro:"Kim sin? — Zamirler & A fi",blocks:[
+    {t:"vocab",title:"Tanışma ifadeleri",items:[
+      ["Eu sunt…","Ben …‑im"],["Tu cine ești?","Sen kimsin?"],["Eu sunt din…","Ben …‑lıyım"],
+      ["Îmi pare bine să te cunosc.","Tanıştığımıza memnun oldum."],
+      ["Mă bucur să te cunosc.","Tanıştığıma sevindim."],
+    ]},
+    {t:"table",title:"Pronume personale — Kişi zamirleri",head:["Romence","Türkçe"],rows:[
+      ["eu","ben"],["tu","sen"],["el / ea","o (erkek / kadın)"],
+      ["noi","biz"],["voi","siz"],["ei / ele","onlar (erkek / kadın)"],
+    ]},
+    {t:"table",title:"Verbul A FI — olmak (prezent)",head:["Kişi","A fi"],rows:[
+      ["eu","sunt"],["tu","ești"],["el / ea","este"],["noi","suntem"],["voi","sunteți"],["ei / ele","sunt"],
+    ],note:"Örnek: Eu sunt profesor. · Eu sunt din România. · Noi suntem la curs."},
+    {t:"ex_fill",title:"Alıştırma",instr:"Boşlukları doldur: sunt · ești · este · suntem · sunteți",qs:[
+      ["Eu ___ din Anglia.","sunt"],
+      ["Tu ___ din Siria?","ești"],
+      ["El ___ Ali.","este"],
+      ["Ea ___ colega mea.","este"],
+      ["Noi ___ studenți.","suntem"],
+      ["Voi ___ colegi la curs.","sunteți"],
+    ]},
+  ]},
+  {title:"Numerele",ro:"Sayılar",blocks:[
+    {t:"table",title:"0 – 20",head:["#","Romence"],rows:[
+      ["0","zero"],["1","unu"],["2","doi"],["3","trei"],["4","patru"],["5","cinci"],["6","șase"],
+      ["7","șapte"],["8","opt"],["9","nouă"],["10","zece"],["11","unsprezece"],["12","doisprezece"],
+      ["13","treisprezece"],["14","paisprezece"],["15","cincisprezece"],["16","șaisprezece"],
+      ["17","șaptesprezece"],["18","optsprezece"],["19","nouăsprezece"],["20","douăzeci"],
+    ]},
+    {t:"table",title:"Onluklar",head:["#","Romence"],rows:[
+      ["10","zece"],["20","douăzeci"],["30","treizeci"],["40","patruzeci"],["50","cincizeci"],
+      ["60","șaizeci"],["70","șaptezeci"],["80","optzeci"],["90","nouăzeci"],["100","o sută"],
+    ],note:"11–19: birler + sprezece. 21, 22…: onluk + și + birler → douăzeci și unu (21), treizeci și doi (32)."},
+    {t:"table",title:"Cinsiyet: un/o, doi/două",head:["Eril (M)","Dişil (F)"],rows:[
+      ["un băiat","o fată"],["doi băieți","două fete"],["trei băieți","trei fete"],
+    ],note:"Sadece 1 ve 2 cinsiyete göre değişir (un/o, doi/două). 3’ten itibaren aynıdır."},
+    {t:"text",body:"Câți? / Câte? = Kaç tane? — Eril için câți, dişil/nötr için câte. Yalnızca çoğulla kullanılır."},
+    {t:"ex_choice",title:"Alıştırma — Câți / Câte?",instr:"Doğru soru sözcüğünü seç.",qs:[
+      ["___ fete sunt la curs?",["Câți","Câte"],1],
+      ["___ băieți sunt la curs?",["Câți","Câte"],0],
+      ["___ profesori sunt?",["Câți","Câte"],0],
+      ["___ telefoane sunt pe masă?",["Câți","Câte"],1],
+      ["___ studente sunt?",["Câți","Câte"],1],
+      ["___ colegi ai?",["Câți","Câte"],0],
+    ]},
+    {t:"text",body:"“DE” kuralı: 1–19 → de YOK (trei fete). 20 ve üstü → de VAR (douăzeci de fete)."},
+    {t:"ex_choice",title:"Alıştırma — “de” gerekli mi?",instr:"Gerekliyse “de”yi seç.",qs:[
+      ["trei ___ fete",["—","de"],0],
+      ["douăzeci ___ studenți",["—","de"],1],
+      ["cincizeci ___ lei",["—","de"],1],
+      ["șapte ___ colegi",["—","de"],0],
+      ["patruzeci ___ ani",["—","de"],1],
+      ["zece ___ zile",["—","de"],0],
+    ]},
+  ]},
+  {title:"Câți ani ai?",ro:"Kaç yaşındasın?",blocks:[
+    {t:"vocab",title:"Yaş",items:[
+      ["Câți ani ai?","Kaç yaşındasın?"],["Am … ani.","… yaşındayım."],
+      ["Am douăzeci de ani.","Yirmi yaşındayım."],["Câți ani are el?","O kaç yaşında?"],
+      ["El are treizeci de ani.","O otuz yaşında."],
+    ],},
+    {t:"note_block",body:"Yaşta a avea (sahip olmak) kullanılır: “Am 20 de ani” = “20 yaşım var”. 20 ve üstünde “de ani”, altında sadece “ani”: am 5 ani / am 25 de ani."},
+    {t:"ex_fill",title:"Alıştırma",instr:"a avea ile doldur: am · ai · are",qs:[
+      ["Eu ___ douăzeci de ani.","am"],
+      ["Tu câți ani ___?","ai"],
+      ["El ___ treizeci de ani.","are"],
+    ]},
+  ]},
+];
+
+/* ---------- A1 · UNIT 2 (La curs) ---------- */
+const A1_U2=[
+  {title:"Colegii mei",ro:"Sınıf arkadaşlarım",blocks:[
+    {t:"vocab",title:"Sınıf eşyaları",items:[
+      ["catedră / birou","öğretmen masası"],["tablă","tahta"],["fereastră","pencere"],["scaun","sandalye"],
+      ["masă","masa"],["dulap","dolap"],["creion","kurşun kalem"],["pix","tükenmez kalem"],["caiet","defter"],["carte","kitap"],
+    ]},
+    {t:"vocab",title:"Diyalog ifadeleri",items:[
+      ["De unde ești?","Nerelisin?"],["Sunt din Canada.","Kanadalıyım."],
+      ["colegul meu / colega mea","sınıf arkadaşım (e / k)"],["Văd că sunt colegi noi.","Yeni arkadaşlar olduğunu görüyorum."],
+    ]},
+  ]},
+  {title:"Genul",ro:"Cinsiyet (M / F / N)",blocks:[
+    {t:"text",body:"Romence’de isimler eril (M), dişil (F) veya nötr (N) olur. Nötr isimler tekilde eril, çoğulda dişil gibi davranır."},
+    {t:"table",title:"Örnekler",head:["Kelime","Cinsiyet"],rows:[
+      ["frate","M — erkek kardeş"],["mamă","F — anne"],["caiet","N — defter"],["profesoară","F — öğretmen (k)"],
+      ["student","M — öğrenci"],["scaun","N — sandalye"],["fereastră","F — pencere"],["pix","N — tükenmez"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma — Cinsiyet",instr:"Doğru cinsiyeti seç.",qs:[
+      ["frate",["M","F","N"],0],["mamă",["M","F","N"],1],["caiet",["M","F","N"],2],
+      ["profesoară",["M","F","N"],1],["scaun",["M","F","N"],2],["student",["M","F","N"],0],
+    ]},
+  ]},
+  {title:"Articolul nehotărât",ro:"Belirsiz artikel (un / o)",blocks:[
+    {t:"table",title:"un / o + niște",head:["Eril","Dişil"],rows:[
+      ["un băiat","o fată"],["un student","o studentă"],["un coleg","o colegă"],["niște băieți","niște fete"],
+    ],note:"Belirsiz artikel kelimenin ÖNÜNE gelir: un (eril), o (dişil). Çoğulda her ikisi için niște. (Karşılaştır: belirli artikel sona gelir → băiatul, fata.)"},
+    {t:"ex_choice",title:"Alıştırma — un / o?",instr:"Doğru artikeli seç.",qs:[
+      ["___ băiat",["un","o"],0],["___ fată",["un","o"],1],["___ studentă",["un","o"],1],
+      ["___ coleg",["un","o"],0],["___ profesoară",["un","o"],1],
+    ]},
+  ]},
+  {title:"Culorile",ro:"Renkler",blocks:[
+    {t:"vocab",title:"Renkler",items:[
+      ["roșu","kırmızı"],["galben","sarı"],["albastru","mavi"],["verde","yeşil"],["negru","siyah"],["alb","beyaz"],
+      ["portocaliu","turuncu"],["maro","kahverengi"],["roz","pembe"],["gri","gri"],
+    ]},
+  ]},
+  {title:"La plimbare",ro:"Ulaşım",blocks:[
+    {t:"vocab",title:"Ulaşım araçları",items:[
+      ["bicicletă","bisiklet"],["mașină","araba"],["autobuz","otobüs"],["avion","uçak"],["tren","tren"],
+      ["tramvai","tramvay"],["metrou","metro"],["barcă","tekne / kayık"],["vapor","gemi / vapur"],["elicopter","helikopter"],
+    ]},
+    {t:"note_block",body:"Eu merg cu… = … ile giderim. Eu călătoresc = seyahat ederim. Araç belirli artikelle gelir: cu autobuzul, cu mașina, cu trenul."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Doğru mu yanlış mı?",qs:[
+      ["Eu merg pe stradă cu metroul.",false],
+      ["Tu mergi pe apă cu iahtul.",true],
+      ["Noi mergem pe șine cu avionul.",false],
+      ["Voi mergeți în aer cu elicopterul.",true],
+      ["Ele merg pe stradă cu mașina.",true],
+    ]},
+  ]},
+];
+
+/* ---------- A1 · UNIT 3 (La cumpărături — piață) ---------- */
+const A1_U3=[
+  {title:"Legume",ro:"Sebzeler",blocks:[
+    {t:"vocab",title:"Sebzeler",items:[
+      ["legume","sebzeler"],["ardei","biber"],["roșie / roșii","domates(ler)"],["ceapă","soğan"],["usturoi","sarımsak"],
+      ["cartof / cartofi","patates"],["varză","lahana"],["morcov","havuç"],["castravete","salatalık"],
+      ["ciupercă / ciuperci","mantar"],["fasole","fasulye"],["mazăre","bezelye"],["porumb","mısır"],
+    ]},
+    {t:"vocab",title:"Öğünler",items:[
+      ["micul dejun","kahvaltı"],["masa de prânz","öğle yemeği"],["cina","akşam yemeği"],
+    ]},
+  ]},
+  {title:"Verbe — mâncare",ro:"Yemek fiilleri",blocks:[
+    {t:"table",title:"a mânca — yemek",head:["Kişi","Biçim"],rows:[
+      ["eu","mănânc"],["tu","mănânci"],["el / ea","mănâncă"],["noi","mâncăm"],["voi","mâncați"],["ei / ele","mănâncă"],
+    ]},
+    {t:"table",title:"a cumpăra — satın almak",head:["Kişi","Biçim"],rows:[
+      ["eu","cumpăr"],["tu","cumperi"],["el / ea","cumpără"],["noi","cumpărăm"],["voi","cumpărați"],["ei / ele","cumpără"],
+    ]},
+    {t:"table",title:"a pregăti — hazırlamak",head:["Kişi","Biçim"],rows:[
+      ["eu","pregătesc"],["tu","pregătești"],["el / ea","pregătește"],["noi","pregătim"],["voi","pregătiți"],["ei / ele","pregătesc"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"Parantezdeki fiili doğru çek.",qs:[
+      ["Dimineața eu ___ acasă. (a mânca)","mănânc"],
+      ["Noi ___ împreună cina. (a pregăti)","pregătim"],
+      ["Mama și tata ___ alimente. (a cumpăra)","cumpără"],
+      ["Eu ___ fructe de la piață. (a cumpăra)","cumpăr"],
+      ["Voi ce ___ dimineața? (a mânca)","mâncați"],
+    ]},
+  ]},
+  {title:"Cantități",ro:"Miktarlar",blocks:[
+    {t:"vocab",title:"Miktar & ürün",items:[
+      ["gram / grame","gram"],["kilogram (kg)","kilogram"],["mililitru / litru","mililitre / litre"],
+      ["lapte","süt"],["cașcaval","kaşar peyniri"],["brânză","beyaz peynir"],["iaurt","yoğurt"],
+      ["carne","et"],["pui","tavuk"],["pește","balık"],
+    ]},
+    {t:"note_block",body:"“Ne kadar?” soru sözcüğü cinsiyete göre: dişil Câtă (apă), eril/nötr Cât (lapte, orez), çoğul sayılabilir Câte (fructe) / Câți (oameni)."},
+    {t:"ex_choice",title:"Alıştırma — Câtă / Cât / Câte?",instr:"Doğru biçimi seç.",qs:[
+      ["___ apă bei? (apă · F)",["Câtă","Cât","Câte"],0],
+      ["___ lapte bei? (lapte · N)",["Câtă","Cât","Câte"],1],
+      ["___ fructe mănânci? (çoğul)",["Câtă","Cât","Câte"],2],
+      ["___ cafea bei? (cafea · F)",["Câtă","Cât","Câte"],0],
+    ]},
+  ]},
+  {title:"Fructele",ro:"Meyveler",blocks:[
+    {t:"vocab",title:"Meyveler",items:[
+      ["mere","elma"],["pere","armut"],["prune","erik"],["pepene","kavun / karpuz"],["struguri","üzüm"],
+      ["căpșuni","çilek"],["zmeură","ahududu"],["mure","böğürtlen"],["ananas","ananas"],["banană","muz"],
+      ["portocală","portakal"],["lămâie","limon"],
+    ]},
+  ]},
+  {title:"Cât costă?",ro:"Ne kadar? (markette)",blocks:[
+    {t:"vocab",title:"Markette",items:[
+      ["Cât costă?","Ne kadar?"],["Cât costă un kilogram de mere?","Bir kilo elma kaça?"],
+      ["costă … lei","… lei tutar"],["ieftin / scump","ucuz / pahalı"],["Vreau, vă rog…","İstiyorum, lütfen…"],
+    ]},
+    {t:"note_block",body:"Fiyat sorusu: Cât costă…? Cevap: Costă X lei. Romanya para birimi leu (çoğul: lei)."},
+  ]},
+];
+
+/* ---------- A1 · UNIT 4 (Timpul) ---------- */
+const A1_U4=[
+  {title:"Luni și anotimpuri",ro:"Aylar ve mevsimler",blocks:[
+    {t:"table",title:"Anotimpuri — Mevsimler",head:["Romence","Türkçe"],rows:[
+      ["primăvară","ilkbahar"],["vară","yaz"],["toamnă","sonbahar"],["iarnă","kış"],
+    ]},
+    {t:"table",title:"Lunile — Aylar",head:["Romence","Türkçe"],rows:[
+      ["ianuarie","Ocak"],["februarie","Şubat"],["martie","Mart"],["aprilie","Nisan"],["mai","Mayıs"],["iunie","Haziran"],
+      ["iulie","Temmuz"],["august","Ağustos"],["septembrie","Eylül"],["octombrie","Ekim"],["noiembrie","Kasım"],["decembrie","Aralık"],
+    ]},
+    {t:"note_block",body:"Zaman: 60 secunde = 1 minut · 60 minute = 1 oră · 24 ore = o zi · 7 zile = o săptămână · 12 luni = un an."},
+  ]},
+  {title:"Ora",ro:"Saat",blocks:[
+    {t:"vocab",title:"Saat sorma",items:[
+      ["Cât este ceasul?","Saat kaç?"],["Este ora…","Saat …"],["douăsprezece fix","tam on iki"],
+      ["și un sfert","çeyrek geçe (+15)"],["și jumătate","buçuk (+30)"],["fără un sfert","çeyrek var (−15)"],
+      ["dimineață / prânz / seară","sabah / öğle / akşam"],["ieri / azi / mâine","dün / bugün / yarın"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma — Saat",instr:"Doğru ifadeyi seç.",qs:[
+      ["12:15 = douăsprezece ___",["și un sfert","fără un sfert"],0],
+      ["12:30 = douăsprezece ___",["și jumătate","fix"],0],
+      ["12:45 = unu ___",["fără un sfert","și un sfert"],0],
+      ["12:00 = douăsprezece ___",["fix","și jumătate"],0],
+    ]},
+  ]},
+  {title:"Vremea",ro:"Hava durumu",blocks:[
+    {t:"vocab",title:"Hava",items:[
+      ["Cum e vremea?","Hava nasıl?"],["Este cald.","Sıcak."],["Este frig.","Soğuk."],["Este soare.","Güneşli."],
+      ["Plouă.","Yağmur yağıyor."],["Ninge.","Kar yağıyor."],["Este vânt.","Rüzgârlı."],
+      ["nori","bulutlar"],["ceață","sis"],["zăpadă","kar"],["grade Celsius","santigrat derece"],
+    ]},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Doğru mu yanlış mı?",qs:[
+      ["“Ninge” = kar yağıyor.",true],
+      ["“Plouă” = güneşli.",false],
+      ["“Este cald” = sıcak.",true],
+      ["“Este vânt” = sisli.",false],
+    ]},
+  ]},
+  {title:"Sărbători",ro:"Bayramlar",blocks:[
+    {t:"vocab",title:"Bayramlar",items:[
+      ["Anul Nou / Revelion","Yılbaşı"],["Dragobete","Romen sevgililer günü (24 Şubat)"],
+      ["Mărțișor","bahar simgesi (1 Mart)"],["Paște","Paskalya"],["Crăciun","Noel"],["La mulți ani!","Mutlu yıllar! / Nice senelere!"],
+    ]},
+    {t:"note_block",body:"Mărțișor: 1 Mart’ta kadınlara verilen, beyaz-kırmızı iple bağlı küçük bir süs; baharın gelişini simgeler."},
+  ]},
+];
+
+/* ---------- A1 · UNIT 5 (La cumpărături — haine) ---------- */
+const A1_U5=[
+  {title:"La magazin",ro:"Mağazada",blocks:[
+    {t:"vocab",title:"Giysiler",items:[
+      ["bluză","bluz"],["cămașă","gömlek"],["pantaloni","pantolon"],["rochie","elbise"],["pantofi","ayakkabı"],
+      ["pantofi sport","spor ayakkabı"],["mânecă lungă / scurtă","uzun / kısa kol"],["bumbac","pamuk"],
+      ["mătase","ipek"],["măsură / mărime","beden"],["cabină de probă","deneme kabini"],
+    ]},
+    {t:"vocab",title:"Diyalog",items:[
+      ["Aș vrea…","İstiyorum (kibar)"],["Ce măsură aveți?","Hangi bedensiniz?"],["Pot să probez?","Deneyebilir miyim?"],
+      ["Cât costă în total?","Toplam ne kadar?"],
+    ]},
+    {t:"svg",svg:`<svg viewBox="0 0 220 130" width="200" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="130" fill="#FBF6EC"/><path d="M86 30 L60 46 L72 70 L86 62 L86 110 L134 110 L134 62 L148 70 L160 46 L134 30 L121 30 a13 9 0 0 1 -22 0 Z" fill="#B5232A" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/></svg>`},
+    {t:"read",body:"<b>Vânzător:</b> Bună ziua!<br><b>Client:</b> Bună ziua, aș vrea o bluză albă ca aceea din vitrină, cu mânecă lungă.<br><b>Vânzător:</b> Din ce material preferați?<br><b>Client:</b> Din bumbac.<br><b>Vânzător:</b> Ce măsură aveți?<br><b>Client:</b> Măsura M–L aveți?<br><b>Vânzător:</b> Da, sigur. Puteți proba la cabină!<br><b>Client:</b> Da, cumpăr bluza. Aveți pantaloni măsura L? Și vreau să încerc pantofii sport, măsura 38, negri.<br><b>Vânzător:</b> Costă 200 de lei în total: bluza 50, pantalonii 50 și pantofii 100 lei."},
+    {t:"note_block",body:"Türkçe özet: Müşteri vitrindeki gibi beyaz, uzun kollu, pamuklu bir bluz ister (M–L beden), kabinde dener ve alır. Ayrıca L beden pantolon ve 38 numara siyah spor ayakkabı dener. Toplam 200 lei: bluz 50, pantolon 50, ayakkabı 100."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Diyaloga göre doğru mu yanlış mı?",qs:[
+      ["Clientul caută bluză cu mânecă lungă.",true],
+      ["Clientul caută bluză din mătase.",false],
+      ["Clientul cumpără bluză neagră.",false],
+      ["Clientul probează bluza.",true],
+      ["Clientul plătește 200 de lei în total.",true],
+    ]},
+  ]},
+  {title:"Verbe neregulate",ro:"Düzensiz fiiller & sınıflar",blocks:[
+    {t:"table",title:"a lua — almak",head:["Kişi","Biçim"],rows:[
+      ["eu","iau"],["tu","iei"],["el / ea","ia"],["noi","luăm"],["voi","luați"],["ei / ele","iau"],
+    ]},
+    {t:"text",body:"Fiil sınıfları mastar sonuna göre: -a (a mânca), -ea (a vrea), -e (a merge), -i / -î (a citi)."},
+    {t:"table",title:"Örnek çekim (eu)",head:["Mastar","eu"],rows:[
+      ["a mânca","mănânc"],["a vrea","vreau"],["a merge","merg"],["a citi","citesc"],["a face","fac"],["a putea","pot"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"“eu” biçimini yaz.",qs:[
+      ["a citi → eu ___","citesc"],["a face → eu ___","fac"],["a putea → eu ___","pot"],["a învăța → eu ___","învăț"],
+    ]},
+  ]},
+  {title:"Cât costă?",ro:"Fiyat (a costa)",blocks:[
+    {t:"vocab",title:"Ödeme",items:[
+      ["Cât costă?","Ne kadar?"],["El costă (sacoul).","O (ceket) … tutar."],["Ea costă (rochia).","O (elbise) … tutar."],
+      ["scump / ieftin","pahalı / ucuz"],["reducere","indirim"],["Plătesc cu cardul.","Kartla öderim."],
+    ]},
+    {t:"note_block",body:"a costa: el / ea costă, ei / ele costă. Erkek nesne → el costă, dişil nesne → ea costă."},
+  ]},
+];
+
+/* ---------- A1 · UNIT 6 (Casa mea) ---------- */
+const A1_U6=[
+  {title:"A locui",ro:"Oturmak & konut türleri",blocks:[
+    {t:"table",title:"a locui — oturmak / yaşamak",head:["Kişi","Biçim"],rows:[
+      ["eu","locuiesc"],["tu","locuiești"],["el / ea","locuiește"],["noi","locuim"],["voi","locuiți"],["ei / ele","locuiesc"],
+    ]},
+    {t:"table",title:"a sta — kalmak / durmak",head:["Kişi","Biçim"],rows:[
+      ["eu","stau"],["tu","stai"],["el / ea","stă"],["noi","stăm"],["voi","stați"],["ei / ele","stau"],
+    ]},
+    {t:"vocab",title:"Konut türleri",items:[
+      ["casă","ev (müstakil)"],["bloc","apartman binası"],["apartament","daire"],["garsonieră","stüdyo daire"],
+      ["vilă","villa"],["la oraș / la țară","şehirde / köyde"],["cameră / camere","oda(lar)"],["grădină","bahçe"],["garaj","garaj"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"a locui ile doldur.",qs:[
+      ["Eu ___ la bloc.","locuiesc"],["Tu unde ___?","locuiești"],["Noi ___ la casă.","locuim"],["Ei ___ la oraș.","locuiesc"],
+    ]},
+  ]},
+  {title:"Camerele",ro:"Odalar",blocks:[
+    {t:"vocab",title:"Evin bölümleri",items:[
+      ["hol (de intrare)","giriş holü"],["camera de zi","oturma odası"],["dormitor","yatak odası"],
+      ["bucătărie","mutfak"],["baie","banyo"],["balcon","balkon"],
+    ]},
+  ]},
+  {title:"Mobila",ro:"Mobilya & eşya",blocks:[
+    {t:"vocab",title:"Eşyalar",items:[
+      ["pat","yatak"],["dulap / șifonier","dolap / gardırop"],["masă","masa"],["scaun","sandalye"],
+      ["canapea","kanepe"],["fotoliu","koltuk"],["birou","çalışma masası"],["bibliotecă","kitaplık"],
+      ["oglindă","ayna"],["frigider","buzdolabı"],["aragaz","ocak"],["cadă / chiuvetă","küvet / lavabo"],
+    ]},
+  ]},
+  {title:"Unde locuiești?",ro:"Konum",blocks:[
+    {t:"vocab",title:"Konum ifadeleri",items:[
+      ["Unde locuiești?","Nerede oturuyorsun?"],["în centru","merkezde"],["la periferie","kenar mahallede"],
+      ["lângă parc","parkın yanında"],["lângă școală","okulun yanında"],["lângă spital","hastanenin yanında"],
+      ["stradă / cartier","sokak / mahalle"],["etaj","kat"],
+    ]},
+  ]},
+];
+
+/* ---------- A1 · UNIT 7 (Familia mea) ---------- */
+const A1_U7=[
+  {title:"Familia",ro:"Aile",blocks:[
+    {t:"vocab",title:"Aile bireyleri",items:[
+      ["mamă / tată","anne / baba"],["părinți","ebeveynler"],["fiu / fiică","oğul / kız evlat"],
+      ["frate / soră","erkek / kız kardeş"],["soț / soție","koca / eş (kadın)"],["bunic / bunică","dede / büyükanne"],
+      ["nepot / nepoată","torun / yeğen"],["unchi / mătușă","amca-dayı / hala-teyze"],["văr / verișoară","kuzen (e / k)"],
+      ["cumnat / cumnată","kayınbirader / baldız-görümce"],["copil / copii","çocuk / çocuklar"],["rude","akrabalar"],
+    ]},
+  ]},
+  {title:"Exprimăm posesia",ro:"İyelik (meu / mea)",blocks:[
+    {t:"table",title:"İyelik — eril (al)",head:["Kişi","Biçim"],rows:[
+      ["eu","(al) meu"],["tu","(al) tău"],["el / ea","(al) său"],["noi","(al) nostru"],["voi","(al) vostru"],["ei / ele","(al) lor"],
+    ]},
+    {t:"table",title:"İyelik — dişil (a)",head:["Kişi","Biçim"],rows:[
+      ["eu","(a) mea"],["tu","(a) ta"],["el / ea","(a) sa"],["noi","(a) noastră"],["voi","(a) voastră"],["ei / ele","(a) lor"],
+    ],note:"İyelik isimden SONRA gelir ve cinsiyete uyar: bunicul meu (dedem), bunica mea (büyükannem)."},
+    {t:"ex_choice",title:"Alıştırma — meu / mea?",instr:"Doğru biçimi seç.",qs:[
+      ["bunicul ___ (dede)",["meu","mea"],0],["bunica ___ (büyükanne)",["meu","mea"],1],
+      ["fratele ___ (kardeş-e)",["meu","mea"],0],["sora ___ (kardeş-k)",["meu","mea"],1],
+    ]},
+  ]},
+];
+
+/* ---------- A1 · UNIT 8 (La restaurant) ---------- */
+const A1_U8=[
+  {title:"Mâncăm în oraș",ro:"Dışarıda yemek",blocks:[
+    {t:"vocab",title:"Yerler",items:[
+      ["restaurant","restoran"],["fast food","fast food"],["cantină","kantin / yemekhane"],
+    ]},
+    {t:"vocab",title:"Îmi place să… (…yapmayı severim)",items:[
+      ["Îmi place să gătesc.","Yemek yapmayı severim."],["Îmi place să mănânc.","Yemeyi severim."],
+      ["Îmi place să iau masa în oraș.","Dışarıda yemeyi severim."],["Îmi place să mănânc cu familia.","Ailemle yemeyi severim."],
+    ]},
+  ]},
+  {title:"Comanda",ro:"Sipariş",blocks:[
+    {t:"vocab",title:"Restoranda",items:[
+      ["meniu","menü"],["chelner","garson"],["casier","kasiyer"],["barman","barmen"],
+      ["Ce doriți să mâncați?","Ne yemek istersiniz?"],["Vreau o porție de…","Bir porsiyon … istiyorum."],
+      ["ciorbă","ekşi çorba"],["friptură de pui","tavuk kızartma"],["salată","salata"],["desert","tatlı"],
+      ["o felie de tort","bir dilim pasta"],["nota, vă rog","hesap, lütfen"],["la pachet","paket (götürme)"],
+    ]},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Doğru mu yanlış mı?",qs:[
+      ["“chelner” = garson.",true],["“la pachet” = burada yemek.",false],["“desert” = tatlı.",true],["“nota” = hesap.",true],
+    ]},
+  ]},
+  {title:"Mâncare și băutură",ro:"Yiyecek & içecek",blocks:[
+    {t:"vocab",title:"Kahvaltı & içecek",items:[
+      ["pâine","ekmek"],["ou","yumurta"],["șuncă","jambon"],["salam","salam"],["brânză / cașcaval","peynir / kaşar"],
+      ["măsline","zeytin"],["cafea / ceai","kahve / çay"],["apă / suc","su / meyve suyu"],["lapte","süt"],
+    ]},
+  ]},
+];
+
+/* ---------- A1 · UNIT 9 (La medic) ---------- */
+const A1_U9=[
+  {title:"Corpul",ro:"Vücut",blocks:[
+    {t:"vocab",title:"Vücudun bölümleri",items:[
+      ["cap","baş"],["ochi","göz"],["nas","burun"],["gură","ağız"],["ureche / urechi","kulak(lar)"],["frunte","alın"],
+      ["gât","boğaz / boyun"],["mână / mâini","el(ler)"],["picior / picioare","ayak / bacak"],["deget / degete","parmak(lar)"],
+      ["spate","sırt"],["stomac","mide"],["inimă","kalp"],["dinte / dinți","diş(ler)"],
+    ]},
+  ]},
+  {title:"Mă doare",ro:"Ağrıyor (akuzatif)",blocks:[
+    {t:"table",title:"Mă doare / Mă dor",head:["Kişi","Biçim"],rows:[
+      ["pe mine","mă doare / mă dor"],["pe tine","te doare / te dor"],["pe el / ea","îl / o doare"],
+      ["pe noi","ne doare / dor"],["pe voi","vă doare / dor"],["pe ei / ele","îi / le doare"],
+    ],note:"Tekil ağrıyan organ → doare, çoğul → dor. Mă doare capul (başım ağrıyor) · Mă dor picioarele (ayaklarım ağrıyor). Akuzatif zamir kullanılır."},
+    {t:"ex_choice",title:"Alıştırma — doare / dor?",instr:"Şahıs değişse de biçim organ sayısına bağlı: tekil → doare, çoğul → dor.",qs:[
+      ["Mă ___ capul. (ben · tekil)",["doare","dor"],0],
+      ["Te ___ picioarele. (sen · çoğul)",["doare","dor"],1],
+      ["Îl ___ stomacul. (o · tekil)",["doare","dor"],0],
+      ["O ___ măseaua. (o · tekil)",["doare","dor"],0],
+      ["Ne ___ ochii. (biz · çoğul)",["doare","dor"],1],
+      ["Vă ___ gâtul. (siz · tekil)",["doare","dor"],0],
+      ["Îi ___ dinții. (onlar · çoğul)",["doare","dor"],1],
+      ["Le ___ mâinile. (onlar · çoğul)",["doare","dor"],1],
+    ]},
+  ]},
+  {title:"La medic",ro:"Doktorda",blocks:[
+    {t:"vocab",title:"Sağlık",items:[
+      ["medic / doctor","doktor"],["medic de familie","aile hekimi"],["asistentă","hemşire"],["pacient","hasta"],
+      ["consultație","muayene"],["rețetă","reçete"],["farmacie","eczane"],["spital","hastane"],
+      ["Mă simt rău.","Kendimi kötü hissediyorum."],["Sunt bolnav / bolnavă.","Hastayım (e / k)."],
+    ]},
+  ]},
+];
+
+/* ---------- A1 · UNIT 10 (Stări de spirit și emoții) ---------- */
+const A1_U10=[
+  {title:"Emoții",ro:"Duygular",blocks:[
+    {t:"vocab",title:"Duygular (eril / dişil)",items:[
+      ["fericit / fericită","mutlu"],["bucuros / bucuroasă","neşeli"],["trist / tristă","üzgün"],
+      ["supărat / supărată","kırgın / dargın"],["nervos / nervoasă","sinirli"],["obosit / obosită","yorgun"],
+      ["plictisit / plictisită","sıkılmış"],["dezamăgit / dezamăgită","hayal kırıklığına uğramış"],
+      ["entuziasmat / entuziasmată","heyecanlı"],["furios / furioasă","öfkeli"],
+    ],note:"Sıfat özneye uyar: erkek → fericit, kadın → fericită. “Azi mă simt…” = Bugün … hissediyorum. “Sunt fericit/fericită” = Mutluyum."},
+  ]},
+  {title:"De ce?",ro:"Neden? (pentru că)",blocks:[
+    {t:"vocab",title:"Sebep belirtme",items:[
+      ["De ce ești trist?","Neden üzgünsün?"],["Sunt trist pentru că…","Üzgünüm çünkü…"],
+      ["pentru că este sănătoasă","sağlıklı olduğu için"],["pentru că a câștigat concursul","yarışmayı kazandığı için"],
+      ["pentru că muncește mult","çok çalıştığı için"],["pentru că a primit o veste proastă","kötü haber aldığı için"],
+    ]},
+  ]},
+  {title:"Imperativ",ro:"Emir kipi",blocks:[
+    {t:"table",title:"Emir — “tu” için",head:["Mastar","Emir"],rows:[
+      ["a fi","Fii!"],["a mânca","Mănâncă!"],["a scrie","Scrie!"],["a citi","Citește!"],["a vorbi","Vorbește!"],["a spune","Spune!"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"“tu” için emir biçimini yaz.",qs:[
+      ["a citi → ___ !","Citește"],["a vorbi → ___ !","Vorbește"],["a scrie → ___ !","Scrie"],["a spune → ___ !","Spune"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 1 (Despre mine) ---------- */
+const A2_U1=[
+  {title:"Salutul",ro:"Selamlar (kibar)",blocks:[
+    {t:"vocab",title:"Selam & vedalaşma",items:[
+      ["Sărut-mâna!","Saygı selamı (elinizden öperim)"],["Ciao!","Selam / Hoşça kal"],["Pe curând!","Yakında görüşürüz!"],
+      ["Te îmbrățișez!","Sarılıyorum! (vedalaşma)"],["Te sărut!","Öpüyorum! (samimi)"],["Noapte bună!","İyi geceler!"],
+      ["Bună dimineața / ziua / seara!","Günaydın / İyi günler / İyi akşamlar!"],
+    ],note:"Sărut-mâna: yaşça büyüklere ve kadınlara saygı selamıdır; gerçekten el öpülmez, sözlü kullanılır."},
+  ]},
+  {title:"Alfabet & grupuri",ro:"Harf grupları",blocks:[
+    {t:"table",title:"Harf grupları",head:["Grup","Okunuş"],rows:[
+      ["ce / ci","çe / çi"],["ge / gi","ce / ci"],["che / chi","ke / ki"],["ghe / ghi","ge / gi"],
+    ]},
+    {t:"note_block",body:"Vocale (sesli harfler): A, E, I, O, U, Ă, Î. Consoane (sessizler): geri kalan tüm harfler."},
+  ]},
+  {title:"De unde ești?",ro:"Nerelisin? (ülkeler)",blocks:[
+    {t:"vocab",title:"Köken",items:[
+      ["De unde ești?","Nerelisin?"],["Sunt din…","…‑lıyım"],["Sunt din orașul…","… şehrindenim"],
+    ]},
+    {t:"vocab",title:"Ülkeler (Romence)",items:[
+      ["Turcia","Türkiye"],["România","Romanya"],["Siria","Suriye"],["Egipt","Mısır"],["Maroc","Fas"],
+      ["Ungaria","Macaristan"],["Rusia","Rusya"],["Grecia","Yunanistan"],["Olanda","Hollanda"],["Japonia","Japonya"],
+    ]},
+  ]},
+  {title:"Politețe",ro:"Nezaket",blocks:[
+    {t:"vocab",title:"Nezaket ifadeleri",items:[
+      ["Te rog / Vă rog","Lütfen (sen / siz)"],["Mulțumesc frumos","Çok teşekkürler"],["Cu plăcere","Rica ederim"],
+      ["Ajută-mă, te rog!","Bana yardım et, lütfen!"],["Am nevoie de ajutor.","Yardıma ihtiyacım var."],
+      ["Îmi pare rău.","Üzgünüm."],["Scuze! / Scuzați!","Pardon! / Affedersiniz!"],["Poți să mă asculți?","Beni dinler misin?"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 2 (Învăț în România) ---------- */
+const A2_U2=[
+  {title:"Sala de curs",ro:"Sınıf",blocks:[
+    {t:"vocab",title:"Sınıf & kişiler",items:[
+      ["cursant / cursantă","kursiyer (e / k)"],["coleg de bancă","sıra arkadaşı"],["prima zi de curs","ilk ders günü"],
+      ["doamna profesoară","öğretmen hanım"],["ușă / tablă / scaun","kapı / tahta / sandalye"],
+      ["Cine sunteți voi?","Sizler kimsiniz?"],["prietenii noștri","arkadaşlarımız"],
+    ]},
+  ]},
+  {title:"Rechizite",ro:"Kırtasiye",blocks:[
+    {t:"vocab",title:"Kırtasiye eşyaları",items:[
+      ["caiet","defter"],["creion","kurşun kalem"],["pix","tükenmez"],["carte","kitap"],["rucsac","sırt çantası"],
+      ["riglă","cetvel"],["foarfece","makas"],["ascuțitoare","kalemtıraş"],["gumă (de șters)","silgi"],
+      ["lipici","yapıştırıcı"],["capsator","zımba"],["creioane colorate","boya kalemleri"],["carioci","keçeli kalem"],["calculator","hesap makinesi"],
+    ]},
+  ]},
+  {title:"Mergem la curs",ro:"Derse gidiş",blocks:[
+    {t:"table",title:"a merge — gitmek",head:["Kişi","Biçim"],rows:[
+      ["eu","merg"],["tu","mergi"],["el / ea","merge"],["noi","mergem"],["voi","mergeți"],["ei / ele","merg"],
+    ]},
+    {t:"vocab",title:"Ulaşım ifadeleri",items:[
+      ["Tu cu ce mergi?","Sen neyle gidiyorsun?"],["pe jos","yürüyerek"],["cu autobuzul","otobüsle"],
+      ["cu metroul","metroyla"],["cu troleibuzul","troleybüsle"],["Sunt în stație.","Duraktayım."],["Ajung în 15 minute.","15 dakikaya varırım."],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"a merge ile doldur.",qs:[
+      ["Eu ___ la curs cu metroul.","merg"],["Tu cu ce ___?","mergi"],["Noi ___ pe jos.","mergem"],["Ei ___ cu autobuzul.","merg"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 3 (La cumpărături) ---------- */
+const A2_U3=[
+  {title:"Fructe",ro:"Meyveler",blocks:[
+    {t:"vocab",title:"Yerli & narenciye",items:[
+      ["caise","kayısı"],["piersici","şeftali"],["cireșe","kiraz"],["vișine","vişne"],["prune","erik"],["struguri","üzüm"],
+      ["lămâie","limon"],["portocală","portakal"],["mandarină","mandalina"],["grepfrut","greyfurt"],["pomelo","pomelo"],
+    ],note:"Caise, piersici, cireșe, vișine Romanya’da yetişir; narenciye (lămâie, portocală, mandarină) çoğunlukla ithaldir."},
+  ]},
+  {title:"Mese",ro:"Öğünler",blocks:[
+    {t:"vocab",title:"Kahvaltı / öğle / akşam",items:[
+      ["mic dejun","kahvaltı"],["cornuri","kruvasan / poğaça"],["miere","bal"],["dulceață","reçel"],
+      ["iaurt cu cereale","mısır gevrekli yoğurt"],["prânz","öğle yemeği"],["supă","çorba"],["șnițel","şinitzel"],
+      ["cartofi prăjiți","patates kızartması"],["cină","akşam yemeği"],["plăcintă cu carne","etli börek"],
+    ]},
+  ]},
+  {title:"A bea & la cantină",ro:"İçmek & kantin",blocks:[
+    {t:"table",title:"a bea — içmek",head:["Kişi","Biçim"],rows:[
+      ["eu","beau"],["tu","bei"],["el / ea","bea"],["noi","bem"],["voi","beți"],["ei / ele","beau"],
+    ]},
+    {t:"vocab",title:"Pişirme & kantin",items:[
+      ["prăjit","kızartılmış (yağda)"],["fiert","haşlanmış"],["la grătar","ızgara"],["la cuptor","fırında"],
+      ["o sticlă de apă","bir şişe su"],["Ce doriți să mâncați?","Ne yemek istersiniz?"],["Cât am de plată?","Ne kadar ödeyeceğim?"],
+    ]},
+    {t:"ex_fill",title:"Alıştırma",instr:"a mânca / a bea ile doldur.",qs:[
+      ["Dimineața mama ___ cafea. (a bea)","bea"],["Copiii ___ lapte. (a bea)","beau"],
+      ["La prânz noi ___ supă. (a mânca)","mâncăm"],["Eu ___ multe fructe. (a mânca)","mănânc"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 4 (Timpul) ---------- */
+const A2_U4=[
+  {title:"Sărbători",ro:"Bayramlar (tarihlerle)",blocks:[
+    {t:"table",title:"Romanya bayramları",head:["Tarih","Bayram"],rows:[
+      ["1–2 ianuarie","Anul Nou (Yılbaşı)"],["24 ianuarie","Ziua Unirii (Birleşme Günü)"],["1 Martie","Mărțișor"],
+      ["8 Martie","Ziua Mamei (Anneler Günü)"],["Paște","Paskalya (değişken tarih)"],["1 Mai","Ziua Muncii (İşçi Bayramı)"],
+      ["1 Iunie","Ziua Copilului (Çocuk Bayramı)"],["1 Decembrie","Ziua Națională (Millî Gün)"],["25–26 Decembrie","Crăciun (Noel)"],
+    ]},
+    {t:"vocab",title:"İlgili kelimeler",items:[
+      ["sărbătoare","bayram / kutlama"],["zi liberă","tatil günü"],["cadou","hediye"],["Moș Crăciun","Noel Baba"],["a sărbători","kutlamak"],
+    ]},
+  ]},
+  {title:"Anotimpuri & activități",ro:"Mevsim etkinlikleri",blocks:[
+    {t:"table",title:"Mevsime göre etkinlikler",head:["Mevsim","Etkinlik"],rows:[
+      ["primăvara","punem flori (çiçek dikeriz)"],["vara","mergem la mare, înotăm (denize gider, yüzeriz)"],
+      ["toamna","culegem roade (hasat yaparız)"],["iarna","mergem la schi, patinăm (kayak, paten)"],
+    ]},
+    {t:"vocab",title:"Fiiller & kelimeler",items:[
+      ["a înota","yüzmek"],["a schia","kayak yapmak"],["a patina","paten yapmak"],["om de zăpadă","kardan adam"],["plimbare","gezinti"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 5 (La cumpărături — mall) ---------- */
+const A2_U5=[
+  {title:"La mall",ro:"AVM'de",blocks:[
+    {t:"vocab",title:"Giysiler & AVM",items:[
+      ["mall","AVM"],["raion","reyon"],["rochie","elbise"],["pantaloni scurți","şort"],["blugi","kot pantolon"],
+      ["cămașă cu mânecă lungă","uzun kollu gömlek"],["pantofi de fotbal","futbol ayakkabısı"],["sandale","sandalet"],
+      ["comod","rahat"],["Pot să probez?","Deneyebilir miyim?"],["Care e mărimea ta?","Bedenin kaç?"],
+    ]},
+  ]},
+  {title:"Plata",ro:"Ödeme & alıştırma",blocks:[
+    {t:"vocab",title:"Kasada",items:[
+      ["casa de marcat","kasa"],["Plătiți cash sau cu cardul?","Nakit mi kartla mı ödersiniz?"],
+      ["factură","fatura"],["rest","para üstü"],["reducere / ofertă","indirim / kampanya"],
+    ]},
+    {t:"note_block",body:"Tekrar eden günler: joia = her perşembe, vinerea = her cuma, sâmbăta = her cumartesi, duminica = her pazar."},
+    {t:"svg",svg:`<svg viewBox="0 0 200 150" width="160" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="150" fill="#FBF6EC"/><path d="M85 28 a15 8 0 0 0 30 0 l14 18 -12 8 18 66 -70 0 18 -66 -12 -8 z" fill="#7A4E9E" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/></svg>`},
+    {t:"read",body:"Familia Matei merge duminica la cumpărături, la Mall Vitan. Ioana și Andrei au nevoie de haine noi.<br><b>Ioana:</b> Uite, mama, acea rochie! Pot să probez?<br><b>Mama:</b> Această rochie mov este mărimea ta. <i>(Ioana probează rochia.)</i><br><b>Andrei:</b> Eu vreau pantaloni scurți pentru fotbal, albaștri cu dungi albe.<br><b>Mama:</b> Aici sunt blugi de damă; vreau să probez o pereche negri.<br><b>Tata:</b> Pentru mine am ales o cămașă cu mânecă lungă pentru birou.<br><b>Casier:</b> Aveți de plată 340 de lei. Plătiți cash sau cu cardul?<br><b>Tata:</b> Plătim cash. Poftiți 400 lei, vă rog factura.<br><b>Andrei:</b> Am nevoie de pantofi de fotbal. <b>Ioana:</b> Și eu vreau sandale pentru vară."},
+    {t:"note_block",body:"Türkçe özet: Matei ailesi pazar günü Mall Vitan’a gider. Ioana mor bir elbise dener. Andrei futbol için mavi-beyaz çizgili şort, sonra futbol ayakkabısı ister. Anne siyah kadın kot pantolon dener. Baba ofis için uzun kollu gömlek alır. Kasada 340 lei tutar; baba nakit öder, fatura ister."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Diyaloga göre doğru mu yanlış mı?",qs:[
+      ["Ioana probează o rochie.",true],["Andrei vrea pantofi de fotbal.",true],
+      ["Tata plătește cu cardul.",false],["Mama cumpără blugi de damă.",true],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 6 (Casa mea) ---------- */
+const A2_U6=[
+  {title:"Descrierea casei",ro:"Ev tarifi",blocks:[
+    {t:"vocab",title:"İleri mobilya & mekânlar",items:[
+      ["canapea / fotoliu","kanepe / koltuk"],["bibliotecă","kitaplık"],["veioză","gece lambası"],
+      ["comodă / noptieră","şifonyer / komodin"],["măsuță de cafea","sehpa"],["pat dublu","çift kişilik yatak"],
+      ["dulap cu sertare","çekmeceli dolap"],["raft","raf"],["covor","halı"],["mașină de spălat vase","bulaşık makinesi"],
+      ["mașină de spălat rufe","çamaşır makinesi"],["cadă / chiuvetă","küvet / lavabo"],["etaj / balcon","kat / balkon"],
+    ]},
+  ]},
+  {title:"Într-un / dintr-o",ro:"Edat + belirsiz artikel",blocks:[
+    {t:"table",title:"Kaynaşma",head:["Birleşim","Sonuç"],rows:[
+      ["în + un","într-un"],["în + o","într-o"],["din + un","dintr-un"],["din + o","dintr-o"],
+    ],note:"Belirsiz artikelli isimden önce edat kaynaşır: Locuiesc într-un apartament (bir dairede oturuyorum). Vin dintr-o țară (bir ülkeden geliyorum)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["Locuiesc ___ apartament.",["într-un","în un"],0],
+      ["Stau ___ casă mare.",["într-o","în o"],0],
+      ["Vin ___ oraș mic.",["dintr-un","din un"],0],
+      ["Ies ___ cameră.",["dintr-o","din o"],0],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 7 (Familia mea) ---------- */
+const A2_U7=[
+  {title:"Tablou de familie",ro:"Aile tablosu",blocks:[
+    {t:"vocab",title:"Aile & durum",items:[
+      ["familie numeroasă","kalabalık aile"],["mai mare / mai mic","daha büyük / daha küçük"],
+      ["căsătorit / necăsătorit","evli / bekâr"],["a semăna cu","benzemek"],["din partea mamei / tatălui","anne / baba tarafından"],
+      ["cumnat / cumnată","kayınbirader / baldız"],["verișor / verișoară","kuzen (e / k)"],["mătușă / unchi","teyze-hala / amca-dayı"],
+    ]},
+  ]},
+  {title:"Comparație",ro:"Karşılaştırma (mai… decât)",blocks:[
+    {t:"vocab",title:"Karşılaştırma kalıpları",items:[
+      ["mai mare decât","…‑den daha büyük"],["mai mic decât","…‑den daha küçük"],["la fel de … ca","… kadar …"],
+      ["cel mai mare","en büyük"],["cel mai mic","en küçük"],
+    ],note:"Karşılaştırma: mai + sıfat + decât. Oana este mai mare decât Mihai (Oana, Mihai’den büyük). En üstünlük: cel mai mare (en büyük)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Yaşlara göre doğru biçimi seç.",qs:[
+      ["Oana (12) e ___ decât Mihai (10).",["mai mare","mai mic"],0],
+      ["Mihai (10) e ___ decât Oana (12).",["mai mare","mai mic"],1],
+      ["Adrian (17) e ___ decât Oana.",["mai mare","mai mic"],0],
+      ["Mihai e cel mai ___ dintre frați.",["mare","mic"],1],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 8 (La restaurant) ---------- */
+const A2_U8=[
+  {title:"La restaurant",ro:"Sipariş",blocks:[
+    {t:"vocab",title:"Restoranda",items:[
+      ["o masă pentru patru persoane","dört kişilik masa"],["lângă fereastră","pencere kenarında"],["meniu","menü"],
+      ["supă de legume","sebze çorbası"],["ciorbă de văcuță","ekşi dana çorbası"],["friptură de pui","tavuk kızartma"],
+      ["tocăniță de legume","sebze yahnisi"],["clătite","krep"],["cartofi la cuptor","fırın patates"],
+      ["suc de portocale","portakal suyu"],["un pahar cu vin","bir kadeh şarap"],["Ce vreți să mâncați?","Ne yemek istersiniz?"],
+    ]},
+  ]},
+  {title:"Conjunctiv (să…)",ro:"Dilek kipi",blocks:[
+    {t:"table",title:"Prezent → Conjunctiv (el / ea)",head:["Prezent","Conjunctiv"],rows:[
+      ["mănâncă","să mănânce"],["merge","să meargă"],["poate","să poată"],["face","să facă"],["citește","să citească"],["vrea","să vrea"],
+    ],note:"Conjunctiv = «să + fiil»; istek/dilek anlatır. Vreau să mănânc (yemek istiyorum). Yalnızca 3. şahıs biçim değiştirir: el merge → să meargă; diğer şahıslar prezent ile aynıdır."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru “să” biçimini seç.",qs:[
+      ["El vrea să ___. (a merge)",["merge","meargă"],1],
+      ["Ea poate să ___. (a face)",["face","facă"],1],
+      ["Îmi place să ___. (a citi, eu)",["citesc","citească"],0],
+      ["Ei vor să ___. (a mânca)",["mănâncă","mănânce"],1],
+    ]},
+  ]},
+  {title:"Mâncare internațională",ro:"Dünya mutfağı",blocks:[
+    {t:"vocab",title:"Yemekler",items:[
+      ["pizza","pizza"],["paste","makarna"],["musaca","musakka"],["sushi","suşi"],["tabuleh","tabule"],
+      ["falafel","falafel"],["kebab","kebap"],["hamburger","hamburger"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 9 (La medic) ---------- */
+const A2_U9=[
+  {title:"Am răcit",ro:"Hastalık",blocks:[
+    {t:"vocab",title:"Şikâyetler",items:[
+      ["a răci","üşütmek"],["răceală / gripă","soğuk algınlığı / grip"],["Îmi curge nasul.","Burnum akıyor."],
+      ["Am febră.","Ateşim var."],["Tușesc.","Öksürüyorum."],["Mă doare gâtul.","Boğazım ağrıyor."],
+      ["Mă dor mușchii.","Kaslarım ağrıyor."],["Ce vă supără?","Şikâyetiniz ne?"],["Sănătate!","Geçmiş olsun! / Çok yaşa!"],
+    ]},
+    {t:"vocab",title:"Doktor & tedavi",items:[
+      ["consultație","muayene"],["radiografie","röntgen"],["rețetă","reçete"],["medicamente","ilaçlar"],
+      ["farmacie","eczane"],["repaos la domiciliu","evde istirahat"],["ceai cu lămâie și miere","limonlu ballı çay"],
+    ]},
+  ]},
+  {title:"Perfect compus",ro:"Geçmiş zaman",blocks:[
+    {t:"table",title:"Geçmiş zaman örnekleri (eu)",head:["Mastar","Geçmiş (eu)"],rows:[
+      ["a merge","am mers"],["a mânca","am mâncat"],["a face","am făcut"],["a fi","am fost"],["a avea","am avut"],["a răci","am răcit"],
+    ],note:"Geçmiş zaman (perfect compus) = a avea (am, ai, a, am, ați, au) + ortaç. a merge → mers: am mers (gittim). a răci → răcit: am răcit (üşüttüm)."},
+    {t:"ex_fill",title:"Alıştırma",instr:"Geçmiş zaman ortaçını yaz: am + ___",qs:[
+      ["a merge → eu am ___","mers"],["a mânca → eu am ___","mâncat"],["a face → eu am ___","făcut"],["a fi → eu am ___","fost"],
+    ]},
+  ]},
+  {title:"Corpul uman",ro:"Vücut (yüz & baş)",blocks:[
+    {t:"vocab",title:"Yüz & baş",items:[
+      ["păr","saç"],["frunte","alın"],["sprânceană / sprâncene","kaş(lar)"],["obraz","yanak"],["ureche","kulak"],
+      ["dinte / dinți","diş(ler)"],["buză / buze","dudak(lar)"],["bărbie","çene"],["gât","boyun / boğaz"],
+    ]},
+  ]},
+];
+
+/* ---------- A2 · UNIT 10 (Stări de spirit) ---------- */
+const A2_U10=[
+  {title:"Cum te simți?",ro:"Nasıl hissediyorsun?",blocks:[
+    {t:"vocab",title:"Duygular (genişletilmiş)",items:[
+      ["plictisit","sıkılmış"],["trist","üzgün"],["confuz","kafası karışık"],["dezamăgit","hayal kırıklığına uğramış"],
+      ["optimist / pesimist","iyimser / kötümser"],["îngrijorat","endişeli"],["emoționat","duygulanmış / heyecanlı"],["calm / relaxat","sakin / rahatlamış"],
+    ]},
+    {t:"vocab",title:"Sorular",items:[
+      ["Cum te simți azi?","Bugün nasıl hissediyorsun?"],["Ce te face fericit?","Seni ne mutlu eder?"],
+      ["De ce îți este frică?","Neyden korkuyorsun?"],["Ce te plictisește?","Seni ne sıkar?"],
+    ]},
+  ]},
+  {title:"Substantive",ro:"Duygu isimleri",blocks:[
+    {t:"table",title:"Sıfat → İsim",head:["Sıfat","İsim"],rows:[
+      ["fericit","fericire (mutluluk)"],["bucuros","bucurie (sevinç)"],["entuziasmat","entuziasm (coşku)"],
+      ["furios","furie (öfke)"],["trist","tristețe (üzüntü)"],["dezamăgit","dezamăgire (hayal kırıklığı)"],["relaxat","relaxare (rahatlama)"],
+    ],note:"Duygu sıfatlarından isim türetilir: fericit → fericire, trist → tristețe."},
+  ]},
+];
+
+/* ---------- B1 · UNIT 1 (Din nou la curs) ---------- */
+const B1_U1=[
+  {title:"Sunete & grupuri",ro:"Ses grupları",blocks:[
+    {t:"table",title:"Harf grupları (ses)",head:["Grup","Ses"],rows:[
+      ["ce / ci","çe / çi"],["ge / gi","ce / ci"],["che / chi","ke / ki"],["ghe / ghi","ge / gi"],
+    ],note:"İki harf bir ses verir (ce = ç); üç harf iki ses verir (chi = ki)."},
+  ]},
+  {title:"Punctuație",ro:"Noktalama & yazım",blocks:[
+    {t:"table",title:"Noktalama işaretleri",head:["İşaret","Romence"],rows:[
+      [".","punct (nokta)"],[",","virgulă (virgül)"],["?","semnul întrebării (soru)"],
+      ["!","semnul exclamării (ünlem)"],[":","două puncte"],[";","punct și virgulă"],
+    ]},
+    {t:"note_block",body:"Büyük harf: cümle başında ve özel adlarda (kişi, ülke, şehir, nehir, firma). Nokta / soru / ünlemden sonra büyük harfle başlanır."},
+  ]},
+  {title:"Despre mine",ro:"Kendini tanıtma",blocks:[
+    {t:"vocab",title:"Kendini tanıtma",items:[
+      ["nume / prenume","soyadı / ad"],["țară / oraș","ülke / şehir"],["vârstă","yaş"],
+      ["mâncarea preferată","en sevdiğim yemek"],["sportul preferat","en sevdiğim spor"],["hobby","hobi"],
+      ["culoarea preferată","en sevdiğim renk"],["Mă numesc…","Adım…"],["Sunt din… și locuiesc în…","…‑lıyım ve …‑de yaşıyorum."],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 2 (Învățăm în România) ---------- */
+const B1_U2=[
+  {title:"La curs",ro:"Süre & hedef",blocks:[
+    {t:"vocab",title:"Diyalog ifadeleri",items:[
+      ["De cât timp ești în România?","Ne zamandır Romanya’dasın?"],["Sunt aici de trei luni.","Üç aydır buradayım."],
+      ["Vreau să mă înscriu la facultate.","Üniversiteye kaydolmak istiyorum."],["Vreau să devin…","… olmak istiyorum."],
+      ["afacere","iş / ticaret"],["Vă urez bun venit!","Hoş geldiniz!"],["Mă bucur să te cunosc.","Tanıştığıma sevindim."],
+    ],note:"Süre için «de» kullanılır: Sunt aici de trei luni (üç aydır buradayım). De cât timp…? = Ne zamandır…?"},
+  ]},
+  {title:"Gen & articol",ro:"Cinsiyet & artikel tekrarı",blocks:[
+    {t:"table",title:"Belirsiz artikel (M / F / N)",head:["Cins","Tekil → Çoğul"],rows:[
+      ["M","un student → niște studenți"],["F","o studentă → niște studente"],["N","un telefon → niște telefoane"],
+    ],note:"Tekilde un (M / N), o (F); çoğulda hepsi için niște. Belirli artikel sona eklenir: studentul, studenta, telefonul."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru artikeli seç.",qs:[
+      ["___ student (eril, tekil)",["un","o"],0],
+      ["___ studentă (dişil, tekil)",["un","o"],1],
+      ["___ studenți (çoğul)",["niște","o"],0],
+      ["___ telefon (nötr, tekil)",["un","o"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 3 (La cumpărături) ---------- */
+const B1_U3=[
+  {title:"La piață",ro:"Pazarda",blocks:[
+    {t:"vocab",title:"Pazar & ürünler",items:[
+      ["aglomerat","kalabalık"],["proaspăt","taze"],["copt / coapte","olgun"],["carne","et"],["unt","tereyağı"],
+      ["făină","un"],["conopidă","karnabahar"],["vinete","patlıcan"],["ardei gras","dolmalık biber"],
+      ["2 kg de roșii","2 kilo domates"],["500 gr de ardei","500 gr biber"],
+    ],note:"Miktar + de + ürün: 2 kg de roșii, 500 gr de ardei. 20 ve üstü sayılarda da «de»: douăzeci de mere."},
+  ]},
+  {title:"Comprehensiune",ro:"Okuma & anlama",blocks:[
+    {t:"text",body:"📖 Citește textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"text",body:"Ema și Radu merg cu mama la piață. Sâmbătă dimineața la piață este aglomerat; legumele și fructele sunt proaspete și prețurile mai mici. Mama vrea să cumpere carne pentru friptură și ciorbă, unt pentru micul dejun, pâine, roșii, castraveți și ceapă pentru salată, fructe pentru gustări sănătoase, și făină și lapte pentru desert."},
+    {t:"text",body:"— Haideți, copii, să mergem!\n— Bună dimineața! Ce mai faceți, doamna Ionescu?\n— Bună dimineața, domnule Matache! Aveți roșii proaspete și coapte?\n— Da, sigur! Avem roșii din Turcia sau din România. Din care doriți?\n— Doresc 2 kg de roșii din România și mai puneți: 2 kg de castraveți, 1 kg de ceapă, o conopidă, 3 kg de vinete, doi cartofi și 500 gr de ardei gras."},
+    {t:"note_block",body:"Türkçe özet: Ema ve Radu anneleriyle pazara gider. Cumartesi sabahı pazar kalabalıktır; sebze-meyve tazedir, fiyatlar daha ucuzdur. Anne; kızartma ve çorba için et, kahvaltı için tereyağı, salata için domates-salatalık-soğan, tatlı için un ve süt almak ister. Bay Matache’nin Türkiye ve Romanya’dan domatesi vardır; anne 2 kg Romanya domatesi ve başka sebzeler (salatalık, soğan, karnabahar, patlıcan, dolmalık biber) ister."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Yukarıdaki metne göre doğru mu yanlış mı?",qs:[
+      ["Sâmbăta prețurile sunt mai mari.",false],
+      ["Mama folosește untul la friptură.",false],
+      ["Mama vrea să cumpere ceapă pentru salată.",true],
+      ["Domnul Matache are roșii din Turcia și România.",true],
+      ["Doamna Ionescu dorește 500 gr de roșii.",false],
+      ["Doamna Ionescu dorește 500 gr de ardei iute.",false],
+      ["Ema și Radu merg cu mama lor la cumpărături.",true],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 4 (Timpul) ---------- */
+const B1_U4=[
+  {title:"Sărbători din lume",ro:"Dünya bayramları",blocks:[
+    {t:"vocab",title:"Bayramlar",items:[
+      ["Ziua Recunoștinței","Şükran Günü"],["Diwali","Diwali (Işık Festivali)"],["Ramadan","Ramazan"],
+      ["Suhur / Iftar","Sahur / İftar"],["Crăciun","Noel"],["Nowruz","Nevruz"],
+      ["recoltă bogată","bol hasat"],["post","oruç"],["lumânare","mum"],["cadou","hediye"],
+    ]},
+  ]},
+  {title:"Tradiții românești",ro:"Romen gelenekleri",blocks:[
+    {t:"vocab",title:"Noel'de",items:[
+      ["Moș Crăciun","Noel Baba"],["brad de Crăciun","Noel ağacı"],["globuri colorate","renkli süs topları"],
+      ["sarmale","sarma"],["cozonac","cozonac (tatlı çörek)"],["Nașterea Domnului","İsa’nın doğuşu"],
+    ],note:"Romanya’da Noel’de geleneksel yemek sarmale (sarma), tatlı olarak cozonac yenir. Çam ağacı süsleme geleneği 1920’den sonra yayılmıştır."},
+  ]},
+];
+
+/* ---------- B1 · UNIT 5 (La cumpărături — stil) ---------- */
+const B1_U5=[
+  {title:"Stilul vestimentar",ro:"Giyim tarzı",blocks:[
+    {t:"vocab",title:"Giysi & malzeme",items:[
+      ["haine elegante","şık giysiler"],["cămașă din in / bumbac","keten / pamuk gömlek"],["încălțăminte comodă","rahat ayakkabı"],
+      ["bijuterii din argint","gümüş takılar"],["costum / cravată","takım elbise / kravat"],["tricou","tişört"],
+      ["pantaloni lejeri","bol / rahat pantolon"],["ceas","kol saati"],["pantofi de lac","rugan ayakkabı"],["echipament sportiv","spor kıyafeti"],
+    ]},
+    {t:"vocab",title:"Tarzlar",items:[
+      ["stil elegant","şık tarz"],["stil sport","spor tarz"],["stil office","ofis tarzı"],
+      ["stil clasic","klasik tarz"],["ținută obligatorie","zorunlu kıyafet"],
+    ]},
+  ]},
+  {title:"Comprehensiune",ro:"Okuma & anlama",blocks:[
+    {t:"text",body:"📖 Citește textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 240 140" width="220" xmlns="http://www.w3.org/2000/svg"><rect width="240" height="140" fill="#FBF6EC"/><path d="M50 34 L34 46 L42 62 L50 57 L50 104 L94 104 L94 57 L102 62 L110 46 L94 34 L84 34 a11 7 0 0 1 -24 0 Z" fill="#2C3E63" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M150 34 L134 46 L142 62 L150 57 L150 104 L194 104 L194 57 L202 62 L210 46 L194 34 L184 34 a11 7 0 0 1 -24 0 Z" fill="#B5232A" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M172 38 l-6 16 6 22 6 -22 z" fill="#C8902F" stroke="#2A2622" stroke-width="1.2"/></svg>`},
+    {t:"read",body:"Familia Matei merge duminica la cumpărături, la Mall Vitan. Fiecare caută lucruri care să îl reprezinte.<br><b>Mama</b> preferă hainele elegante, cămășile albe din in sau bumbac, dar alege mereu încălțăminte comodă. Îi place să poarte bijuterii fine, din argint.<br><b>Tata</b> se îmbracă de obicei în costum și poartă cravată — la birou este ținută obligatorie. În timpul liber preferă haine comode, tricouri și pantaloni lejeri. Poartă mereu ceas, ca să fie punctual.<br><b>Ioana</b> alege cămăși colorate și pantaloni; uneori rochie și pantofi de lac sau sandale. Îi plac hainele largi, pentru că aleargă și se joacă mult.<br><b>Andrei</b> este adeptul stilului sport: face fotbal și înot și are mereu echipament sportiv în rucsac."},
+    {t:"note_block",body:"Türkçe özet: Matei ailesinin her üyesinin kendine göre bir tarzı var. Anne şık giysiler ve beyaz keten/pamuk gömlekleri sever ama hep rahat ayakkabı seçer; gümüş takı takar. Baba genelde takım elbise + kravat giyer (ofiste zorunlu); boş zamanda rahat tişört-pantolon ve dakiklik için kol saati. Ioana renkli, bol giysiler; bazen elbise. Andrei spor tarzı: futbol, yüzme, çantasında hep spor kıyafeti."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Ioana și Andrei caută lucruri elegante.",false],
+      ["Mama preferă hainele elegante.",true],
+      ["Mama alege încălțăminte sport.",false],
+      ["Tata poartă la birou costum și cravată.",true],
+      ["Tata poartă cravată în timpul liber.",false],
+      ["Ioana preferă stilul clasic.",false],
+      ["Andrei face înot.",true],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 6 (Casa mea) ---------- */
+const B1_U6=[
+  {title:"Casa visurilor mele",ro:"Hayalimdeki ev",blocks:[
+    {t:"vocab",title:"Mekânlar & tarif",items:[
+      ["casa visurilor mele","hayalimdeki ev"],["garsonieră","stüdyo daire"],["sufragerie","oturma / yemek odası"],
+      ["dormitor","yatak odası"],["grădină","bahçe"],["garaj","garaj"],["la munte / la mare","dağda / deniz kenarında"],
+      ["din lemn","ahşaptan"],["conexiune la internet","internet bağlantısı"],["în mijlocul naturii","doğanın ortasında"],
+    ]},
+  ]},
+  {title:"Trebuie să / să",ro:"Gereklilik & dilek",blocks:[
+    {t:"table",title:"Conjunctiv (să — el / ea)",head:["Mastar","să"],rows:[
+      ["a avea","să aibă"],["a fi","să fie"],["a putea","să poată"],["a face","să facă"],["a sta","să stea"],
+    ],note:"Gereklilik: trebuie să + fiil = …meli/malı. Casa trebuie să aibă grădină (evin bahçesi olmalı). Amaç/sıfat cümlesinde de «să»: o casă unde să pot lucra (çalışabileceğim bir ev)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru “să” biçimini seç.",qs:[
+      ["Casa trebuie să ___ grădină. (a avea)",["are","aibă"],1],
+      ["Casa trebuie să ___ mare. (a fi)",["este","fie"],1],
+      ["El vrea o cameră unde să ___ liniște. (a fi)",["este","fie"],1],
+      ["Trebuie să ___ ceva. (a face)",["face","facă"],1],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 7 (Familia mea) ---------- */
+const B1_U7=[
+  {title:"Familia la români",ro:"Toplumda aile",blocks:[
+    {t:"vocab",title:"Toplum & aile",items:[
+      ["rol important","önemli rol"],["relații puternice","güçlü ilişkiler"],["responsabilități","sorumluluklar"],
+      ["activități gospodărești","ev işleri"],["a împărți","paylaşmak"],["majorat (18 ani)","reşit olma (18 yaş)"],
+      ["familia extinsă","geniş aile"],["rude de sânge","kan bağı akrabalar"],["rude prin alianță","evlilik yoluyla akrabalar"],["a avea grijă de","ilgilenmek / bakmak"],
+    ]},
+  ]},
+  {title:"Diateza pasivă",ro:"Edilgen çatı",blocks:[
+    {t:"table",title:"Etken → Edilgen",head:["Etken","Edilgen"],rows:[
+      ["vizitează","este vizitat (ziyaret edilir)"],["ajută","este ajutat (yardım edilir)"],
+      ["iubește","este iubit (sevilir)"],["respectă","este respectat (saygı görür)"],
+    ],note:"Edilgen çatı: a fi + ortaç (özneyle uyumlu). Părinții sunt vizitați. Copiii sunt ajutați. Ortaç cinsiyet/sayıya uyar: vizitat / vizitată / vizitați / vizitate."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru edilgen ortacı seç.",qs:[
+      ["Părinții sunt ___ la sărbători.",["vizitați","vizitează"],0],
+      ["Copiii sunt ___ de părinți.",["ajutați","ajută"],0],
+      ["Casa este ___ în fiecare zi.",["curățată","curăță"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 8 (La restaurant — mâncare românească) ---------- */
+const B1_U8=[
+  {title:"Aperitiv românesc",ro:"Romen mezeleri",blocks:[
+    {t:"vocab",title:"Mezeler",items:[
+      ["salată de vinete","közlenmiş patlıcan salatası"],["zacuscă","zakuska (sebze ezmesi)"],["pate de gâscă","kaz ciğeri ezmesi"],
+      ["telemea de oaie","koyun beyaz peyniri"],["cașcaval afumat","füme kaşar"],["salam de Sibiu","Sibiu salamı"],
+      ["măsline","zeytin"],["aperitiv","meze / başlangıç"],
+    ]},
+  ]},
+  {title:"Feluri de mâncare",ro:"Ana yemekler",blocks:[
+    {t:"vocab",title:"Çorba & ana yemek",items:[
+      ["ciorbă de perișoare","köfteli ekşi çorba"],["ciorbă de legume / fasole","sebzeli / fasulyeli çorba"],["borș","çorbayı ekşiten maya"],
+      ["perișoare","küçük köfteler"],["friptură la grătar","ızgara kızartma"],["cârnați","sucuk / sosis"],
+      ["cașcaval pane","pane kaşar"],["murături","turşu"],["frigărui","şiş kebap"],["cartofi prăjiți","patates kızartması"],
+    ],note:"Romanya çorbaları (ciorbă) borș ile ekşitilir; bu yüzden acrișor (hafif ekşi) olur."},
+  ]},
+  {title:"Gust",ro:"Tat & yorum",blocks:[
+    {t:"vocab",title:"Tatlar",items:[
+      ["gustos","lezzetli"],["delicios","nefis"],["acru / acrișor","ekşi / hafif ekşi"],["dulce","tatlı"],
+      ["sărat","tuzlu"],["picant","acılı / baharatlı"],["Ce foame îmi este!","Çok acıktım!"],["Poftă bună!","Afiyet olsun!"],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 9 (La medic) ---------- */
+const B1_U9=[
+  {title:"Simptome & diagnostic",ro:"Belirti & teşhis",blocks:[
+    {t:"table",title:"Belirti → Olası teşhis",head:["Simptom","Diagnostic"],rows:[
+      ["tușesc, strănut","răceală / gripă"],["mă doare / mă dor","durere"],["frisoane / febră","infecție"],
+      ["stare de vomă","gastrită"],["stare de oboseală","lipsă de vitamine"],
+    ]},
+    {t:"vocab",title:"Belirti & uzman",items:[
+      ["a tuși / a strănuta","öksürmek / hapşırmak"],["frisoane","titreme"],["febră","ateş"],
+      ["stomatolog","diş hekimi"],["farmacist","eczacı"],["fractură","kırık"],["infecție","enfeksiyon"],
+    ]},
+  ]},
+  {title:"Ce faci dacă…?",ro:"Eğer… ne yaparsın?",blocks:[
+    {t:"vocab",title:"Tavsiyeler",items:[
+      ["Te dor dinții? → la stomatolog","Dişin ağrıyorsa → diş hekimine"],["Te doare capul? → iei o pastilă","Başın ağrıyorsa → hap alırsın"],
+      ["Ești răcit? → bei ceai cald","Üşüttünse → sıcak çay içersin"],["Te doare stomacul? → la medic","Miden ağrıyorsa → doktora"],
+      ["Ai febră? → stai în pat","Ateşin varsa → yatakta kalırsın"],
+    ]},
+  ]},
+];
+
+/* ---------- B1 · UNIT 10 (Stări de spirit) ---------- */
+const B1_U10=[
+  {title:"Azi mă simt…",ro:"Bugün hissediyorum",blocks:[
+    {t:"vocab",title:"Durum & bağlam",items:[
+      ["confuz / confuză","kafası karışık"],["fericit / fericită","mutlu"],["obosit / obosită","yorgun"],["emoționat","heyecanlı"],
+      ["Cum te simți când…?","… olduğunda nasıl hissediyorsun?"],["Când mă trezesc…","Uyandığımda…"],["Când ascult muzică…","Müzik dinlediğimde…"],
+    ],note:"Bağlam için când (…‑dığında): Când mănânc ceva bun, sunt fericit (güzel bir şey yiyince mutlu olurum)."},
+  ]},
+  {title:"Piramida nevoilor",ro:"Maslow — İhtiyaçlar piramidi",blocks:[
+    {t:"vocab",title:"İhtiyaç düzeyleri",items:[
+      ["nevoi fiziologice","fizyolojik ihtiyaçlar"],["apă, mâncare, aer, odihnă","su, yemek, hava, dinlenme"],
+      ["nevoi de siguranță","güvenlik ihtiyaçları"],["nevoi sociale","sosyal ihtiyaçlar"],
+      ["stimă / respect","saygınlık / saygı"],["autorealizare","kendini gerçekleştirme"],
+    ],note:"Maslow piramidi: önce fizyolojik ihtiyaçlar (apă, mâncare, aer, odihnă) karşılanmalı; ancak o zaman insan üst ihtiyaçlara (güvenlik, sosyal, saygı, kendini gerçekleştirme) yönelir."},
+  ]},
+];
+
+/* ---------- B2 · UNIT 1 (România) ---------- */
+const B2_U1=[
+  {title:"România, o țară minunată",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 180 120" width="170" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="120" x="0" fill="#002B7F"/><rect width="60" height="120" x="60" fill="#FCD116"/><rect width="60" height="120" x="120" fill="#CE1126"/><rect width="180" height="120" fill="none" stroke="#2A2622" stroke-width="2"/></svg>`},
+    {t:"read",body:"România este una dintre țările Uniunii Europene din anul 2007. Poartă acest nume din 1862, după unirea a două principate: <b>Muntenia</b> și <b>Moldova</b>. Capitala este <b>București</b>.<br><b>Localizare:</b> în sud-estul Europei Centrale, pe paralela 45, cu ieșire la Marea Neagră.<br><b>Vecinii:</b> Bulgaria, Serbia, Ungaria, Ucraina și Republica Moldova.<br><b>Relief:</b> variat și așezat în trepte — munți (Munții Carpați, cu Vârful Moldoveanu, 2.543 m), dealuri și câmpii. Râurile se varsă în Dunăre.<br><b>Climă:</b> temperat-continentală, cu patru anotimpuri. <b>Populația:</b> aproximativ 19 milioane. Limba oficială este româna. Țara are 41 de județe și capitala București."},
+    {t:"note_block",body:"Türkçe özet: Romanya 2007’den beri AB üyesi. Adını 1862’de iki prensliğin (Muntenia ve Moldova) birleşmesinden alır; başkenti Bükreş. Güneydoğu Avrupa’da, 45. paralelde, Karadeniz’e kıyısı var. Komşuları: Bulgaristan, Sırbistan, Macaristan, Ukrayna, Moldova. Arazisi engebeli: Karpat Dağları (en yüksek nokta Moldoveanu, 2.543 m), tepeler, ovalar; nehirler Tuna’ya dökülür. İklim ılıman-karasal, dört mevsim. Nüfus ~19 milyon, resmî dil Romence. 41 ilçe (județ) ve başkent Bükreş."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["România face parte din UE din 2007.",true],
+      ["Capitala României este Constanța.",false],
+      ["Vârful Moldoveanu are 2.543 de metri.",true],
+      ["România se învecinează cu Italia.",false],
+      ["Limba oficială a țării este româna.",true],
+      ["România are 41 de județe.",true],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Coğrafya kelimeleri",blocks:[
+    {t:"vocab",title:"Coğrafya",items:[
+      ["mărime","boyut"],["înălțime","yükseklik"],["relief","yer şekli / arazi"],["suprafață","yüzölçümü"],
+      ["principat","prenslik"],["capitală","başkent"],["peninsulă","yarımada"],["graniță","sınır"],
+      ["fluviu","büyük nehir"],["râu","nehir / çay"],["lac","göl"],["livadă","meyve bahçesi"],
+      ["vegetație","bitki örtüsü"],["recensământ","nüfus sayımı"],["populație","nüfus"],["județ","il / ilçe (idari)"],
+    ]},
+    {t:"vocab",title:"Yer şekilleri & fiiller",items:[
+      ["munte / deal","dağ / tepe"],["câmpie / podiș","ova / yayla"],["vale","vadi"],
+      ["a se învecina","komşu olmak"],["a se situa","konumlanmak"],["a străbate","boydan boya geçmek"],
+      ["a se vărsa","(nehir) dökülmek"],["a încânta","büyülemek / mest etmek"],
+    ]},
+  ]},
+  {title:"Articolul genitival",ro:"Genitival artikel (al/a/ai/ale)",blocks:[
+    {t:"table",title:"al / a / ai / ale",head:["Sahip olunan isim","Biçim"],rows:[
+      ["eril tekil","al"],["dişil tekil","a"],["eril çoğul","ai"],["dişil / nötr çoğul","ale"],
+    ],note:"Artikel, SAHİP OLUNAN isimle uyuşur (sahip olanla değil) ve iyelik bağını kurar/tekrar eder: Mașina mea e roșie, a Mariei e albă (a → mașină dişil tekil)."},
+    {t:"vocab",title:"Örnekler",items:[
+      ["a mea / al meu","benimki (k / e nesne)"],["ai mei / ale mele","benimkiler (e / k)"],
+      ["Câinele acesta e al lui George.","Bu köpek George’un."],["Rochia a Mariei e în dulap.","Maria’nın elbisesi dolapta."],
+    ]},
+    {t:"ex_choice",title:"Alıştırma",instr:"Sahip olunan isme göre doğru biçimi seç.",qs:[
+      ["Mașina mea e roșie, ___ Mariei e albă.",["al","a"],1],
+      ["Copiii Georgetei sunt elevi, ___ mei sunt studenți.",["ai","ale"],0],
+      ["Florile voastre au crescut, ___ noastre s-au uscat.",["ai","ale"],1],
+      ["Apartamentul tău e mic, ___ meu e mare.",["al","a"],0],
+    ]},
+  ]},
+  {title:"Comparația adjectivului",ro:"Sıfat karşılaştırması",blocks:[
+    {t:"table",title:"Derecelendirme",head:["Tür","Yapı"],rows:[
+      ["Üstünlük","mai … decât"],["Eksiklik","mai puțin … decât"],["Eşitlik","la fel de … ca"],
+      ["En üstünlük (e)","cel mai …"],["En üstünlük (k)","cea mai …"],
+    ],note:"mai înalt decât (…‑den daha yüksek), la fel de frumos ca (… kadar güzel), cel mai mare oraș (en büyük şehir)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["Vârful Moldoveanu este ___ înalt munte din România.",["cel mai","mai"],0],
+      ["București este ___ mare decât Constanța.",["mai","cel mai"],0],
+      ["Această clădire e ___ înaltă ca aceea.",["la fel de","cel mai"],0],
+      ["Cluj este unul dintre ___ mari orașe.",["cele mai","cel mai"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B2 · UNIT 2 (Constanța) ---------- */
+const B2_U2=[
+  {title:"Constanța — trecut și prezent",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 120 140" width="110" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="140" fill="#FBF6EC"/><g fill="none" stroke="#2C3E63" stroke-width="6" stroke-linecap="round"><circle cx="60" cy="24" r="10"/><line x1="60" y1="34" x2="60" y2="118"/><line x1="38" y1="52" x2="82" y2="52"/><path d="M24 92 a36 36 0 0 0 72 0"/><line x1="24" y1="92" x2="15" y2="80"/><line x1="96" y1="92" x2="105" y2="80"/></g></svg>`},
+    {t:"read",body:"Constanța este unul dintre cele mai vechi orașe ale României, pe malul <b>Mării Negre</b>, în sud-est. În anul 657 î.e.n. grecii au întemeiat aici colonia <b>Tomis</b>. Romanii au cucerit-o și au numit-o <b>Constantiana</b>, după sora împăratului roman Constantin cel Mare. Mai târziu, negustorii genovezi, apoi otomanii au stăpânit zona. După construirea căii ferate și a portului, în <b>1865</b>, Constanța a redevenit oraș și s-a dezvoltat continuu.<br>Astăzi este un oraș cosmopolit. Turiștii pot vizita muzee, situri arheologice, Cazinoul, Acvariul și Farul genovez. <b>Piața Ovidiu</b>, cu statuia poetului latin Ovidiu, este sufletul orașului. La nord se află stațiunea <b>Mamaia</b>, între mare și lacul Siutghiol, cu plajă, parcul Aqua Magic și Telegondola."},
+    {t:"note_block",body:"Türkçe özet: Constanța, Karadeniz kıyısında, Romanya’nın en eski şehirlerinden. MÖ 657’de Yunanlar burada Tomis kolonisini kurdu. Romalılar fethedip İmparator Büyük Constantin’in kız kardeşinden esinle Constantiana adını verdi. Sonra Cenovalı tüccarlar, ardından Osmanlılar bölgeye hâkim oldu. 1865’te demiryolu ve liman yapılınca şehir yeniden gelişti. Bugün kozmopolit bir şehir: müzeler, Kumarhane (Cazinou), Akvaryum, Cenova Feneri; Ovidiu Meydanı’nda Latin şair Ovidius’un heykeli var. Kuzeyde Mamaia tatil beldesi (plaj, Aqua Magic, Telegondola)."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Constanța se află pe malul Mării Negre.",true],
+      ["Primul nume al orașului a fost Tomis.",true],
+      ["Constantiana vine de la numele unui împărat grec.",false],
+      ["Portul și calea ferată au fost construite în 1865.",true],
+      ["Statuia din Piața Ovidiu îl reprezintă pe un poet latin.",true],
+      ["Stațiunea Mamaia se află în sudul orașului.",false],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Kelimeler",blocks:[
+    {t:"vocab",title:"Şehir & tarih",items:[
+      ["malul mării","deniz kıyısı"],["colonie","koloni"],["a cuceri","fethetmek"],["negustor","tüccar"],
+      ["a stăpâni","hâkim olmak / yönetmek"],["cale ferată","demiryolu"],["port","liman"],["dezvoltare","gelişme"],
+      ["cosmopolit","kozmopolit"],["sit arheologic","arkeolojik alan"],["far","deniz feneri"],["faleză","sahil gezinti yolu"],
+      ["stațiune","tatil beldesi"],["scoică","deniz kabuğu"],["priveliște","manzara"],["pescar / împărat","balıkçı / imparator"],
+    ]},
+  ]},
+  {title:"Formarea cuvintelor",ro:"Kelime türetme (ön/son ek)",blocks:[
+    {t:"table",title:"Ön ekler (prefixe)",head:["Ön ek","Örnek"],rows:[
+      ["ne- (olumsuzluk)","fericire → nefericire"],["re- (tekrar)","a porni → a reporni"],
+      ["des- / dez- (karşıtlık)","a face → a desface"],["in- / im- (olumsuzluk)","moral → imoral"],
+    ]},
+    {t:"table",title:"Son ekler (sufixe)",head:["Son ek","Örnek"],rows:[
+      ["-ime","mare → mărime (büyüklük)"],["-tor","a munci → muncitor (işçi)"],["-iu","aur → auriu (altın rengi)"],
+      ["-ist","fotbal → fotbalist"],["-esc","român → românesc (Romen’e ait)"],
+    ]},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru türetilmiş biçimi seç.",qs:[
+      ["‘a face’ karşıtı:",["a desface","a reface"],0],
+      ["‘a porni’ tekrarı:",["a reporni","a deporni"],0],
+      ["‘fericire’ olumsuzu:",["nefericire","refericire"],0],
+      ["‘a munci’den ‘işçi’:",["muncitor","muncime"],0],
+    ]},
+  ]},
+  {title:"Structuri lexicale",ro:"Bağlaç yapıları",blocks:[
+    {t:"vocab",title:"Bağlaçlar",items:[
+      ["atât … cât și","hem … hem de"],["nu numai …, ci și","sadece … değil, … de"],
+      ["cu cât …, cu atât","… dıkça, o kadar …"],["pe de o parte …, pe de altă parte","bir yandan …, öbür yandan"],
+      ["cu toate că / deși … totuși","… olmasına rağmen yine de"],["atât de … încât","o kadar … ki"],
+    ],note:"Falezele sunt îndrăgite atât de constănțeni, cât și de turiști. · Este atât de frumoasă atmosfera, încât vei dori să te întorci."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Anlamına uygun yapıyı seç.",qs:[
+      ["Mamaia atrage ___ tineri, ___ vârstnici. (hem…hem)",["atât … cât și","nu numai"],0],
+      ["E ___ de cald ___ stăm la plajă. (o kadar…ki)",["atât … încât","cu cât"],0],
+      ["___ plouă mai mult, ___ e mai frig. (…dıkça)",["cu cât … cu atât","deși"],0],
+      ["Vine ___ pentru plajă, ___ și pentru cluburi.",["nu numai … ci și","pe de o parte"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B2 · UNIT 3 (Delta Dunării) ---------- */
+const B2_U3=[
+  {title:"Delta Dunării — oameni și locuri",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 200 120" width="200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF6EC"/><rect y="86" width="200" height="34" fill="#2C3E63" opacity="0.22"/><g fill="none" stroke="#2A2622" stroke-width="3" stroke-linecap="round"><path d="M36 50 q12 -14 24 0 q12 -14 24 0"/><path d="M104 36 q10 -12 20 0 q10 -12 20 0"/><path d="M146 60 q8 -10 16 0 q8 -10 16 0"/></g></svg>`},
+    {t:"read",body:"Când vizitezi România, trebuie neapărat să faci un popas în <b>Delta Dunării</b>, un loc unic în Europa prin biodiversitatea sa: păduri și insule plutitoare, un adevărat paradis al păsărilor. Aici trăiesc peste 90 de specii de pești și peste 300 de specii de păsări. În martie, păsările călătoare se întorc din țările calde, își fac cuiburi, iar toamna pleacă spre Africa și Asia.<br>Pe cele 580 de mii de hectare poți întâlni pelicani, egrete, cocostârci și cormorani; de pe maluri te privesc nutriile și vidrele. Dacă ți se face foame, poposești într-un sat de pescari pentru borș pescăresc, saramură de pește cu mămăligă sau icre de știucă. Nu poți pleca fără să vezi pădurea <b>Letea</b> cu cai sălbatici, orașul <b>Sulina</b> cu cimitirul multietnic și <b>Mila 23</b>, satul campionului olimpic Ivan Patzaikin."},
+    {t:"note_block",body:"Türkçe özet: Romanya’ya gelince mutlaka Tuna Deltası’na uğramalısın — biyoçeşitliliğiyle Avrupa’da eşsiz; yüzen adalar, kuş cenneti. 90’dan fazla balık, 300’den fazla kuş türü yaşar. Mart’ta göçmen kuşlar sıcak ülkelerden döner, yuva yapar; sonbaharda Afrika ve Asya’ya gider. 580 bin hektarda pelikan, balıkçıl, karabatak görülür; kıyıdan su samurları bakar. Acıkınca balıkçı köyünde balık çorbası, mămăligă ile balık, turna havyarı yenir. Letea ormanı (yabani atlar), Sulina (çok dinli mezarlık) ve olimpiyat şampiyonu Ivan Patzaikin’in köyü Mila 23 görülmeli."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Delta Dunării este un loc unic în Europa.",true],
+      ["Aici se găsesc multe animale și păsări sălbatice.",true],
+      ["Păsările călătoare se întorc în deltă în fiecare vară.",false],
+      ["În Delta Dunării nu te poți odihni.",false],
+      ["În deltă turiștii pot mânca preparate tradiționale.",true],
+      ["În Sulina nu există cimitire.",false],
+      ["În deltă mai putem găsi cai sălbatici.",true],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Doğa kelimeleri",blocks:[
+    {t:"vocab",title:"Hayvanlar & kuşlar",items:[
+      ["lup / urs / vulpe","kurt / ayı / tilki"],["iepure / cerb","tavşan / geyik"],["nutrie / vidră","su samuru türleri"],
+      ["pelican / egretă","pelikan / ak balıkçıl"],["barză / cocostârc","leylek / turna"],["cormoran / lebădă","karabatak / kuğu"],
+      ["rândunică","kırlangıç"],["pasăre călătoare","göçmen kuş"],["cuib","yuva"],
+    ]},
+    {t:"vocab",title:"Bitkiler & balıklar",items:[
+      ["trestie / stuf","saz / kamış"],["papură","hasırotu"],["nufăr","nilüfer"],["crap","sazan"],
+      ["scrumbie","uskumru"],["știucă","turna balığı"],["somn","yayın balığı"],["icre","havyar"],
+    ]},
+  ]},
+  {title:"Structuri cu Dativ",ro:"Datif yapıları (mi-e foame)",blocks:[
+    {t:"table",title:"mi-e … (durum/ihtiyaç)",head:["Romence","Türkçe"],rows:[
+      ["mi-e foame / sete","acıktım / susadım"],["mi-e somn","uykum var"],["mi-e frig / cald","üşüyorum / sıcakladım"],
+      ["mi-e frică / dor","korkuyorum / özledim"],["îmi place","hoşuma gidiyor"],["îmi trebuie","lazım"],["îmi stă bine","bana yakışıyor"],
+    ]},
+    {t:"table",title:"Şahıslar",head:["Kişi","Biçim"],rows:[
+      ["(mie)","mi-e"],["(ție)","ți-e"],["(lui / ei)","i-e"],["(nouă)","ne e"],["(vouă)","vă e"],["(lor)","le e"],
+    ],note:"Kişi DATİF zamirle gösterilir. Geçmiş: mi-a fost foame; gelecek: o să-mi fie foame."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Kişiye göre doğru biçimi seç.",qs:[
+      ["___ foame. (ben)",["mi-e","ți-e"],0],
+      ["___ frică. (o)",["i-e","ne e"],0],
+      ["___ sete? (sen)",["ți-e","le e"],0],
+      ["___ somn. (biz)",["ne e","vă e"],0],
+    ]},
+  ]},
+  {title:"Pronumele care / cine",ro:"İlgi zamiri",blocks:[
+    {t:"table",title:"care çekimi",head:["Durum","Biçim"],rows:[
+      ["N / Ac (e-k, tekil-çoğul)","care"],["G / D eril tekil","căruia"],["G / D dişil tekil","căreia"],["G / D çoğul","cărora"],
+    ],note:"care = ki / o (ilgi zamiri); cine = kim (kişi için soru/ilgi). Omul care vine… (gelen adam); Băiatul căruia i-am dat cartea… (kitabı verdiğim çocuk)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["Omul ___ vine este profesorul meu.",["care","cine"],0],
+      ["___ a spus asta? (kim)",["Cine","Care"],0],
+      ["Fata ___ i-am dat florile. (k · datif)",["căreia","căruia"],0],
+      ["Băiatul ___ i-am scris. (e · datif)",["căruia","căreia"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B2 · UNIT 4 (Legende românești) ---------- */
+const B2_U4=[
+  {title:"Povestea frumoasei Dochia",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 200 120" width="200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" fill="#FBF6EC"/><path d="M8 112 L66 42 L98 78 L138 30 L192 112 Z" fill="#5B8A4E" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M138 30 L126 50 L150 50 Z" fill="#FBF6EC" stroke="#2A2622" stroke-width="1"/></svg>`},
+    {t:"read",body:"Legenda spune că <b>Decebal</b>, regele dacilor, avea o soră, <b>Dochia</b> — tânără, vitează și frumoasă. Împăratul roman <b>Traian</b> s-a îndrăgostit de ea și a vrut s-o ducă la Roma, în palatul lui. Dochia a refuzat: «Sunt sora lui Decebal; oricât de frumos ar fi palatul tău, eu acolo tot o sclavă voi fi.» Ea a luat o turmă de oi, s-a făcut păstoriță și a urcat în munți. Supărat, Traian a căutat-o și a găsit-o pe muntele <b>Ceahlău</b>. Când a vrut s-o ia cu forța, Dochia a ridicat mâinile spre cer: «Stană de piatră mă fac și rămân aici, în țara mea!» — și s-a prefăcut în piatră."},
+    {t:"note_block",body:"Türkçe özet: Efsaneye göre Daklar’ın kralı Decebal’ın Dochia adında genç, yiğit ve güzel bir kız kardeşi vardı. Romalı İmparator Traian ona âşık olur, Roma’daki sarayına götürmek ister. Dochia reddeder: «Decebal’ın kız kardeşiyim; sarayın ne kadar güzel olsa da orada köle olurum.» Bir koyun sürüsü alıp çoban olur, dağlara çıkar. Kızan Traian onu Ceahlău dağında bulur. Zorla götürmek isteyince Dochia ellerini göğe kaldırır: «Taş kesilip ülkemde kalayım!» der ve taşa dönüşür."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Dochia era sora regelui Decebal.",true],
+      ["Împăratul Traian s-a îndrăgostit de Dochia.",true],
+      ["Dochia a acceptat să meargă la Roma.",false],
+      ["Dochia s-a făcut păstoriță și a urcat în munți.",true],
+      ["Traian a găsit-o pe Dochia pe muntele Ceahlău.",true],
+      ["La final, Dochia s-a prefăcut în piatră.",true],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Efsane & tarih",blocks:[
+    {t:"vocab",title:"Kelimeler",items:[
+      ["legendă","efsane"],["împărat / rege / regină","imparator / kral / kraliçe"],["prinț / prințesă","prens / prenses"],
+      ["sclav / sclavă","köle (e / k)"],["păstor / păstoriță","çoban (e / k)"],["soldat / ostaș","asker"],
+      ["prizonier","esir / tutsak"],["război / pace","savaş / barış"],["armată","ordu"],
+      ["cetate / castel / palat","kale / şato / saray"],["a lupta","savaşmak"],["a se îndrăgosti","âşık olmak"],
+      ["stană de piatră","taş heykel (taş kesilmiş)"],["vitejie","yiğitlik"],["înțelept","bilge"],
+    ]},
+  ]},
+  {title:"Imperfectul",ro:"Geçmiş süreklilik zamanı",blocks:[
+    {t:"table",title:"Imperfect — a cânta / a fi",head:["Kişi","a cânta","a fi"],rows:[
+      ["eu","cântam","eram"],["tu","cântai","erai"],["el / ea","cânta","era"],
+      ["noi","cântam","eram"],["voi","cântați","erați"],["ei / ele","cântau","erau"],
+    ],note:"Imperfect = geçmişte süregelen ya da alışkanlık olan eylem (Türkçe ‘-ıyordu / -ardı’). Când eram copil, alergam prin parc (Çocukken parkta koşardım)."},
+    {t:"ex_fill",title:"Alıştırma",instr:"Parantezdeki fiili imperfectte yaz.",qs:[
+      ["Când ___ copil, mă jucam mult. (a fi, eu)","eram"],
+      ["George nu ___ niciodată la cursuri. (a întârzia)","întârzia"],
+      ["Ori de câte ori ___, asculta muzică. (a lucra, el)","lucra"],
+      ["Bunicul ne ___ povești. (a spune)","spunea"],
+    ]},
+  ]},
+];
+
+/* ---------- B2 · UNIT 5 (Planuri de vacanță) ---------- */
+const B2_U5=[
+  {title:"La camping",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 200 130" width="190" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="130" fill="#FBF6EC"/><path d="M30 110 L100 32 L170 110 Z" fill="#5B8A4E" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M100 32 L100 110" stroke="#2A2622" stroke-width="2"/><path d="M86 110 L100 66 L114 110 Z" fill="#FBF6EC" stroke="#2A2622" stroke-width="1.5"/></svg>`},
+    {t:"read",body:"Marius este prietenul meu cel mai bun, pasionat de călătorii. Ieri mi-a arătat o fotografie cu cetatea <b>Sarmizegetusa</b>, unde voia să ajungă. Am știut imediat că merg cu el.<br>În weekend, ne-am urcat în trenul de Hunedoara și am călătorit toată noaptea. Pe peron mirosea a covrigi calzi și a cafea; Marius mi-a luat un espresso. Din Costești am făcut <b>autostopul</b> — domnul Costel, cu o Dacia Duster nouă, ne-a dat o hartă a locului. Spre prânz am ajuns la campingul <b>Sargeția</b>, pe malul râului Orăștie, și am campat două nopți printre corturi și rulote. Seara, după ce ne-am întors de la cetate, am făcut un <b>foc de tabără</b>, am cântat și am dansat."},
+    {t:"note_block",body:"Türkçe özet: Anlatıcının en iyi arkadaşı Marius gezi tutkunu. Sarmizegetusa kalesinin fotoğrafını gösterince anlatıcı da gitmeye karar verir. Hafta sonu Hunedoara trenine binip gece boyu yol alırlar; peronda sıcak simit ve kahve kokar. Costești’ten otostop çekerler — Bay Costel onlara bir harita verir. Öğleye doğru Orăștie nehri kıyısındaki Sargeția kampına varıp çadırlar ve karavanlar arasında iki gece kamp yaparlar. Akşam kaleden dönünce kamp ateşi yakar, şarkı söyleyip dans ederler."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Marius este pasionat de călătorii.",true],
+      ["Ei au mers la Sarmizegetusa.",true],
+      ["Au călătorit cu avionul până la Hunedoara.",false],
+      ["Din Costești au făcut autostopul.",true],
+      ["Au campat pentru două nopți.",true],
+      ["Seara au făcut un foc de tabără.",true],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Tatil & ulaşım",blocks:[
+    {t:"vocab",title:"Konaklama & doğa",items:[
+      ["hotel / motel","otel / motel"],["pensiune","pansiyon"],["cabană","dağ evi"],["camping","kamp alanı"],
+      ["cort / rulotă","çadır / karavan"],["foc de tabără","kamp ateşi"],["rucsac","sırt çantası"],["drumeție / excursie","yürüyüş / gezi"],
+      ["cascadă / peșteră","şelale / mağara"],["pădure / deșert","orman / çöl"],["insulă / poiană","ada / orman açıklığı"],
+    ]},
+    {t:"vocab",title:"Ulaşım",items:[
+      ["avion / elicopter","uçak / helikopter"],["balon cu aer cald","sıcak hava balonu"],["parapantă","yamaç paraşütü"],
+      ["telecabină / telescaun","teleferik / telesiyej"],["tren / autobuz","tren / otobüs"],["a face autostopul","otostop çekmek"],
+    ]},
+  ]},
+  {title:"Dativ + Acuzativ",ro:"Birleşik zamirler",blocks:[
+    {t:"table",title:"mi + akuzatif",head:["Akuzatif","Birleşim"],rows:[
+      ["îl (onu · e)","mi-l"],["o (onu · k)","mi-o"],["îi (onları · e)","mi-i"],["le (onları · k)","mi le"],
+    ],note:"Önce datif, sonra akuzatif zamir gelir: mi-l dă (onu[e] bana verir), mi-o dă (onu[k]). Geçmişte akuzatif ortaçtan sonra: i-am dat-o (onu ona verdim)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru birleşik biçimi seç.",qs:[
+      ["Cartea? Mi-___ dă. (onu · k)",["o","l"],0],
+      ["Stiloul? Mi-___ dă. (onu · e)",["l","o"],0],
+      ["Cheile? Mi ___ dă. (onları · k)",["le","l"],0],
+      ["Harta? I-am dat-___ Mariei. (onu · k)",["o","l"],0],
+    ]},
+  ]},
+  {title:"Imperativul",ro:"Emir kipi (tu)",blocks:[
+    {t:"table",title:"Olumlu & olumsuz emir",head:["Mastar","Olumlu","Olumsuz"],rows:[
+      ["a citi","Citește!","Nu citi!"],["a vorbi","Vorbește!","Nu vorbi!"],["a veni","Vino!","Nu veni!"],
+      ["a face","Fă!","Nu face!"],["a pleca","Pleacă!","Nu pleca!"],
+    ],note:"Olumsuz emir (tu) = Nu + mastar (‘a’ olmadan): Nu pleca! (Gitme!), Nu vorbi! (Konuşma!)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru emir biçimini seç.",qs:[
+      ["‘a pleca’ olumsuz emir:",["Nu pleca!","Nu pleci!"],0],
+      ["‘a veni’ olumlu emir:",["Vino!","Veni!"],0],
+      ["‘a face’ olumlu emir:",["Fă!","Faci!"],0],
+      ["‘a vorbi’ olumsuz emir:",["Nu vorbi!","Nu vorbește!"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B2 · UNIT 6 (Școala românească) ---------- */
+const B2_U6=[
+  {title:"Școala românească",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 200 130" width="190" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="130" fill="#FBF6EC"/><path d="M100 38 L28 66 L100 94 L172 66 Z" fill="#2C3E63" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/><path d="M68 82 L68 106 a32 12 0 0 0 64 0 L132 82" fill="none" stroke="#2A2622" stroke-width="2"/><line x1="172" y1="66" x2="172" y2="102" stroke="#C8902F" stroke-width="2"/><circle cx="172" cy="104" r="4" fill="#C8902F"/></svg>`},
+    {t:"read",body:"<b>Ministerul Educației</b> reglementează sistemul educațional românesc.<br><b>Grădinița</b> (de la 3 ani) nu este obligatorie; are program prelungit sau scurt.<br><b>Școala:</b> prima clasă obligatorie este cea pregătitoare („clasa 0”), de la 6 ani. Până la clasa a IV-a este învățământ primar, cu un învățător și calificative (foarte bine, bine, suficient). <b>Gimnaziul</b> (clasele V–VIII) se încheie cu evaluarea națională, cu note de la 1 la 10. <b>Liceul</b> durează 4–5 ani și se termină cu examenul de <b>bacalaureat</b>.<br><b>Facultatea:</b> învățământ superior în trei cicluri — licență, masterat, doctorat. Anul universitar începe la 1 octombrie. Învățământul este gratuit și obligatoriu până la clasa a X-a; cel superior este opțional."},
+    {t:"note_block",body:"Türkçe özet: Eğitim sistemini Eğitim Bakanlığı düzenler. Anaokulu (3 yaştan) zorunlu değil. Okul: ilk zorunlu sınıf hazırlık (‘0. sınıf’, 6 yaş); 4. sınıfa kadar ilköğretim, bir öğretmen ve sözel notlarla (çok iyi, iyi…). Ortaokul (5–8) ulusal değerlendirme sınavıyla biter, notlar 1–10. Lise 4–5 yıl, bakalorya sınavıyla biter. Üniversite üç aşamalı: lisans, yüksek lisans, doktora; akademik yıl 1 Ekim’de başlar. Eğitim 10. sınıfa kadar ücretsiz ve zorunlu; yükseköğretim isteğe bağlı."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Ministerul Educației reglementează sistemul.",true],
+      ["Grădinița este obligatorie.",false],
+      ["Prima clasă obligatorie este clasa pregătitoare.",true],
+      ["Gimnaziul se încheie cu examenul de bacalaureat.",false],
+      ["Liceul se încheie cu bacalaureatul.",true],
+      ["Învățământul superior este obligatoriu.",false],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Eğitim",blocks:[
+    {t:"vocab",title:"Okul & kademeler",items:[
+      ["grădiniță","anaokulu"],["școală","okul"],["liceu","lise"],["facultate / universitate","fakülte / üniversite"],
+      ["învățământ primar","ilköğretim"],["gimnaziu","ortaokul"],["secundar","ortaöğretim"],["bacalaureat","bakalorya (lise bitirme)"],
+      ["evaluare națională","ulusal değerlendirme sınavı"],["note / calificative","notlar / sözel notlar"],
+      ["învățător / educator","öğretmen / anaokulu öğretmeni"],["decan / rector","dekan / rektör"],["absolvent","mezun"],["licență / masterat / doctorat","lisans / yüksek lisans / doktora"],
+    ]},
+  ]},
+  {title:"Numeralul ordinal",ro:"Sıra sayıları",blocks:[
+    {t:"table",title:"Sıra sayıları (eril / dişil)",head:["Sayı","Eril","Dişil"],rows:[
+      ["1","primul / întâiul","prima / întâia"],["2","al doilea","a doua"],["3","al treilea","a treia"],
+      ["4","al patrulea","a patra"],["5","al cincilea","a cincea"],
+    ],note:"Eril: al + sayı + -lea; dişil: a + sayı + -a. clasa a V-a (5. sınıf), ciclul al doilea (ikinci devre)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["clasa ___ (2. · dişil)",["a doua","al doilea"],0],
+      ["ciclul ___ (3. · eril)",["al treilea","a treia"],0],
+      ["a ___ clasă (4. · dişil)",["patra","patrulea"],0],
+      ["___ examen (1. · eril)",["primul","prima"],0],
+    ]},
+  ]},
+  {title:"Condiționalul",ro:"Şart kipi",blocks:[
+    {t:"table",title:"Condiționalul prezent — a merge",head:["Kişi","Biçim"],rows:[
+      ["eu","aș merge"],["tu","ai merge"],["el / ea","ar merge"],["noi","am merge"],["voi","ați merge"],["ei / ele","ar merge"],
+    ],note:"Şart kipi: aș/ai/ar/am/ați/ar + mastar (‘…erdim’). Aș merge la facultate dacă aș avea timp (Vaktim olsa üniversiteye giderdim). Geçmiş şart: aș fi mers (gitmiş olurdum)."},
+    {t:"ex_fill",title:"Alıştırma",instr:"Şart kipi yardımcısını yaz (a merge ile).",qs:[
+      ["Eu ___ merge. (ben)","aș"],["Tu ___ merge. (sen)","ai"],["El ___ merge. (o)","ar"],["Noi ___ merge. (biz)","am"],
+    ]},
+  ]},
+];
+
+/* ---------- B2 · UNIT 7 (Rețelele de socializare) ---------- */
+const B2_U7=[
+  {title:"Rețelele de socializare",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 120 160" width="110" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="160" fill="#FBF6EC"/><rect x="34" y="20" width="52" height="120" rx="8" fill="#2C3E63" stroke="#2A2622" stroke-width="2"/><rect x="40" y="32" width="40" height="84" rx="2" fill="#FBF6EC"/><path d="M60 60 a8 8 0 0 1 14 6 c0 8 -14 16 -14 16 c0 0 -14 -8 -14 -16 a8 8 0 0 1 14 -6 z" fill="#B5232A"/><circle cx="60" cy="128" r="4" fill="#FBF6EC"/></svg>`},
+    {t:"read",body:"<b>Rețelele de socializare</b> — necesitate, obișnuință sau modă? Ele te ajută să fii conectat și să comunici cu prietenii din copilărie și cu rudele stabilite la mii de kilometri. Tot ele îți reamintesc evenimente importante și te scapă de plictiseală. Cu toate acestea, <b>creează dependență</b> și te pot distrage de la activitățile importante.<br>Zilnic, 63% dintre americani se loghează pe cel puțin o rețea. Psihologul Scott Bea spune că rețelele sunt atrăgătoare pentru că oferă un plus de încredere la fiecare <b>like</b> sau comentariu. Printre efectele negative: reducerea stimei de sine, frica de a rămâne pe dinafară (<b>FOMO</b>), perturbarea somnului și sentimente de invidie. Soluția? Să controlăm timpul petrecut online."},
+    {t:"note_block",body:"Türkçe özet: Sosyal ağlar — ihtiyaç mı, alışkanlık mı, moda mı? İnsanı bağlı tutar, çocukluk arkadaşları ve uzaktaki akrabalarla iletişim sağlar, önemli olayları hatırlatır, can sıkıntısını giderir. Ama bağımlılık yaratır ve önemli işlerden uzaklaştırır. Her gün Amerikalıların %63’ü en az bir ağa girer. Psikolog Scott Bea’ya göre her ‘beğeni’ özgüven verdiği için cazipler. Olumsuz etkiler: özgüven düşüşü, dışarıda kalma korkusu (FOMO), uyku bozulması, kıskançlık. Çözüm: çevrimiçi geçirilen süreyi kontrol etmek."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["Rețelele de socializare ajută la comunicarea cu prietenii.",true],
+      ["Rețelele de socializare nu creează dependență.",false],
+      ["63% dintre americani se loghează zilnic pe o rețea.",true],
+      ["Un like poate oferi un plus de încredere.",true],
+      ["FOMO înseamnă frica de a rămâne pe dinafară.",true],
+      ["Folosirea excesivă nu afectează somnul.",false],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Sosyal medya",blocks:[
+    {t:"vocab",title:"Kelimeler",items:[
+      ["rețea de socializare","sosyal ağ"],["cont","hesap"],["a se loga","giriş yapmak"],["postare","gönderi"],
+      ["a distribui","paylaşmak"],["like / comentariu","beğeni / yorum"],["dependență","bağımlılık"],["stima de sine","özgüven"],
+      ["a rămâne pe dinafară","dışarıda kalmak"],["invidie","kıskançlık"],["anxietate / depresie","kaygı / depresyon"],["utilizator","kullanıcı"],
+    ]},
+  ]},
+  {title:"Mai mult ca perfectul",ro:"Geçmiş öncesi zaman",blocks:[
+    {t:"table",title:"a merge — mai mult ca perfect",head:["Kişi","Biçim"],rows:[
+      ["eu","mersesem"],["tu","merseseși"],["el / ea","mersese"],["noi","merseserăm"],["voi","merseserăți"],["ei / ele","merseseră"],
+    ],note:"Geçmişten önceki geçmiş (‘…mişti’). Când am ajuns, el plecase deja (Ben varınca o çoktan gitmişti)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Anlamına göre doğru biçimi seç.",qs:[
+      ["Când am ajuns, el ___ deja. (gitmişti)",["plecase","pleacă"],0],
+      ["Eu ___ tema înainte de cină. (yapmıştım)",["făcusem","fac"],0],
+      ["Ei ___ filmul. (görmüştüler)",["văzuseră","văd"],0],
+      ["Noi ___ cartea. (okumuştuk)",["citiserăm","citim"],0],
+    ]},
+  ]},
+  {title:"Pronume nehotărâte & negative",ro:"Belirsiz & olumsuz zamirler",blocks:[
+    {t:"table",title:"Belirsiz → Olumsuz",head:["Belirsiz","Olumsuz"],rows:[
+      ["cineva (biri)","nimeni (kimse)"],["ceva (bir şey)","nimic (hiçbir şey)"],
+      ["undeva (bir yerde)","nicăieri (hiçbir yerde)"],["vreun / vreo (herhangi)","niciun / nicio (hiçbir)"],
+    ],note:"Olumsuz zamirle fiil de olumsuz olur (çift olumsuzluk): Nu văd pe nimeni (Kimseyi görmüyorum). Nu am nimic (Hiçbir şeyim yok)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru zamiri seç.",qs:[
+      ["___ nu este aici. (kimse)",["Nimeni","Cineva"],0],
+      ["Nu am ___. (hiçbir şey)",["nimic","ceva"],0],
+      ["Este ___ la ușă. (biri)",["cineva","nimeni"],0],
+      ["Nu merg ___. (hiçbir yere)",["nicăieri","undeva"],0],
+    ]},
+  ]},
+];
+
+/* ---------- B2 · UNIT 8 (Alimentația sănătoasă) ---------- */
+const B2_U8=[
+  {title:"Alimentația sănătoasă",ro:"Okuma metni",blocks:[
+    {t:"text",body:"📖 Citiți textul! · Önce metni oku, sonra soruları yanıtla."},
+    {t:"svg",svg:`<svg viewBox="0 0 200 140" width="190" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#FBF6EC"/><path d="M100 20 L121 52 L79 52 Z" fill="#B5232A"/><path d="M79 52 L121 52 L135 76 L65 76 Z" fill="#C8902F"/><path d="M65 76 L135 76 L151 100 L49 100 Z" fill="#5B8A4E"/><path d="M49 100 L151 100 L170 124 L30 124 Z" fill="#2C3E63"/><path d="M100 20 L170 124 L30 124 Z" fill="none" stroke="#2A2622" stroke-width="2" stroke-linejoin="round"/></svg>`},
+    {t:"read",body:"Ce înseamnă o <b>alimentație sănătoasă</b>? Potrivit OMS, ea este esențială pentru sănătate și ne protejează de boli cronice precum afecțiunile cardiovasculare, diabetul și cancerul. Regulile de bază: să mâncăm o varietate de alimente, cu un consum <b>scăzut</b> de sare, zahăr și grăsimi.<br>În <b>piramida alimentelor</b>, la bază se află alimentele cele mai importante (consumate aproape fără restricții); spre vârf sunt cele consumate cât mai rar. La bază adăugăm și exercițiile fizice — mersul pe jos 30 de minute pe zi.<br>Specialiștii recomandă <b>3 mese principale</b>: micul dejun este cea mai importantă masă (pune în mișcare metabolismul), iar cina este cea mai săracă și nu se ia mai târziu de orele 19:00–20:00. Alcoolul se consumă cu moderație."},
+    {t:"note_block",body:"Türkçe özet: Sağlıklı beslenme nedir? DSÖ’ye göre sağlık için şarttır ve kalp-damar hastalıkları, diyabet, kanser gibi kronik hastalıklardan korur. Temel kurallar: çeşitli yiyecekler, az tuz-şeker-yağ. Besin piramidinde tabanda en önemli (neredeyse serbest) yiyecekler; tepeye doğru çok seyrek yenenler bulunur. Tabana fiziksel etkinlik de eklenir (günde 30 dk yürüyüş). Uzmanlar günde 3 ana öğün önerir: kahvaltı en önemli öğündür (metabolizmayı çalıştırır), akşam yemeği en hafif olanıdır ve 19:00–20:00’den geç yenmemeli. Alkol ölçülü tüketilmeli."},
+    {t:"ex_tf",title:"Alıştırma — Adevărat / Fals",instr:"Metne göre doğru mu yanlış mı?",qs:[
+      ["O alimentație sănătoasă ne protejează de boli cronice.",true],
+      ["Este recomandat un consum mare de sare și zahăr.",false],
+      ["Micul dejun este cea mai importantă masă.",true],
+      ["Cina trebuie luată după ora 22:00.",false],
+      ["Alcoolul se consumă cu moderație.",true],
+      ["La baza piramidei se află și exercițiile fizice.",true],
+    ]},
+  ]},
+  {title:"Vocabular",ro:"Beslenme",blocks:[
+    {t:"vocab",title:"Beslenme & sağlık",items:[
+      ["alimentație","beslenme"],["apetit","iştah"],["metabolism","metabolizma"],["nutrienți","besin öğeleri"],
+      ["carență","eksiklik"],["sațietate","tokluk"],["hidratare","sıvı alımı"],["a ține cont de","dikkat etmek / uymak"],
+      ["a sări peste o masă","öğün atlamak"],["a fi sătul","tok olmak"],["boli cardiovasculare","kalp-damar hastalıkları"],
+      ["diabet / obezitate","diyabet / obezite"],["calorii / proteine","kalori / protein"],["glucide / lipide / grăsimi","karbonhidrat / lipit / yağ"],["vitamine","vitaminler"],
+    ]},
+  ]},
+  {title:"Gerunziul & Supinul",ro:"Ulaç & supin",blocks:[
+    {t:"table",title:"Örnekler",head:["Mastar","Gerunziu","Supin"],rows:[
+      ["a mânca","mâncând","de mâncat"],["a merge","mergând","de mers"],["a citi","citind","de citit"],["a face","făcând","de făcut"],
+    ],note:"Gerunziu = -ând/-ind (‘-erek/-ken’): mâncând (yiyerek). Supin = de + ortaç: de mâncat (yenecek). Am ceva de făcut (yapacak bir şeyim var)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["‘a citi’ ulaç (okuyarak):",["citind","de citit"],0],
+      ["‘a mânca’ supin (yenecek):",["de mâncat","mâncând"],0],
+      ["Am ceva ___ . (yapacak)",["de făcut","făcând"],0],
+      ["A răspuns ___ . (gülerek)",["râzând","de râs"],0],
+    ]},
+  ]},
+  {title:"Demonstrative",ro:"Aynılık & farklılık",blocks:[
+    {t:"table",title:"Aynı (același) / Öteki (celălalt)",head:["Aynı","Öteki"],rows:[
+      ["același (e)","celălalt (e)"],["aceeași (k)","cealaltă (k)"],["aceiași (e çoğul)","ceilalți (e çoğul)"],["aceleași (k çoğul)","celelalte (k çoğul)"],
+    ],note:"același = aynı; celălalt = öteki/diğeri. Cinsiyet ve sayıya uyar: același bărbat (aynı adam), aceeași femeie (aynı kadın); celălalt copil (öteki çocuk)."},
+    {t:"ex_choice",title:"Alıştırma",instr:"Doğru biçimi seç.",qs:[
+      ["___ bărbat (aynı · e)",["același","aceeași"],0],
+      ["___ femeie (aynı · k)",["aceeași","același"],0],
+      ["___ copil (öteki · e)",["celălalt","cealaltă"],0],
+      ["___ fată (öteki · k)",["cealaltă","celălalt"],0],
+    ]},
+  ]},
+];
+
+/* ---------- COURSE ---------- */
+function mkUnits(themes,filled){return themes.map(t=>({n:t[0],ro:t[1],tr:t[2],lessons:filled[t[0]]||null}));}
+const COURSE={
+  A1:{label:"Nivel A1",desc:"Başlangıç",badge:"var(--green)",units:mkUnits(A1_THEMES,{1:A1_U1,2:A1_U2,3:A1_U3,4:A1_U4,5:A1_U5,6:A1_U6,7:A1_U7,8:A1_U8,9:A1_U9,10:A1_U10})},
+  A2:{label:"Nivel A2",desc:"Temel",badge:"var(--indigo)",units:mkUnits(A2_THEMES,{1:A2_U1,2:A2_U2,3:A2_U3,4:A2_U4,5:A2_U5,6:A2_U6,7:A2_U7,8:A2_U8,9:A2_U9,10:A2_U10})},
+  B1:{label:"Nivel B1",desc:"Orta",badge:"var(--red)",units:mkUnits(B1_THEMES,{1:B1_U1,2:B1_U2,3:B1_U3,4:B1_U4,5:B1_U5,6:B1_U6,7:B1_U7,8:B1_U8,9:B1_U9,10:B1_U10})},
+  B2:{label:"Nivel B1–B2",desc:"İleri",badge:"var(--gold)",units:mkUnits(B2_THEMES,{1:B2_U1,2:B2_U2,3:B2_U3,4:B2_U4,5:B2_U5,6:B2_U6,7:B2_U7,8:B2_U8})},
+};
+const LEVELS=["A1","A2","B1","B2"];
+
+/* ---------- state + storage ---------- */
+const S={view:"home",level:null,unit:null,lesson:null,done:new Set()};
+function load(){try{S.done=new Set(JSON.parse(localStorage.getItem("manual:done")||"[]"));}catch(e){}}
+function save(){try{localStorage.setItem("manual:done",JSON.stringify([...S.done]));}catch(e){}}
+function lid(lv,u,i){return lv+"-"+u+"-"+i;}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function fold(s){return String(s).toLocaleLowerCase("tr").trim()
+  .replace(/ă|â/g,"a").replace(/î/g,"i").replace(/ș|ş/g,"s").replace(/ț|ţ/g,"t");}
+function levelStats(lv){let total=0,done=0;COURSE[lv].units.forEach(u=>{if(u.lessons){total+=u.lessons.length;
+  u.lessons.forEach((_,i)=>{if(S.done.has(lid(lv,u.n,i)))done++;});}});return{total,done};}
+
+/* ============ VIEWS ============ */
+function vHome(){
+  const cards=LEVELS.map(lv=>{
+    const c=COURSE[lv];const st=levelStats(lv);
+    const pct=st.total?Math.round(st.done/st.total*100):0;
+    return `<div class="levelcard" data-act="level" data-val="${lv}">
+      <div class="lvbadge" style="background:${c.badge}">${lv}</div>
+      <div style="flex:1">
+        <h2>${c.label}</h2>
+        <div class="sub">${esc(c.desc)} · ${st.total?`${st.done}/${st.total} ders`:"hazırlanıyor"}</div>
+        <div class="progmini"><i style="width:${pct}%"></i></div>
+      </div>
+      <div style="font-size:22px;color:var(--mute)">›</div>
+    </div>`;
+  }).join("");
+  const tools=TOOLS.map(t=>`<div class="levelcard" data-act="tool" data-val="${t[0]}">
+    <div class="lvbadge" style="background:${t[3]};font-size:24px">${t[2]}</div>
+    <div style="flex:1"><h2>${t[1]}</h2><div class="sub">${esc(t[4])}</div></div>
+    <div style="font-size:22px;color:var(--mute)">›</div></div>`).join("");
+  return `<div class="top"><div><div class="kicker">Manual de limba română</div>
+    <h1>Romence Kursu</h1></div></div>
+    <p class="sub" style="margin:-6px 0 16px">Yetişkinler için kurs — A1, A2, B1. Tema tema diyalog, gramer ve alıştırma.</p>
+    ${cards}
+    <div class="sectlabel">Sık kullanılanlar</div>
+    ${tools}`;
+}
+function vUnits(){
+  const lv=S.level,c=COURSE[lv];
+  const list=c.units.map(u=>{
+    if(!u.lessons){
+      return `<div class="unit soon"><div class="unum">${u.n}</div>
+        <div><div class="utitle">${esc(u.ro)}</div><div class="utheme">${esc(u.tr)}</div></div>
+        <span class="tag soon">Hazırlanıyor</span></div>`;
+    }
+    let done=0;u.lessons.forEach((_,i)=>{if(S.done.has(lid(lv,u.n,i)))done++;});
+    return `<div class="unit" data-act="unit" data-val="${u.n}"><div class="unum">${u.n}</div>
+      <div><div class="utitle">${esc(u.ro)}</div><div class="utheme">${esc(u.tr)}</div></div>
+      <span class="tag ok">${done}/${u.lessons.length} ✓</span></div>`;
+  }).join("");
+  return topBar(c.label,"Üniteler")+list;
+}
+function vUnit(){
+  const lv=S.level,u=COURSE[lv].units.find(x=>x.n===S.unit);
+  const list=u.lessons.map((l,i)=>{
+    const done=S.done.has(lid(lv,u.n,i));
+    return `<div class="lesson" data-act="lesson" data-val="${i}">
+      <div class="lcheck ${done?"on":""}">${done?"✓":""}</div>
+      <div><div class="ltitle">${i+1}. ${esc(l.title)}</div><div class="lro">${esc(l.ro)}</div></div>
+      <div style="margin-left:auto;color:var(--mute)">›</div></div>`;
+  }).join("");
+  return topBar(`${lv} · Ünite ${u.n}`,esc(u.ro))+list;
+}
+function vLesson(){
+  const lv=S.level,u=COURSE[lv].units.find(x=>x.n===S.unit),l=u.lessons[S.lesson];
+  const id=lid(lv,u.n,S.lesson);const done=S.done.has(id);
+  const body=l.blocks.map((b,bi)=>renderBlock(b,id+":"+bi)).join("");
+  return topBar(`${lv} · Ü${u.n} · Ders ${S.lesson+1}`,esc(l.title))+body+genQuizHTML(l)+
+    `<button class="donebtn ${done?"on":""}" data-act="toggledone">${done?"✓ Tamamlandı":"Dersi tamamla"}</button>`;
+}
+function topBar(crumb,title){
+  return `<div class="top"><button class="back" data-act="back">‹ Geri</button>
+    <div><div class="crumb">${crumb}</div></div></div>
+    <h1 style="margin-bottom:14px">${title}</h1>`;
+}
+
+function renderBlock(b,exId){
+  if(b.t==="text")return `<div class="block"><div class="btext">${esc(b.body).replace(/\n/g,"<br>")}</div></div>`;
+  if(b.t==="svg")return `<div class="block svgwrap">${b.svg}</div>`;
+  if(b.t==="read")return `<div class="block"><div class="dialog">${b.body}</div></div>`;
+  if(b.t==="note_block")return `<div class="block"><div class="note">${esc(b.body)}</div></div>`;
+  if(b.t==="vocab"){
+    const rows=b.items.map(it=>`<div class="vrow"><span class="vro">${esc(it[0])}</span><span class="vtr">${esc(it[1])}</span></div>`).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div><div class="panel">${rows}</div></div>`;
+  }
+  if(b.t==="table"){
+    const th=`<tr>${b.head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr>`;
+    const tr=b.rows.map(r=>`<tr>${r.map((c,i)=>`<td class="${i===0?"k":"v"}">${esc(c)}</td>`).join("")}</tr>`).join("");
+    const note=b.note?`<div class="note">${esc(b.note)}</div>`:"";
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div><div class="panel"><table>${th}${tr}</table></div>${note}</div>`;
+  }
+  if(b.t==="ex_fill"){
+    const qs=b.qs.map(q=>{
+      const inp=`<input class="fillin" data-answer="${esc(q[1])}" autocapitalize="off" autocomplete="off" spellcheck="false"><span class="sol"></span>`;
+      return `<div class="exq"><span class="exprompt">${esc(q[0]).replace("___",inp)}</span></div>`;
+    }).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div>
+      <div class="ex" id="ex-${esc(exId)}"><div class="exinstr">${esc(b.instr)}</div>${qs}
+      <button class="checkbtn" data-act="checkfill" data-ex="${esc(exId)}">Kontrol et</button></div></div>`;
+  }
+  if(b.t==="ex_choice"){
+    const qs=b.qs.map(q=>{
+      const opts=q[1].map((o,oi)=>`<button class="exopt" data-act="choice" data-correct="${oi===q[2]?1:0}">${esc(o)}</button>`).join("");
+      return `<div class="exq"><div class="exprompt">${esc(q[0])}</div><div class="exopts">${opts}</div></div>`;
+    }).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div>
+      <div class="ex"><div class="exinstr">${esc(b.instr)}</div>${qs}</div></div>`;
+  }
+  if(b.t==="ex_tf"){
+    const qs=b.qs.map(q=>{
+      const opts=[["Adevărat",true],["Fals",false]].map(o=>
+        `<button class="exopt" data-act="choice" data-correct="${o[1]===q[1]?1:0}">${o[0]}</button>`).join("");
+      return `<div class="exq"><div class="exprompt">${esc(q[0])}</div><div class="exopts">${opts}</div></div>`;
+    }).join("");
+    return `<div class="block"><div class="btitle">${esc(b.title)}</div>
+      <div class="ex"><div class="exinstr">${esc(b.instr)}</div>${qs}</div></div>`;
+  }
+  return "";
+}
+
+/* ============ SIK KULLANILANLAR — veri ============ */
+const VERBS=[
+  {inf:"a pleca",tr:"ayrılmak / gitmek",part:"plecat",group:"hareket",prez:["plec","pleci","pleacă","plecăm","plecați","pleacă"]},
+  {inf:"a ajunge",tr:"varmak",part:"ajuns",group:"hareket",prez:["ajung","ajungi","ajunge","ajungem","ajungeți","ajung"]},
+  {inf:"a trece",tr:"geçmek",part:"trecut",group:"hareket",prez:["trec","treci","trece","trecem","treceți","trec"]},
+  {inf:"a veni",tr:"gelmek",part:"venit",group:"hareket",prez:["vin","vii","vine","venim","veniți","vin"]},
+  {inf:"a merge",tr:"gitmek",part:"mers",group:"hareket",prez:["merg","mergi","merge","mergem","mergeți","merg"]},
+  {inf:"a coborî",tr:"inmek",part:"coborât",group:"hareket",prez:["cobor","cobori","coboară","coborâm","coborâți","coboară"]},
+  {inf:"a urca",tr:"çıkmak",part:"urcat",group:"hareket",prez:["urc","urci","urcă","urcăm","urcați","urcă"]},
+  {inf:"a opri",tr:"durmak / durdurmak",part:"oprit",group:"hareket",prez:["opresc","oprești","oprește","oprim","opriți","opresc"]},
+  {inf:"a trimite",tr:"göndermek",part:"trimis",group:"verme",prez:["trimit","trimiți","trimite","trimitem","trimiteți","trimit"]},
+  {inf:"a primi",tr:"almak (teslim)",part:"primit",group:"verme",prez:["primesc","primești","primește","primim","primiți","primesc"]},
+  {inf:"a duce",tr:"götürmek",part:"dus",group:"verme",prez:["duc","duci","duce","ducem","duceți","duc"]},
+  {inf:"a aduce",tr:"getirmek",part:"adus",group:"verme",prez:["aduc","aduci","aduce","aducem","aduceți","aduc"]},
+  {inf:"a lua",tr:"almak",part:"luat",group:"verme",prez:["iau","iei","ia","luăm","luați","iau"]},
+  {inf:"a da",tr:"vermek",part:"dat",group:"verme",prez:["dau","dai","dă","dăm","dați","dau"]},
+  {inf:"a cumpăra",tr:"satın almak",part:"cumpărat",group:"verme",prez:["cumpăr","cumperi","cumpără","cumpărăm","cumpărați","cumpără"]},
+  {inf:"a fi",tr:"olmak",part:"fost",group:"temel",prez:["sunt","ești","este","suntem","sunteți","sunt"]},
+  {inf:"a avea",tr:"sahip olmak / …var",part:"avut",group:"temel",prez:["am","ai","are","avem","aveți","au"]},
+  {inf:"a putea",tr:"yapabilmek",part:"putut",group:"temel",prez:["pot","poți","poate","putem","puteți","pot"]},
+  {inf:"a vrea",tr:"istemek",part:"vrut",group:"temel",prez:["vreau","vrei","vrea","vrem","vreți","vor"]},
+  {inf:"a face",tr:"yapmak / etmek",part:"făcut",group:"temel",prez:["fac","faci","face","facem","faceți","fac"]},
+  {inf:"a ști",tr:"bilmek",part:"știut",group:"temel",prez:["știu","știi","știe","știm","știți","știu"]},
+  {inf:"a spune",tr:"söylemek",part:"spus",group:"konusma",prez:["spun","spui","spune","spunem","spuneți","spun"]},
+  {inf:"a zice",tr:"demek",part:"zis",group:"konusma",prez:["zic","zici","zice","zicem","ziceți","zic"]},
+  {inf:"a vedea",tr:"görmek",part:"văzut",group:"konusma",prez:["văd","vezi","vede","vedem","vedeți","văd"]},
+  {inf:"a auzi",tr:"duymak",part:"auzit",group:"konusma",prez:["aud","auzi","aude","auzim","auziți","aud"]},
+  {inf:"a crede",tr:"inanmak / sanmak",part:"crezut",group:"konusma",prez:["cred","crezi","crede","credem","credeți","cred"]},
+  {inf:"a încerca",tr:"denemek",part:"încercat",group:"deneme",prez:["încerc","încerci","încearcă","încercăm","încercați","încearcă"]},
+  {inf:"a arăta",tr:"göstermek",part:"arătat",group:"deneme",prez:["arăt","arăți","arată","arătăm","arătați","arată"]},
+  {inf:"a începe",tr:"başlamak",part:"început",group:"deneme",prez:["încep","începi","începe","începem","începeți","încep"]},
+  {inf:"a termina",tr:"bitirmek",part:"terminat",group:"deneme",prez:["termin","termini","termină","terminăm","terminați","termină"]},
+  {inf:"a alege",tr:"seçmek",part:"ales",group:"deneme",prez:["aleg","alegi","alege","alegem","alegeți","aleg"]},
+];
+const VERB_GROUPS=[["hareket","Hareket"],["verme","Verme / Alma"],["temel","Temel & Modal"],["konusma","Konuşma / Algı"],["deneme","Deneme / Bitiş"]];
+const PERSONS=["eu","tu","el / ea","noi","voi","ei / ele"];
+const AUX_PC=["am","ai","a","am","ați","au"];
+const AUX_VI=["voi","vei","va","vom","veți","vor"];
+const TENSES=[["prez","Prezent","şimdiki"],["pc","Perfect compus","geçmiş"],["vi","Viitor","gelecek"]];
+function verbForms(v,tense){
+  if(tense==="prez")return v.prez;
+  if(tense==="pc")return AUX_PC.map(a=>a+" "+v.part);
+  return AUX_VI.map(a=>a+" "+v.inf.slice(2));
+}
+const CLITICS=[
+  {title:"Akuzatif zamirleri",sub:"nesne — kimi / neyi?",
+   table:[["eu (pe mine)","mă / m-","beni"],["tu (pe tine)","te","seni"],["el","îl / l-","onu (e)"],["ea","o","onu (k)"],["noi","ne","bizi"],["voi","vă / v-","sizi"],["ei","îi / i-","onları (e)"],["ele","le","onları (k)"]],
+   note:"Ünlüden önce kısalır: m-a, l-a, v-a. Geçmişte “o” fiilden SONRA gelir: a văzut-o.",
+   exTitle:"Örnek — a vedea (görmek)",exCols:["nesne","prezent","perfect","viitor"],
+   rows:[["beni","mă vede","m-a văzut","mă va vedea"],["seni","te vede","te-a văzut","te va vedea"],["onu (e)","îl vede","l-a văzut","îl va vedea"],["onu (k)","o vede","a văzut-o","o va vedea"],["bizi","ne vede","ne-a văzut","ne va vedea"],["sizi","vă vede","v-a văzut","vă va vedea"],["onları (e)","îi vede","i-a văzut","îi va vedea"],["onları (k)","le vede","le-a văzut","le va vedea"]],
+   sentences:[["Te văd.","Seni görüyorum."],["Te-am sunat ieri.","Seni dün aradım."],["O cunosc bine.","Onu (kadın) iyi tanıyorum."],["Ne ajută mereu.","Bize hep yardım eder."],["Îi aștept jos.","Onları aşağıda bekliyorum."],["Cartea? Am citit-o.","Kitap mı? Onu okudum."]]},
+  {title:"Datif zamirleri",sub:"dolaylı nesne — kime / neye?",
+   table:[["mie","îmi / mi-","bana"],["ție","îți / ți-","sana"],["lui / ei","îi / i-","ona"],["nouă","ne / ni-","bize"],["vouă","vă / vi-","size"],["lor","le / li-","onlara"]],
+   note:"a plăcea Türkçedeki “hoşuma gitmek” gibidir: beğenilen şey ÖZNE, kişi DATİF olur. “Îmi place cafeaua” = kahve hoşuma gidiyor.",
+   exTitle:"Örnek — a plăcea (hoşuna gitmek)",exCols:["kişi","prezent","perfect","viitor"],
+   rows:[["bana","îmi place","mi-a plăcut","îmi va plăcea"],["sana","îți place","ți-a plăcut","îți va plăcea"],["ona","îi place","i-a plăcut","îi va plăcea"],["bize","ne place","ne-a plăcut","ne va plăcea"],["size","vă place","v-a plăcut","vă va plăcea"],["onlara","le place","le-a plăcut","le va plăcea"]],
+   sentences:[["Îmi place muzica.","Müziği severim."],["Îți place cafeaua?","Kahveyi sever misin?"],["Îți mulțumesc mult.","Sana çok teşekkür ederim."],["I-am dat cartea.","Ona kitabı verdim."],["Îmi trebuie ajutor.","Bana yardım lazım."],["Mi-e dor de tine.","Seni özledim."],["Îți scriu mâine.","Sana yarın yazarım."]]},
+  {title:"Refleksif zamirler",sub:"kişi kendisi için yapar",
+   table:[["eu","îmi / mi-","kendime"],["tu","îți / ți-","kendine"],["el / ea","își / și-","kendine"],["noi","ne / ni-","kendimize"],["voi","vă / vi-","kendinize"],["ei / ele","își / și-","kendilerine"]],
+   note:"Refleksif datif: eylem kişinin kendisi için. a-și aminti (hatırlamak), a-și dori (arzulamak). Refleksif akuzatif ise: mă, te, se, ne, vă, se (örn. a se trezi — uyanmak).",
+   exTitle:"Örnek — a-și dori (arzulamak)",exCols:["kişi","prezent","perfect","viitor"],
+   rows:[["eu","îmi doresc","mi-am dorit","îmi voi dori"],["tu","îți dorești","ți-ai dorit","îți vei dori"],["el / ea","își dorește","și-a dorit","își va dori"],["noi","ne dorim","ne-am dorit","ne vom dori"],["voi","vă doriți","v-ați dorit","vă veți dori"],["ei / ele","își doresc","și-au dorit","își vor dori"]],
+   sentences:[["Mă trezesc devreme.","Erken uyanırım."],["Îmi amintesc de tine.","Seni hatırlıyorum."],["Mi-am dorit asta de mult.","Bunu çoktandır istiyordum."],["Ne distrăm împreună.","Birlikte eğleniyoruz."],["Își imaginează totul.","Her şeyi hayal ediyor."]]},
+];
+const ARTICLES={
+  intro:"Romence’de belirli artikel (İng. “the”) kelimenin SONUNA eklenir — bir ek gibi. Cinsiyete ve sayıya göre değişir. Türkçede tam karşılığı yoktur; belirlilik (“o / söz konusu”) anlamı katar.",
+  groups:[
+    {title:"Eril & Nötr — tekil",rule:"Ünsüzle bitenlere -ul; -e ile bitenlere -le.",rows:[["băiat","băiatul","çocuk"],["tren","trenul","tren"],["om","omul","adam / insan"],["câine","câinele","köpek"],["frate","fratele","erkek kardeş"],["pește","peștele","balık"]]},
+    {title:"Dişil — tekil",rule:"-ă → -a; -e → -ea; -a → -ua.",rows:[["casă","casa","ev"],["fată","fata","kız"],["floare","floarea","çiçek"],["carte","cartea","kitap"],["cafea","cafeaua","kahve"],["cutie","cutia","kutu"]]},
+    {title:"Çoğul",rule:"Eril çoğul -i uzar: băieți → băieții. Dişil/nötr çoğul → -le.",rows:[["băieți","băieții","çocuklar"],["studenți","studenții","öğrenciler"],["case","casele","evler"],["cărți","cărțile","kitaplar"],["flori","florile","çiçekler"],["trenuri","trenurile","trenler"]]},
+  ],
+  examples:[["Cartea este pe masă.","Kitap masanın üstünde."],["Unde este băiatul?","Çocuk nerede?"],["Îmi place cafeaua.","Kahveyi severim."],["Câinele doarme.","Köpek uyuyor."],["Florile sunt frumoase.","Çiçekler güzel."],["Am închis ușa.","Kapıyı kapattım."]],
+  note:"Karşılaştır: belirsiz artikel (un / o) kelimenin ÖNÜNE gelir → un băiat (bir çocuk), o casă (bir ev). Belirli artikel ise hep sona eklenir → băiatul, casa.",
+};
+const TOOLS=[
+  ["dict","Sözlük","📖","var(--green)","Tüm kelimeler · ara"],
+  ["conj","Çekimler","🔄","var(--indigo)","30+ fiil · 3 zaman"],
+  ["pron","Zamirler","👥","var(--red)","Akuzatif · Datif · Refleksif"],
+  ["gram","Gramer","📐","var(--gold)","Belirli artikel"],
+  ["quiz","Sınav","🎯","var(--blue)","Karışık kelime testi"],
+];
+
+/* ============ SIK KULLANILANLAR — ekranlar ============ */
+function buildDict(){
+  if(S._dict)return S._dict;
+  const seen=new Set(),out=[];
+  for(const lv of LEVELS) for(const u of COURSE[lv].units){ if(!u.lessons)continue;
+    for(const l of u.lessons) for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items){
+      if(seen.has(it[0]))continue; seen.add(it[0]); out.push([it[0],it[1]]); } }
+  for(const v of VERBS){ if(seen.has(v.inf))continue; seen.add(v.inf); out.push([v.inf,v.tr]); }
+  out.sort((a,b)=>a[0].localeCompare(b[0],"ro"));
+  S._dict=out;return out;
+}
+function dictRows(){
+  const q=fold(S.dictQ||"");
+  let list=buildDict();
+  if(q)list=list.filter(p=>fold(p[0]).includes(q)||fold(p[1]).includes(q));
+  const n=list.length; list=list.slice(0,400);
+  if(!n)return `<div class="sub" style="padding:14px">Sonuç yok.</div>`;
+  return list.map(p=>`<div class="vrow"><span class="vro">${esc(p[0])}</span><span class="vtr">${esc(p[1])}</span></div>`).join("");
+}
+function toolTop(t){return `<div class="top"><button class="back" data-act="toolback">‹ Geri</button><div class="crumb">Sık kullanılanlar</div></div><h1 style="margin-bottom:12px">${t}</h1>`;}
+function vDict(){
+  return toolTop("Sözlük 📖")+
+    `<input class="search" id="dictsearch" placeholder="Romence veya Türkçe ara…" value="${esc(S.dictQ||"")}" autocapitalize="off" autocomplete="off" spellcheck="false">
+    <div class="panel" id="dictresults">${dictRows()}</div>`;
+}
+function vConj(){
+  const g=S.conjGroup||VERB_GROUPS[0][0];
+  const chips=VERB_GROUPS.map(gr=>`<div class="chip ${gr[0]===g?"on":""}" data-act="conjgroup" data-val="${gr[0]}">${esc(gr[1])}</div>`).join("");
+  const cards=VERBS.filter(v=>v.group===g).map(v=>{
+    const head=`<tr><th>Kişi</th>${TENSES.map(t=>`<th>${esc(t[2])}</th>`).join("")}</tr>`;
+    const rows=PERSONS.map((p,i)=>`<tr><td class="k">${esc(p)}</td>${TENSES.map(t=>`<td class="v">${esc(verbForms(v,t[0])[i])}</td>`).join("")}</tr>`).join("");
+    return `<div class="block"><div class="btitle">${esc(v.inf)} <span class="sub">— ${esc(v.tr)}</span></div>
+      <div class="panel ctable"><table>${head}${rows}</table></div></div>`;
+  }).join("");
+  return toolTop("Çekimler 🔄")+`<div class="chips">${chips}</div>${cards}`;
+}
+function vPron(){
+  const secs=CLITICS.map(c=>{
+    const t1=`<table><tr><th>Kişi</th><th>Zamir</th><th>Anlam</th></tr>${c.table.map(r=>`<tr><td class="k">${esc(r[0])}</td><td class="v">${esc(r[1])}</td><td class="v">${esc(r[2])}</td></tr>`).join("")}</table>`;
+    const exHead=`<tr>${c.exCols.map(h=>`<th>${esc(h)}</th>`).join("")}</tr>`;
+    const exRows=c.rows.map(r=>`<tr>${r.map((cell,i)=>`<td class="${i===0?"k":"v"}">${esc(cell)}</td>`).join("")}</tr>`).join("");
+    const sents=c.sentences.map(s=>`<div class="sent"><span class="sro">${esc(s[0])}</span><span class="str">${esc(s[1])}</span></div>`).join("");
+    return `<div class="block"><div class="btitle">${esc(c.title)}</div><div class="sub" style="margin:-4px 0 8px">${esc(c.sub)}</div>
+      <div class="panel ctable">${t1}</div><div class="note">${esc(c.note)}</div>
+      <div class="sectlabel">${esc(c.exTitle)}</div><div class="panel ctable"><table>${exHead}${exRows}</table></div>
+      <div class="sectlabel">Örnek cümleler</div><div class="panel">${sents}</div></div>`;
+  }).join("");
+  return toolTop("Zamirler 👥")+secs;
+}
+function vGram(){
+  const groups=ARTICLES.groups.map(g=>{
+    const rows=g.rows.map(r=>`<tr><td class="k">${esc(r[0])}</td><td class="v">${esc(r[1])}</td><td class="v">${esc(r[2])}</td></tr>`).join("");
+    return `<div class="block"><div class="btitle">${esc(g.title)}</div><div class="sub" style="margin:-4px 0 8px">${esc(g.rule)}</div>
+      <div class="panel ctable"><table><tr><th>Yalın</th><th>Artikelli</th><th>Anlam</th></tr>${rows}</table></div></div>`;
+  }).join("");
+  const ex=ARTICLES.examples.map(e=>`<div class="sent"><span class="sro">${esc(e[0])}</span><span class="str">${esc(e[1])}</span></div>`).join("");
+  return toolTop("Belirli Artikel 📐")+`<div class="note">${esc(ARTICLES.intro)}</div>${groups}
+    <div class="sectlabel">Örnekler</div><div class="panel">${ex}</div>
+    <div class="note" style="margin-top:12px">${esc(ARTICLES.note)}</div>`;
+}
+function makeQuizQ(){
+  const d=buildDict(); if(d.length<4)return null;
+  const ans=shuf(d)[0],ro2tr=Math.random()<0.5;
+  const prompt=ro2tr?ans[0]:ans[1],correct=ro2tr?ans[1]:ans[0];
+  const pool=d.map(p=>ro2tr?p[1]:p[0]),dis=[],seen=new Set([correct]);
+  for(const v of shuf(pool)){ if(seen.has(v))continue; seen.add(v); dis.push(v); if(dis.length>=3)break; }
+  return {prompt,correct,options:shuf([correct].concat(dis)),dir:ro2tr};
+}
+function vQuiz(){
+  if(!S.quiz||!S.quiz.q)S.quiz={q:makeQuizQ(),score:0,total:0};
+  const q=S.quiz.q;
+  const opts=q.options.map(o=>`<button class="exopt" data-act="quizpick" data-correct="${o===q.correct?1:0}">${esc(o)}</button>`).join("");
+  return toolTop("Sınav 🎯")+
+    `<p class="sub" style="margin:-6px 0 14px">Skor: <b id="quizscore">${S.quiz.score} / ${S.quiz.total}</b> · ${q.dir?"Romence → Türkçe":"Türkçe → Romence"}</p>
+    <div class="ex"><div class="exprompt" style="font-size:24px;color:var(--red);margin-bottom:10px">${esc(q.prompt)}</div>
+      <div class="exopts">${opts}</div></div>
+    <button class="donebtn" style="margin-top:18px;color:var(--indigo);border-color:var(--indigo)" data-act="quiznext">Sonraki soru ›</button>`;
+}
+
+/* ============ AUTO QUIZ (her derste kelime testi) ============ */
+let _GV=null;
+function globalVocab(){
+  if(_GV)return _GV;
+  const ro=[],tr=[],sro=new Set(),str=new Set();
+  for(const lv of LEVELS) for(const u of COURSE[lv].units){ if(!u.lessons)continue;
+    for(const l of u.lessons) for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items){
+      if(!sro.has(it[0])){sro.add(it[0]);ro.push(it[0]);}
+      if(!str.has(it[1])){str.add(it[1]);tr.push(it[1]);}
+    }
+  }
+  _GV={ro,tr};return _GV;
+}
+function shuf(a){const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[x[i],x[j]]=[x[j],x[i]];}return x;}
+function lessonPairs(l){
+  const seen=new Set(),out=[];
+  for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items){ if(seen.has(it[0]))continue; seen.add(it[0]); out.push([it[0],it[1]]); }
+  return out;
+}
+function distractors(correct,localPool,globalPool){
+  const cands=[],seen=new Set([correct]);
+  for(const v of localPool){ if(seen.has(v))continue; seen.add(v); cands.push(v); }
+  for(const v of shuf(globalPool)){ if(seen.has(v))continue; seen.add(v); cands.push(v); if(cands.length>=14)break; }
+  return shuf(cands).slice(0,3);
+}
+function genQuizHTML(l){
+  const pairs=lessonPairs(l);
+  if(pairs.length<2)return "";
+  const GV=globalVocab();
+  const n=Math.min(6,pairs.length);
+  const chosen=shuf(pairs).slice(0,n);
+  const localTr=pairs.map(p=>p[1]),localRo=pairs.map(p=>p[0]);
+  const qs=chosen.map(p=>{
+    const ro2tr=Math.random()<0.5;
+    let prompt,correct,dis;
+    if(ro2tr){prompt=p[0];correct=p[1];dis=distractors(correct,localTr,GV.tr);}
+    else{prompt=p[1];correct=p[0];dis=distractors(correct,localRo,GV.ro);}
+    if(dis.length<3)return "";
+    const opts=shuf([correct].concat(dis));
+    const ob=opts.map(o=>`<button class="exopt" data-act="choice" data-correct="${o===correct?1:0}">${esc(o)}</button>`).join("");
+    return `<div class="exq"><div class="exprompt">${esc(prompt)}</div><div class="exopts">${ob}</div></div>`;
+  }).filter(Boolean).join("");
+  if(!qs)return "";
+  return `<div class="block"><div class="btitle">Kelime testi 🎲</div>
+    <div class="ex"><div class="exinstr">Doğru karşılığı seç · her açılışta yenilenir</div>${qs}</div></div>`;
+}
+
+/* ============ REVIEW (ders bitince tekrar) ============ */
+function completedVocab(){
+  const pairs=[];
+  for(const lv of LEVELS) for(const u of COURSE[lv].units){ if(!u.lessons)continue;
+    u.lessons.forEach((l,i)=>{ if(!S.done.has(lid(lv,u.n,i)))return;
+      for(const b of l.blocks) if(b.t==="vocab") for(const it of b.items) pairs.push({ro:it[0],tr:it[1]});
+    });
+  }
+  const seen=new Set(),out=[];
+  for(const p of pairs){ if(seen.has(p.ro))continue; seen.add(p.ro); out.push(p); }
+  return out;
+}
+function makeReviewQ(){
+  const pool=completedVocab();
+  const trs=[...new Set(pool.map(p=>p.tr))];
+  if(pool.length<4||trs.length<4)return null;
+  const sh=a=>{const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[x[i],x[j]]=[x[j],x[i]];}return x;};
+  const ans=sh(pool)[0];
+  const dis=sh(trs.filter(t=>t!==ans.tr)).slice(0,3);
+  return {ro:ans.ro,tr:ans.tr,options:sh([ans.tr].concat(dis))};
+}
+function vReview(){
+  const r=S.review;
+  const opts=r.options.map(o=>`<button class="exopt" data-act="choice" data-correct="${o===r.tr?1:0}">${esc(o)}</button>`).join("");
+  return `<div class="top"><button class="back" data-act="revdone">‹ Geç</button><div class="crumb">Hızlı tekrar</div></div>
+    <h1 style="margin-bottom:6px">Tekrar 📝</h1>
+    <p class="sub" style="margin-bottom:16px">Önceki derslerden bir kelime — anlamı ne?</p>
+    <div class="ex" style="margin-bottom:14px"><div class="exinstr">Bu Romence kelimenin anlamı?</div>
+      <div class="exprompt" style="font-size:24px;color:var(--red)">${esc(r.ro)}</div></div>
+    <div class="exopts" style="display:grid;gap:10px">${opts}</div>
+    <button class="donebtn" style="margin-top:18px;color:var(--indigo);border-color:var(--indigo)" data-act="revdone">Devam ›</button>`;
+}
+
+/* ============ RENDER ============ */
+function render(){
+  let html;
+  switch(S.view){case"home":html=vHome();break;case"units":html=vUnits();break;
+    case"unit":html=vUnit();break;case"lesson":html=vLesson();break;case"review":html=vReview();break;
+    case"dict":html=vDict();break;case"conj":html=vConj();break;case"pron":html=vPron();break;
+    case"gram":html=vGram();break;case"quiz":html=vQuiz();break;}
+  const app=document.getElementById("app");app.innerHTML=html;app.scrollTo?app.scrollTo(0,0):0;window.scrollTo(0,0);
+}
+
+/* ============ ACTIONS ============ */
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-act]");if(!t)return;
+  const act=t.getAttribute("data-act"),val=t.getAttribute("data-val");
+  // exercise interactions (no full re-render)
+  if(act==="choice"){
+    const box=t.parentElement;if(box.dataset.locked)return;box.dataset.locked="1";
+    box.querySelectorAll(".exopt").forEach(o=>{
+      if(o.getAttribute("data-correct")==="1")o.classList.add("ok");});
+    if(t.getAttribute("data-correct")!=="1")t.classList.add("no");
+    return;
+  }
+  if(act==="quizpick"){
+    const box=t.parentElement;if(box.dataset.locked)return;box.dataset.locked="1";
+    box.querySelectorAll(".exopt").forEach(o=>{if(o.getAttribute("data-correct")==="1")o.classList.add("ok");});
+    if(t.getAttribute("data-correct")!=="1")t.classList.add("no");
+    if(S.quiz){S.quiz.total++;if(t.getAttribute("data-correct")==="1")S.quiz.score++;
+      const sc=document.getElementById("quizscore");if(sc)sc.textContent=S.quiz.score+" / "+S.quiz.total;}
+    return;
+  }
+  if(act==="checkfill"){
+    const box=document.getElementById("ex-"+t.getAttribute("data-ex"));
+    if(!box)return;
+    box.querySelectorAll("input.fillin").forEach(inp=>{
+      const ok=fold(inp.value)===fold(inp.getAttribute("data-answer"));
+      inp.classList.remove("ok","no");inp.classList.add(ok?"ok":"no");
+      const sol=inp.nextElementSibling;
+      if(sol&&sol.classList.contains("sol")){sol.textContent=ok?"✓":("→ "+inp.getAttribute("data-answer"));
+        sol.style.color=ok?"var(--green)":"var(--red)";}
+    });
+    return;
+  }
+  // navigation / state
+  switch(act){
+    case"level":S.level=val;S.view="units";break;
+    case"tool":
+      if(val==="quiz")S.quiz=null;
+      if(val==="conj"&&!S.conjGroup)S.conjGroup=VERB_GROUPS[0][0];
+      if(val==="dict")S.dictQ="";
+      S.view=val;break;
+    case"toolback":S.view="home";break;
+    case"conjgroup":S.conjGroup=val;break;
+    case"quiznext":S.quiz={q:makeQuizQ(),score:(S.quiz?S.quiz.score:0),total:(S.quiz?S.quiz.total:0)};break;
+    case"unit":S.unit=+val;S.view="unit";break;
+    case"lesson":S.lesson=+val;S.view="lesson";break;
+    case"toggledone":{const id=lid(S.level,S.unit,S.lesson);S.done.has(id)?S.done.delete(id):S.done.add(id);save();break;}
+    case"revdone":S.review=null;S.view="unit";break;
+    case"back":
+      if(S.view==="lesson"){
+        const curDone=S.done.has(lid(S.level,S.unit,S.lesson));
+        const rq=curDone?makeReviewQ():null;
+        if(rq){S.review=rq;S.view="review";}
+        else S.view="unit";
+      }
+      else if(S.view==="review")S.view="unit";
+      else if(S.view==="unit")S.view="units";
+      else if(S.view==="units")S.view="home";
+      break;
+    default:return;
+  }
+  render();
+});
+document.addEventListener("input",e=>{
+  if(e.target&&e.target.id==="dictsearch"){
+    S.dictQ=e.target.value;
+    const r=document.getElementById("dictresults");if(r)r.innerHTML=dictRows();
+  }
+});
+
+/* ============ PWA ============ */
+let dp=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e;
+  const b=document.getElementById("install");b.style.display="block";
+  b.onclick=async()=>{b.style.display="none";dp.prompt();await dp.userChoice;dp=null;};});
+window.addEventListener("appinstalled",()=>{document.getElementById("install").style.display="none";});
+if("serviceWorker"in navigator&&location.protocol.startsWith("http")){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}
+
+/* ============ INIT ============ */
+load();render();
+</script>
+</body>
+</html>  .levelcard h2{font-family:var(--serif);font-size:19px;margin:0 0 2px;}
+  .progmini{height:5px;background:var(--soft);border-radius:5px;margin-top:7px;overflow:hidden;}
+  .progmini i{display:block;height:100%;background:var(--green);border-radius:5px;}
+
+  .unit{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);
+    border-radius:9px;padding:13px 15px;margin-bottom:9px;cursor:pointer;}
+  .unit.soon{opacity:.6;}
+  .unum{font-family:var(--serif);font-size:17px;color:var(--indigo);width:30px;flex:0 0 auto;}
+  .utitle{font-family:var(--serif);font-size:16px;}
+  .utheme{font-size:12px;color:var(--mute);}
+  .tag{font-size:11px;padding:3px 9px;border-radius:20px;margin-left:auto;flex:0 0 auto;}
+  .tag.ok{background:#e7f0e3;color:var(--green);}
+  .tag.soon{background:var(--soft);color:var(--mute);}
+
+  .lesson{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);
+    border-radius:9px;padding:13px 15px;margin-bottom:9px;cursor:pointer;}
+  .lcheck{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;}
+  .lcheck.on{background:var(--green);border-color:var(--green);}
+  .ltitle{font-family:var(--serif);font-size:16px;}
+  .lro{font-size:12px;color:var(--mute);}
+
+  .block{margin-bottom:20px;}
+  .btitle{font-family:var(--serif);font-size:18px;color:var(--indigo);margin:0 0 8px;}
+  .btext{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:11px 14px;font-size:14px;line-height:1.5;}
+  .panel{background:#fff;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;}
+  .vrow{display:flex;gap:10px;padding:9px 14px;border-top:1px solid var(--soft);}
+  .vrow:first-child{border-top:none;}
+  .vro{font-family:var(--serif);font-size:16px;color:var(--red);flex:0 0 46%;}
+  .vtr{font-size:13.5px;flex:1;}
+  table{width:100%;border-collapse:collapse;}
+  th{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mute);text-align:left;padding:8px 14px;background:#faf6ec;font-weight:600;}
+  td{padding:7px 14px;border-top:1px solid var(--soft);font-size:14.5px;}
+  td.k{color:var(--mute);width:42%;}
+  td.v{font-family:var(--serif);color:var(--red);}
+  .note{background:#eef1f6;border-left:3px solid var(--indigo);padding:8px 12px;border-radius:3px;
+    font-size:12.5px;color:#46506b;margin-top:8px;}
+
+  .ex{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:14px;}
+  .exinstr{font-size:12.5px;color:var(--mute);margin-bottom:12px;}
+  .exq{margin-bottom:13px;}
+  .exprompt{font-family:var(--serif);font-size:16px;line-height:1.7;}
+  .fillin{font-family:var(--serif);font-size:15px;border:none;border-bottom:2px solid var(--indigo);
+    background:#f7f3ea;width:120px;padding:2px 6px;text-align:center;color:var(--ink);}
+  .fillin.ok{border-color:var(--green);background:#e7f0e3;}
+  .fillin.no{border-color:var(--red);background:#f6e3e3;}
+  .sol{font-size:12px;color:var(--green);margin-left:8px;}
+  .exopts{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+  .exopt{font-family:var(--serif);font-size:15px;padding:8px 16px;border:1.5px solid var(--line);
+    background:#fff;border-radius:6px;cursor:pointer;}
+  .exopt.ok{background:#e7f0e3;border-color:var(--green);color:#3f6a34;}
+  .exopt.no{background:#f6e3e3;border-color:var(--red);color:var(--red);}
+  .checkbtn{font-family:var(--serif);font-size:14px;background:var(--indigo);color:#fff;border:none;
+    border-radius:6px;padding:8px 16px;cursor:pointer;margin-top:6px;}
+  .donebtn{display:block;width:100%;font-family:var(--serif);font-size:16px;padding:13px;border-radius:8px;
+    border:1.5px solid var(--green);background:#fff;color:var(--green);cursor:pointer;margin-top:8px;}
+  .donebtn.on{background:var(--green);color:#fff;}
+
+  #install{position:fixed;right:14px;bottom:18px;z-index:30;display:none;background:var(--indigo);color:#fff;
+    border:none;border-radius:24px;padding:11px 18px;font-family:var(--serif);font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;}
+  .search{width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;
+    font-size:15px;background:#fff;font-family:var(--serif);margin-bottom:12px;}
+  .search:focus{outline:none;border-color:var(--indigo);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .chip{font-size:12.5px;padding:6px 12px;border:1.5px solid var(--line);border-radius:20px;background:#fff;cursor:pointer;}
+  .chip.on{background:var(--indigo);color:#fff;border-color:var(--indigo);}
+  .sectlabel{font-family:var(--serif);font-size:12px;letter-spacing:2px;color:var(--mute);text-transform:uppercase;margin:22px 0 10px;}
+  .ctable td,.ctable th{font-size:11.5px;padding:6px 8px;}
+  .ctable .k{white-space:nowrap;}
+  .sent{display:flex;gap:10px;padding:8px 14px;border-top:1px solid var(--soft);}
+  .sent:first-child{border-top:none;}
+  .sro{font-family:var(--serif);color:var(--red);flex:0 0 50%;font-size:14px;}
+  .str{font-size:13px;flex:1;}
+  .svgwrap{text-align:center;margin:6px 0 16px;}
+  .svgwrap svg{max-width:100%;height:auto;display:inline-block;border:1px solid var(--line);border-radius:10px;background:#fff;}
+  .dialog{background:#fff;border:1px solid var(--line);border-left:4px solid var(--indigo);border-radius:8px;padding:13px 15px;font-size:14.5px;line-height:1.6;}
+  .dialog b{color:var(--indigo);}
+</style>
+</head>
+<body>
+  <div id="app" class="wrap"></div>
+  <button id="install">⬇ Uygulamayı yükle</button>
+
+<script>
+"use strict";
+/* ====== Limba Română — Manual (PWA v1.0) ======
+   Kaynak: Manual de limba română pentru adulți (A1·A2·B1)
+   A1 Ünite 1 tam dolu; diğer üniteler iskelet (ekledikçe büyür). */
+
+/* ---------- THEMES ---------- */
+const A1_THEMES=[
+  [1,"Salut! Cine ești?","Selamlaşma & Tanışma"],
+  [2,"La curs","Derste"],
+  [3,"La cumpărături","Markette alışveriş"],
+  [4,"Timpul","Zaman & Saat"],
+  [5,"La cumpărături","Giyim alışverişi"],
+  [6,"Casa mea","Evim"],
+  [7,"Familia mea","Ailem"],
+  [8,"La restaurant","Restoranda"],
+  [9,"La medic","Doktorda"],
+  [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
+];
+const A2_THEMES=[
+  [1,"Salutul","Selamlaşma"],[2,"Învăț în România","Romanya'da öğrenim"],[3,"La cumpărături","Alışveriş"],
+  [4,"Timpul","Zaman"],[5,"La cumpărături","Giyim alışverişi"],[6,"Casa mea","Evim"],
+  [7,"Familia mea","Ailem"],[8,"La restaurant","Restoranda"],[9,"La medic","Doktorda"],
+  [10,"Stări de spirit și emoții","Ruh hâli & Duygular"],
+];
 const B1_THEMES=[
   [1,"Din nou la curs!","Yeniden derste"],
   [2,"Învățăm în România!","Romanya'da öğrenim"],
